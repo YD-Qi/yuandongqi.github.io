@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/2020/04/27/notebook/</loc>
+    
+    <lastmod>2020-04-27T14:20:01.071Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/2020/04/27/customize-pages/</loc>
     
     <lastmod>2020-04-27T14:01:36.173Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://yuandongqi.github.io/2020/04/27/hexo-use/</loc>
     
     <lastmod>2020-04-27T12:46:28.067Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/notebook/</loc>
-    
-    <lastmod>2020-04-27T04:31:31.748Z</lastmod>
     
   </url>
   

@@ -363,8 +363,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Clustering-Analysis/" class="post-category" target="_blank">
-                            Clustering Analysis
+                        <a href="/categories/Clustering/" class="post-category" target="_blank">
+                            Clustering
                         </a>
                         
                     </div>
@@ -632,8 +632,9 @@ plot_one
 plot_two = ggplot(heart_disease, aes(x = age, y = chol, color = as.factor(second_clust))) + 
   geom_point()
 plot_two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_10_0.png" alt="png"></p>
-<p><img src="notebook_files/notebook_10_1.png" alt="png"></p>
+<p><img src="notebook_files/notebook_10_0.png" alt></p>
+<p><img src="/medias/contact.jpg" alt></p>
+<p><img src="notebook_files/notebook_10_1.png" alt></p>
 <h2 id="6-Hierarchical-clustering-another-clustering-approach"><a href="#6-Hierarchical-clustering-another-clustering-approach" class="headerlink" title="6. Hierarchical clustering: another clustering approach"></a>6. Hierarchical clustering: another clustering approach</h2><p>An alternative to k-means clustering is hierarchical clustering. This method works well when the data has a nested structure. It is possible that the data from heart disease patients follows this type of structure. For example, if men are more likely to exhibit certain characteristics, those characteristics might be nested inside the gender variable. Hierarchical clustering also does not require the number of clusters to be selected prior to running the algorithm. </p>
 <p>Clusters can be selected by using the dendrogram. The dendrogram allows one to see how similar observations are to one another and are useful in selecting the number of clusters to group the data. It is now time for us to see how hierarchical clustering groups the data. </p>
 
@@ -646,7 +647,7 @@ plot(hier_clust_1)
 
 # Getting cluster assignments based on number of selected clusters
 hc_1_assign <- cutree(hier_clust_1, 5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_12_0.png" alt="png"></p>
+<p><img src="notebook_files/notebook_12_0.png" alt></p>
 <h2 id="7-Hierarchical-clustering-round-two"><a href="#7-Hierarchical-clustering-round-two" class="headerlink" title="7. Hierarchical clustering round two"></a>7. Hierarchical clustering round two</h2><p>In hierarchical clustering, there are multiple ways to measure the dissimilarity between clusters of observations. Complete linkage records the largest dissimilarity between any two points in the two clusters being compared. On the other hand, single linkage is the smallest dissimilarity between any two points in the clusters. Different linkages will result in different clusters being formed. </p>
 <p>We want to explore different algorithms to group our heart disease patients. The best way to measure dissimilarity between patients could be to look at the smallest difference between patients and minimize that difference when grouping together clusters. It is always a good idea to explore different dissimilarity measures. Let's implement hierarchical clustering using a new linkage function. </p>
 
@@ -659,7 +660,7 @@ plot(hier_clust_2)
 
 # Getting cluster assignments based on number of selected clusters
 hc_2_assign <- cutree(hier_clust_2, 5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_14_0.png" alt="png"></p>
+<p><img src="notebook_files/notebook_14_0.png" alt></p>
 <h2 id="8-Comparing-clustering-results"><a href="#8-Comparing-clustering-results" class="headerlink" title="8. Comparing clustering results"></a>8. Comparing clustering results</h2><p>The doctors are interested in grouping similar patients together in order to determine appropriate treatments. Therefore, they want to have clusters with more than a few patients to see different treatment options. While it is possible for a patient to be in a cluster by themselves, this means that the treatment they received might not be recommended for someone else in the group. </p>
 <p>As with the k-means algorithm, the way to evaluate the clusters is to investigate which patients are being grouped together. Are there patterns evident in the cluster assignments or do they seem to be groups of noise? We're going to examine the clusters resulting from the two hierarchical algorithms. </p>
 
@@ -702,8 +703,8 @@ plot_one
 plot_two = ggplot(heart_disease, aes(x = oldpeak, y = trestbps, color = as.factor(hc_clust))) + 
   geom_point()
 plot_two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_18_0.png" alt="png"></p>
-<p><img src="notebook_files/notebook_18_1.png" alt="png"></p>
+<p><img src="notebook_files/notebook_18_0.png" alt></p>
+<p><img src="notebook_files/notebook_18_1.png" alt></p>
 <h2 id="10-Conclusion"><a href="#10-Conclusion" class="headerlink" title="10. Conclusion"></a>10. Conclusion</h2><p>Now that we've tried out multiple clustering algorithms, it is necessary to determine if we think any of them will work for clustering our patients. For the k-means algorithm, it is imperative that similar clusters are produced for each iteration of the algorithm. We want to make sure that the algorithm is clustering signal as opposed to noise. </p>
 <p>For the sake of the doctors, we also want to have multiple patients in each group so they can compare treatments. We only did some preliminary work to explore the performance of the algorithms, and it is necessary to explore further before making a recomendation. Based on the above analysis are there any algorithms that you would want to investigate further to group patients? </p>
 <p>Remember that it is important the k-mean algorithm seems stable when running multiple iterations. This means that we would see similar groups of patients showing up in the plots from the different iterations of the algorithm. For the hierarchical clustering, we need a method that puts a balanced number of patients in each group. </p>
