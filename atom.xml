@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-04-27T14:01:36.173Z</updated>
+  <updated>2020-04-27T16:36:32.065Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Resources for reference</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/collection/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/collection/</id>
+    <published>2020-04-27T15:05:12.000Z</published>
+    <updated>2020-04-27T16:36:32.065Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Here I collected and am still collecting useful web pages for future reference:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Documents for
+        
+      
+    
+    </summary>
+    
+      <category term="Resources" scheme="https://yuandongqi.github.io/categories/Resources/"/>
+    
+    
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+    
+      <category term="custom" scheme="https://yuandongqi.github.io/tags/custom/"/>
+    
+      <category term="theme" scheme="https://yuandongqi.github.io/tags/theme/"/>
+    
+  </entry>
   
   <entry>
     <title>customize-pages</title>
@@ -51,7 +83,7 @@
     <link href="https://yuandongqi.github.io/2020/04/27/notebook/"/>
     <id>https://yuandongqi.github.io/2020/04/27/notebook/</id>
     <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T14:23:43.333Z</updated>
+    <updated>2020-04-27T14:44:54.803Z</updated>
     
     <summary type="html">
     
@@ -109,7 +141,7 @@
     <link href="https://yuandongqi.github.io/2020/02/16/sort-algorithms/"/>
     <id>https://yuandongqi.github.io/2020/02/16/sort-algorithms/</id>
     <published>2020-02-16T20:09:23.000Z</published>
-    <updated>2020-04-05T02:43:43.000Z</updated>
+    <updated>2020-04-27T14:38:25.576Z</updated>
     
     <summary type="html">
     
