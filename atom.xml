@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-04-27T12:46:28.067Z</updated>
+  <updated>2020-04-27T13:48:10.274Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>customize-pages</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/customize-pages/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/customize-pages/</id>
+    <published>2020-04-27T14:22:17.000Z</published>
+    <updated>2020-04-27T13:48:10.274Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Understand-the-frame-work&quot;&gt;&lt;a href=&quot;#Understand-the-frame-work&quot; class=&quot;headerlink&quot; title=&quot;Understand the frame work&quot;&gt;&lt;/a&gt;Understand
+        
+      
+    
+    </summary>
+    
+      <category term="tips" scheme="https://yuandongqi.github.io/categories/tips/"/>
+    
+    
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+    
+      <category term="custom" scheme="https://yuandongqi.github.io/tags/custom/"/>
+    
+      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
+    
+  </entry>
   
   <entry>
     <title>How to use Hexo and deploy to GitHub Pages</title>
@@ -38,11 +68,11 @@
       <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
     
     
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+    
       <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
     
       <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
-    
-      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
     
   </entry>
   

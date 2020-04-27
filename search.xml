@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>customize-pages</title>
+      <link href="/2020/04/27/customize-pages/"/>
+      <url>/2020/04/27/customize-pages/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Understand-the-frame-work"><a href="#Understand-the-frame-work" class="headerlink" title="Understand the frame work"></a>Understand the frame work</h3><p>Conceptually, there are two main moving parts in our GitHub Pages:</p><ul><li>contents, such as our posts, tags and categories. They are like the furniture we want to put in our house</li><li>theme. It is our house which has living room, bedrooms, bathrooms, kitchen.</li><li>We put our contents into the theme we select to build our blog.</li><li>If you want to delete and/ or add pages, it means you change remove and/ or add more rooms to your house, that is, you change the theme.</li></ul><p>With the concepts being said, you go to the _config.yml file under your theme folder, find the menu<br>chunk of code, where you can delete and/ or add pages. This is equal to delete and/ or add icons in the navigation bar.</p><pre><code># main menu navigation url and iconmenu:  Index:    url: /    icon: fa-home  Tags:    url: /tags    icon: fa-tags  Categories:    url: /categories    icon: fa-bookmark  Archives:    url: /archives    icon: fa-archive  About:    url: /about    icon: fa-user-circle-o</code></pre><p>In my experience, I need less pages, so I deleted the corresponding code under menu and their<br>folders in the source folder. It worked well. But I have’t tried to add pages. I assume adding<br>pages will require more changes in the theme. </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tips </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> custom </tag>
+            
+            <tag> github pages </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>How to use Hexo and deploy to GitHub Pages</title>
       <link href="/2020/04/27/hexo-use/"/>
       <url>/2020/04/27/hexo-use/</url>
@@ -20,11 +49,11 @@
       
         <tags>
             
+            <tag> hexo </tag>
+            
             <tag> github pages </tag>
             
             <tag> web sites </tag>
-            
-            <tag> hexo </tag>
             
         </tags>
       
