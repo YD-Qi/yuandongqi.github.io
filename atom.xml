@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-04-27T04:31:31.748Z</updated>
+  <updated>2020-04-27T12:43:14.096Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -17,10 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ow to use Hexo and deploy to GitHub Pages</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-04-27T12:43:14.096Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
+        
+      
+    
+    </summary>
+    
+      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
+    
+    
+      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
+    
+      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
+    
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Clustering Heart Disease Patient Data with R</title>
     <link href="https://yuandongqi.github.io/2020/04/27/notebook/"/>
     <id>https://yuandongqi.github.io/2020/04/27/notebook/</id>
-    <published>2020-04-27T04:00:00.000Z</published>
+    <published>2020-04-27T05:00:00.000Z</published>
     <updated>2020-04-27T04:31:31.748Z</updated>
     
     <summary type="html">

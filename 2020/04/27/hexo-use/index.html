@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Clustering Heart Disease Patient Data with R, MachineLearning Yuandong Finance">
+    <meta name="keywords" content="ow to use Hexo and deploy to GitHub Pages, MachineLearning Yuandong Finance">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="1. Targeting treatment for heart disease patientsClustering algorithms are used to group together items that are similar">
+    <meta name="description" content="How to use Hexo and deploy to GitHub Pages
+https://github.com/hexojs/hexo
+https://hexo.io/docs/
+
+1. Install Hexo$ sudo n">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Clustering Heart Disease Patient Data with R | Data Science Portfolio</title>
+    <title>ow to use Hexo and deploy to GitHub Pages | Data Science Portfolio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -266,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Clustering Heart Disease Patient Data with R
+                        ow to use Hexo and deploy to GitHub Pages
                     </div>
                 </div>
             </div>
@@ -383,12 +387,16 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/data-science/" target="_blank">
-                            <span class="chip bg-color">data science</span>
+                        <a href="/tags/github-pages/" target="_blank">
+                            <span class="chip bg-color">github pages</span>
                         </a>
                         
-                        <a href="/tags/machine-learning/" target="_blank">
-                            <span class="chip bg-color">machine learning</span>
+                        <a href="/tags/web-sites/" target="_blank">
+                            <span class="chip bg-color">web sites</span>
+                        </a>
+                        
+                        <a href="/tags/hexo/" target="_blank">
+                            <span class="chip bg-color">hexo</span>
                         </a>
                         
                     </div>
@@ -399,8 +407,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Clustering-Analysis/" class="post-category" target="_blank">
-                            Clustering Analysis
+                        <a href="/categories/Tips/" class="post-category" target="_blank">
+                            Tips
                         </a>
                         
                     </div>
@@ -434,321 +442,90 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-Targeting-treatment-for-heart-disease-patients"><a href="#1-Targeting-treatment-for-heart-disease-patients" class="headerlink" title="1. Targeting treatment for heart disease patients"></a>1. Targeting treatment for heart disease patients</h2><p>Clustering algorithms are used to group together items that are similar to one another. There are many industries where it would be beneficial and insightful to use an unsupervised learning algorithm - retailers want to group similar customers for targeted ad campaigns, biologists want to find plants that share similar characteristics, and more. We are going to explore if it would be appropriate to use some clustering algorithms to group medical patients. </p>
-<p><img src="https://assets.datacamp.com/production/project_552/img/images-3.jpeg" alt></p>
-<p>We are going to look at anonymized patients who have been diagnosed with heart disease. Patients with similar characteristics might respond to the same treatments, and doctors would benefit from learning about the outcomes of patients similar to those they are treating. The data we are analyzing comes from the V.A. Medical Center in Long Beach, CA. For more information, see <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/heart-disease.names" target="_blank" rel="noopener">here</a>, and to download the data visit <a href="https://archive.ics.uci.edu/ml/datasets/heart+Disease" target="_blank" rel="noopener">here</a>. </p>
-<p>Before beginning a project, it is important to get an idea of what the patient data looks like. In addition, the clustering algorithms used below require that the data be numeric, so it is necessary to ensure the patient data doesn't need any transformations. You will also be brushing up on your base R skills for some analysis.</p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Loading the data
-heart_disease = read.csv("datasets/heart_disease_patients.csv")
-
-# Print the first ten rows of the data set
-head(heart_disease, n=10)
-
-# Check that only numeric variables
-lapply(heart_disease, class)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<table>
-<caption>A data.frame: 10 x 12</caption>
-<thead>
-    <tr><th scope="col">id</th><th scope="col">age</th><th scope="col">sex</th><th scope="col">cp</th><th scope="col">trestbps</th><th scope="col">chol</th><th scope="col">fbs</th><th scope="col">restecg</th><th scope="col">thalach</th><th scope="col">exang</th><th scope="col">oldpeak</th><th scope="col">slope</th></tr>
-    <tr><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;int&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;int&gt;</th></tr>
-</thead>
-<tbody>
-    <tr><td> 1</td><td>63</td><td>1</td><td>1</td><td>145</td><td>233</td><td>1</td><td>2</td><td>150</td><td>0</td><td>2.3</td><td>3</td></tr>
-    <tr><td> 2</td><td>67</td><td>1</td><td>4</td><td>160</td><td>286</td><td>0</td><td>2</td><td>108</td><td>1</td><td>1.5</td><td>2</td></tr>
-    <tr><td> 3</td><td>67</td><td>1</td><td>4</td><td>120</td><td>229</td><td>0</td><td>2</td><td>129</td><td>1</td><td>2.6</td><td>2</td></tr>
-    <tr><td> 4</td><td>37</td><td>1</td><td>3</td><td>130</td><td>250</td><td>0</td><td>0</td><td>187</td><td>0</td><td>3.5</td><td>3</td></tr>
-    <tr><td> 5</td><td>41</td><td>0</td><td>2</td><td>130</td><td>204</td><td>0</td><td>2</td><td>172</td><td>0</td><td>1.4</td><td>1</td></tr>
-    <tr><td> 6</td><td>56</td><td>1</td><td>2</td><td>120</td><td>236</td><td>0</td><td>0</td><td>178</td><td>0</td><td>0.8</td><td>1</td></tr>
-    <tr><td> 7</td><td>62</td><td>0</td><td>4</td><td>140</td><td>268</td><td>0</td><td>2</td><td>160</td><td>0</td><td>3.6</td><td>3</td></tr>
-    <tr><td> 8</td><td>57</td><td>0</td><td>4</td><td>120</td><td>354</td><td>0</td><td>0</td><td>163</td><td>1</td><td>0.6</td><td>1</td></tr>
-    <tr><td> 9</td><td>63</td><td>1</td><td>4</td><td>130</td><td>254</td><td>0</td><td>2</td><td>147</td><td>0</td><td>1.4</td><td>2</td></tr>
-    <tr><td>10</td><td>53</td><td>1</td><td>4</td><td>140</td><td>203</td><td>1</td><td>2</td><td>155</td><td>1</td><td>3.1</td><td>3</td></tr>
-</tbody>
-</table>
-
-
-
-
-<dl>
-    <dt>$id</dt>
-        <dd>'integer'</dd>
-    <dt>$age</dt>
-        <dd>'integer'</dd>
-    <dt>$sex</dt>
-        <dd>'integer'</dd>
-    <dt>$cp</dt>
-        <dd>'integer'</dd>
-    <dt>$trestbps</dt>
-        <dd>'integer'</dd>
-    <dt>$chol</dt>
-        <dd>'integer'</dd>
-    <dt>$fbs</dt>
-        <dd>'integer'</dd>
-    <dt>$restecg</dt>
-        <dd>'integer'</dd>
-    <dt>$thalach</dt>
-        <dd>'integer'</dd>
-    <dt>$exang</dt>
-        <dd>'integer'</dd>
-    <dt>$oldpeak</dt>
-        <dd>'numeric'</dd>
-    <dt>$slope</dt>
-        <dd>'integer'</dd>
-</dl>
-
-
-
-<h2 id="2-Quantifying-patient-differences"><a href="#2-Quantifying-patient-differences" class="headerlink" title="2. Quantifying patient differences"></a>2. Quantifying patient differences</h2><p>It is important to conduct some exploratory data analysis to familiarize ourselves with the data before clustering. This will help us learn more about the variables and make an informed decision about whether we should scale the data. Because k-means and hierarchical clustering measures similarity between points using a distance formula, it can place extra emphasis on certain variables that have a larger scale and thus larger differences between points.</p>
-<p>Exploratory data analysis helps us to understand the characteristics of the patients in the data. We need to get an idea of the value ranges of the variables and their distributions. This will also be helpful when we evaluate the clusters of patients from the algorithms. Are there more patients of one gender? What might an outlier look like?</p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Evidence that the data should be scaled?
-summary(heart_disease)
-
-# Remove id
-heart_disease = heart_disease[ , !(names(heart_disease) %in% c("id"))]
-
-# Scaling data and saving as a data frame
-scaled = scale(heart_disease)
-
-# What does data look like now?
-summary(scaled)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>       id             age             sex               cp       
- Min.   :  1.0   Min.   :29.00   Min.   :0.0000   Min.   :1.000  
- 1st Qu.: 76.5   1st Qu.:48.00   1st Qu.:0.0000   1st Qu.:3.000  
- Median :152.0   Median :56.00   Median :1.0000   Median :3.000  
- Mean   :152.0   Mean   :54.44   Mean   :0.6799   Mean   :3.158  
- 3rd Qu.:227.5   3rd Qu.:61.00   3rd Qu.:1.0000   3rd Qu.:4.000  
- Max.   :303.0   Max.   :77.00   Max.   :1.0000   Max.   :4.000  
-    trestbps          chol            fbs            restecg      
- Min.   : 94.0   Min.   :126.0   Min.   :0.0000   Min.   :0.0000  
- 1st Qu.:120.0   1st Qu.:211.0   1st Qu.:0.0000   1st Qu.:0.0000  
- Median :130.0   Median :241.0   Median :0.0000   Median :1.0000  
- Mean   :131.7   Mean   :246.7   Mean   :0.1485   Mean   :0.9901  
- 3rd Qu.:140.0   3rd Qu.:275.0   3rd Qu.:0.0000   3rd Qu.:2.0000  
- Max.   :200.0   Max.   :564.0   Max.   :1.0000   Max.   :2.0000  
-    thalach          exang           oldpeak         slope      
- Min.   : 71.0   Min.   :0.0000   Min.   :0.00   Min.   :1.000  
- 1st Qu.:133.5   1st Qu.:0.0000   1st Qu.:0.00   1st Qu.:1.000  
- Median :153.0   Median :0.0000   Median :0.80   Median :2.000  
- Mean   :149.6   Mean   :0.3267   Mean   :1.04   Mean   :1.601  
- 3rd Qu.:166.0   3rd Qu.:1.0000   3rd Qu.:1.60   3rd Qu.:2.000  
- Max.   :202.0   Max.   :1.0000   Max.   :6.20   Max.   :3.000  
-
-
-
-      age               sex                cp             trestbps       
- Min.   :-2.8145   Min.   :-1.4549   Min.   :-2.2481   Min.   :-2.14149  
- 1st Qu.:-0.7124   1st Qu.:-1.4549   1st Qu.:-0.1650   1st Qu.:-0.66420  
- Median : 0.1727   Median : 0.6851   Median :-0.1650   Median :-0.09601  
- Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.00000  
- 3rd Qu.: 0.7259   3rd Qu.: 0.6851   3rd Qu.: 0.8765   3rd Qu.: 0.47218  
- Max.   : 2.4961   Max.   : 0.6851   Max.   : 0.8765   Max.   : 3.88132  
-      chol              fbs             restecg             thalach       
- Min.   :-2.3310   Min.   :-0.4169   Min.   :-0.995103   Min.   :-3.4364  
- 1st Qu.:-0.6894   1st Qu.:-0.4169   1st Qu.:-0.995103   1st Qu.:-0.7041  
- Median :-0.1100   Median :-0.4169   Median : 0.009951   Median : 0.1483  
- Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.000000   Mean   : 0.0000  
- 3rd Qu.: 0.5467   3rd Qu.:-0.4169   3rd Qu.: 1.015005   3rd Qu.: 0.7166  
- Max.   : 6.1283   Max.   : 2.3905   Max.   : 1.015005   Max.   : 2.2904  
-     exang            oldpeak            slope        
- Min.   :-0.6955   Min.   :-0.8954   Min.   :-0.9747  
- 1st Qu.:-0.6955   1st Qu.:-0.8954   1st Qu.:-0.9747  
- Median :-0.6955   Median :-0.2064   Median : 0.6480  
- Mean   : 0.0000   Mean   : 0.0000   Mean   : 0.0000  
- 3rd Qu.: 1.4331   3rd Qu.: 0.4827   3rd Qu.: 0.6480  
- Max.   : 1.4331   Max.   : 4.4445   Max.   : 2.2708  </code></pre><h2 id="3-Let’s-start-grouping-patients"><a href="#3-Let’s-start-grouping-patients" class="headerlink" title="3. Let’s start grouping patients"></a>3. Let’s start grouping patients</h2><p>Once we've figured out if we need to modify the data and made any necessary changes, we can now start the clustering process. For the k-means algorithm, it is necessary to select the number of clusters in advance.</p>
-<p>It is also important to make sure that your results are reproducible when conducting a statistical analysis. This means that when someone runs your code on the same data, they will get the same results as you reported. Therefore, if you're conducting an analysis that has a random aspect, it is necessary to set a seed to ensure reproducibility.</p>
-<p>Reproducibility is especially important since doctors will potentially be using our results to treat patients. It is vital that another analyst can see where the groups come from and be able to verify the results. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Set the seed so that results are reproducible
-seed_val = 10
-set.seed(seed_val, kind = "Mersenne-Twister", normal.kind = "Inversion")
-
-# Select a number of clusters
-k = 5
-
-# Run the k-means algorithms
-first_clust = kmeans(scaled, centers = k, nstart = 1)
-
-# How many patients are in each group?
-first_clust$size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol class="list-inline">
-    <li>24</li>
-    <li>53</li>
-    <li>87</li>
-    <li>72</li>
-    <li>67</li>
-</ol>
-
-
-
-<h2 id="4-Another-round-of-k-means"><a href="#4-Another-round-of-k-means" class="headerlink" title="4. Another round of k-means"></a>4. Another round of k-means</h2><p>Because the k-means algorithm initially selects the cluster centers by randomly selecting points, different iterations of the algorithm can result in different clusters being created. If the algorithm is truly grouping together similar observations (as opposed to clustering noise), then cluster assignments will be somewhat robust between different iterations of the algorithm. </p>
-<p>With regards to the heart disease data, this would mean that the same patients would be grouped together even when the algorithm is initialized at different random points. If patients are not in similar clusters with various algorithm runs, then the clustering method isn't picking up on meaningful relationships between patients. </p>
-<p>We're going to explore how the patients are grouped together with another iteration of the k-means algorithm. We will then be able to compare the resulting groups of patients. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Set the seed
-seed_val = 38
-set.seed(seed_val, kind = "Mersenne-Twister", normal.kind = "Inversion")
-
-# Run the k-means algorithms
-k = 5
-second_clust = kmeans(scaled, center=k, nstart=1)
-
-# How many patients are in each group?
-second_clust$size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol class="list-inline">
-    <li>51</li>
-    <li>48</li>
-    <li>42</li>
-    <li>67</li>
-    <li>95</li>
-</ol>
-
-
-
-
-<pre class="line-numbers language-R"><code class="language-R">second_clust<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre><code>K-means clustering with 5 clusters of sizes 51, 48, 42, 67, 95
-
-Cluster means:
-         age         sex          cp    trestbps        chol        fbs
-1  0.5892201 -0.99332950 -0.22626141  0.29392331  0.74931318 -0.3618972
-2  0.6221668  0.01633219  0.05199058  0.08154839 -0.11518458 -0.4169448
-3  0.2938813  0.12460389 -0.09059989  0.48164882 -0.04695460  2.3904835
-4  0.1793139  0.26985337  0.76771887  0.01677897  0.07078713 -0.3750429
-5 -0.8870661  0.27960337 -0.40619142 -0.42376687 -0.37322902 -0.3873929
-     restecg     thalach       exang     oldpeak      slope
-1  0.2267274  0.35060936 -0.52853177 -0.58127000 -0.6565473
-2  0.3030918 -0.47190204 -0.65113441  0.79127477  0.8170809
-3  0.1535302  0.01404637  0.06473083  0.02946025  0.1457519
-4  0.1149567 -0.89955878  1.43311039  0.62405541  0.6480412
-5 -0.4238092  0.67842854 -0.42660546 -0.54089960 -0.5818559
-
-Clustering vector:
-  [1] 3 4 4 2 5 5 2 1 2 3 2 1 3 5 3 5 5 5 1 5 2 3 2 2 4 5 1 2 5 4 1 3 1 2 5 5 4
- [38] 4 4 3 2 5 1 3 1 2 5 2 1 3 5 5 5 5 4 4 5 5 2 5 4 4 4 3 2 4 2 5 4 2 1 3 4 1
- [75] 5 1 4 1 5 4 4 1 5 3 5 5 5 1 1 1 2 2 2 5 1 5 4 2 5 5 5 5 1 3 2 5 5 2 4 5 4
-[112] 3 5 3 2 5 3 5 3 2 3 2 4 4 3 5 3 4 5 1 2 5 5 5 5 1 4 2 4 3 5 1 3 4 4 5 3 5
-[149] 5 1 3 2 1 4 4 2 4 1 2 1 5 1 2 2 3 5 5 3 5 5 4 4 4 1 2 4 3 4 5 3 5 4 5 2 1
-[186] 1 3 4 1 2 5 4 3 3 2 4 3 4 5 1 1 1 3 1 5 4 4 4 5 4 5 5 5 3 5 2 5 4 2 1 5 1
-[223] 5 4 4 5 5 1 4 4 1 4 5 1 1 4 4 5 1 5 5 5 1 2 3 2 5 4 5 3 4 2 4 1 5 5 1 2 1
-[260] 5 5 3 1 5 4 4 3 3 5 5 4 2 4 2 5 2 1 5 1 2 4 5 4 5 5 2 3 5 5 5 2 1 4 4 4 5
-[297] 3 4 5 3 4 1 5
-
-Within cluster sum of squares by cluster:
-[1] 368.7387 378.1541 398.0430 458.2080 580.3240
- (between_SS / total_SS =  34.3 %)
-
-Available components:
-
-[1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;     &quot;tot.withinss&quot;
-[6] &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;         &quot;ifault&quot;      </code></pre><h2 id="5-Comparing-patient-clusters"><a href="#5-Comparing-patient-clusters" class="headerlink" title="5. Comparing patient clusters"></a>5. Comparing patient clusters</h2><p>It is important that the clusters resulting from the k-means algorithm are stable. Even though the algorithm begins by randomly initializing the cluster centers, if the k-means algorithm is the right choice for the data, then different initializations of the algorithm will result in similar clusters.</p>
-<p>The clusters from different iterations may not be exactly the same, but the clusters should be roughly the same size and have similar distributions of variables. If there is a lot of change in clusters between different iterations of the algorithm, then k-means clustering is not a good choice for the data. </p>
-<p>It is not possible to validate that the clusters obtained from an algorithm are ground truth are accurate since there is no true labeling for patients. Thus, it is necessary to examine how the clusters change between different iterations of the algorithm. We're going to use some visualizations to get an idea of the cluster stabilities. That way we can see how certain patient characteristics may have been used to group patients together.</p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Adding cluster assignments to the data
-heart_disease["first_clust"] = first_clust$cluster
-heart_disease["second_clust"] = second_clust$cluster
-
-# Load ggplot2
-library(ggplot2)
-
-# Creating the plots of age and chol for the first clustering algorithm
-plot_one = ggplot(heart_disease, aes(x =age, y = chol, color = as.factor(first_clust))) + 
-  geom_point()
-plot_one 
-
-# Creating the plots of age and chol for the second clustering algorithm
-plot_two = ggplot(heart_disease, aes(x = age, y = chol, color = as.factor(second_clust))) + 
-  geom_point()
-plot_two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_10_0.png" alt="png"></p>
-<p><img src="notebook_files/notebook_10_1.png" alt="png"></p>
-<h2 id="6-Hierarchical-clustering-another-clustering-approach"><a href="#6-Hierarchical-clustering-another-clustering-approach" class="headerlink" title="6. Hierarchical clustering: another clustering approach"></a>6. Hierarchical clustering: another clustering approach</h2><p>An alternative to k-means clustering is hierarchical clustering. This method works well when the data has a nested structure. It is possible that the data from heart disease patients follows this type of structure. For example, if men are more likely to exhibit certain characteristics, those characteristics might be nested inside the gender variable. Hierarchical clustering also does not require the number of clusters to be selected prior to running the algorithm. </p>
-<p>Clusters can be selected by using the dendrogram. The dendrogram allows one to see how similar observations are to one another and are useful in selecting the number of clusters to group the data. It is now time for us to see how hierarchical clustering groups the data. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Executing hierarchical clustering with complete linkage
-hier_clust_1 = hclust(dist(scaled), method= "complete")
-
-# Printing the dendrogram
-plot(hier_clust_1)
-
-# Getting cluster assignments based on number of selected clusters
-hc_1_assign <- cutree(hier_clust_1, 5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_12_0.png" alt="png"></p>
-<h2 id="7-Hierarchical-clustering-round-two"><a href="#7-Hierarchical-clustering-round-two" class="headerlink" title="7. Hierarchical clustering round two"></a>7. Hierarchical clustering round two</h2><p>In hierarchical clustering, there are multiple ways to measure the dissimilarity between clusters of observations. Complete linkage records the largest dissimilarity between any two points in the two clusters being compared. On the other hand, single linkage is the smallest dissimilarity between any two points in the clusters. Different linkages will result in different clusters being formed. </p>
-<p>We want to explore different algorithms to group our heart disease patients. The best way to measure dissimilarity between patients could be to look at the smallest difference between patients and minimize that difference when grouping together clusters. It is always a good idea to explore different dissimilarity measures. Let's implement hierarchical clustering using a new linkage function. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Executing hierarchical clustering with single linkage
-hier_clust_2 = hclust(dist(scaled), method = "single")
-
-# Printing the dendrogram
-plot(hier_clust_2)
-
-# Getting cluster assignments based on number of selected clusters
-hc_2_assign <- cutree(hier_clust_2, 5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_14_0.png" alt="png"></p>
-<h2 id="8-Comparing-clustering-results"><a href="#8-Comparing-clustering-results" class="headerlink" title="8. Comparing clustering results"></a>8. Comparing clustering results</h2><p>The doctors are interested in grouping similar patients together in order to determine appropriate treatments. Therefore, they want to have clusters with more than a few patients to see different treatment options. While it is possible for a patient to be in a cluster by themselves, this means that the treatment they received might not be recommended for someone else in the group. </p>
-<p>As with the k-means algorithm, the way to evaluate the clusters is to investigate which patients are being grouped together. Are there patterns evident in the cluster assignments or do they seem to be groups of noise? We're going to examine the clusters resulting from the two hierarchical algorithms. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Adding assignments of chosen hierarchical linkage
-heart_disease['hc_clust'] = hc_1_assign
-
-# Remove 'sex', 'first_clust', and 'second_clust' variables
-hd_simple = heart_disease[, !(names(heart_disease) %in% c("sex", "first_clust", "second_clust"))]
-
-# Getting mean and standard deviation summary statistics
-clust_summary = do.call(data.frame, aggregate(. ~ hc_clust, data = hd_simple, function(x) c(avg = mean(x), sd = sd(x))))
-clust_summary<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<table>
-<caption>A data.frame: 5 x 21</caption>
-<thead>
-    <tr><th scope="col">hc_clust</th><th scope="col">age.avg</th><th scope="col">age.sd</th><th scope="col">cp.avg</th><th scope="col">cp.sd</th><th scope="col">trestbps.avg</th><th scope="col">trestbps.sd</th><th scope="col">chol.avg</th><th scope="col">chol.sd</th><th scope="col">fbs.avg</th><th scope="col">...</th><th scope="col">restecg.avg</th><th scope="col">restecg.sd</th><th scope="col">thalach.avg</th><th scope="col">thalach.sd</th><th scope="col">exang.avg</th><th scope="col">exang.sd</th><th scope="col">oldpeak.avg</th><th scope="col">oldpeak.sd</th><th scope="col">slope.avg</th><th scope="col">slope.sd</th></tr>
-    <tr><th scope="col">&lt;int&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">...</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th><th scope="col">&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-    <tr><td>1</td><td>51.41667</td><td>8.540979</td><td>2.783333</td><td>0.9470625</td><td>129.1389</td><td>15.93800</td><td>239.8722</td><td>42.29228</td><td>0.1222222</td><td>...</td><td>0.8444444</td><td>0.9905826</td><td>161.5722</td><td>15.779214</td><td>0.07777778</td><td>0.2685686</td><td>0.555000</td><td>0.7847196</td><td>1.388889</td><td>0.5730336</td></tr>
-    <tr><td>2</td><td>58.11111</td><td>7.754246</td><td>3.763889</td><td>0.6165112</td><td>130.0417</td><td>13.90657</td><td>253.2222</td><td>49.74476</td><td>0.1805556</td><td>...</td><td>1.4027778</td><td>0.9140488</td><td>135.5417</td><td>17.991342</td><td>0.81944444</td><td>0.3873488</td><td>1.451389</td><td>1.0804268</td><td>1.750000</td><td>0.5240686</td></tr>
-    <tr><td>3</td><td>61.00000</td><td>3.908034</td><td>3.916667</td><td>0.2886751</td><td>168.5000</td><td>17.45904</td><td>284.9167</td><td>53.00336</td><td>0.3333333</td><td>...</td><td>1.2500000</td><td>0.9653073</td><td>147.7500</td><td>13.157266</td><td>0.75000000</td><td>0.4522670</td><td>2.316667</td><td>1.4708274</td><td>2.166667</td><td>0.5773503</td></tr>
-    <tr><td>4</td><td>59.00000</td><td>9.203580</td><td>3.571429</td><td>0.8501112</td><td>134.7714</td><td>18.64070</td><td>233.8571</td><td>49.67136</td><td>0.1428571</td><td>...</td><td>0.6857143</td><td>0.9321521</td><td>116.8857</td><td>17.842071</td><td>0.48571429</td><td>0.5070926</td><td>2.240000</td><td>1.3856831</td><td>2.200000</td><td>0.4058397</td></tr>
-    <tr><td>5</td><td>64.75000</td><td>2.061553</td><td>3.250000</td><td>0.5000000</td><td>138.7500</td><td>18.42779</td><td>433.7500</td><td>89.93470</td><td>0.2500000</td><td>...</td><td>2.0000000</td><td>0.0000000</td><td>156.2500</td><td> 3.774917</td><td>0.00000000</td><td>0.0000000</td><td>1.100000</td><td>0.3829708</td><td>1.500000</td><td>0.5773503</td></tr>
-</tbody>
-</table>
-
-
-
-<h2 id="9-Visualizing-the-cluster-contents"><a href="#9-Visualizing-the-cluster-contents" class="headerlink" title="9. Visualizing the cluster contents"></a>9. Visualizing the cluster contents</h2><p>In addition to looking at the distributions of variables in each of the hierarchical clustering runs, we will make visualizations to evaluate the algorithms. Even though the data has more than two dimensions, we can get an idea of how the data clusters by looking at a scatter plot of two variables. We want to look for patterns that appear in the data and see what patients get clustered together. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Plotting age and chol
-plot_one = ggplot(heart_disease, aes(x = age, y = chol, color = as.factor(hc_clust))) + 
-  geom_point()
-plot_one 
-
-# Plotting oldpeak and trestbps
-plot_two = ggplot(heart_disease, aes(x = oldpeak, y = trestbps, color = as.factor(hc_clust))) + 
-  geom_point()
-plot_two<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="notebook_files/notebook_18_0.png" alt="png"></p>
-<p><img src="notebook_files/notebook_18_1.png" alt="png"></p>
-<h2 id="10-Conclusion"><a href="#10-Conclusion" class="headerlink" title="10. Conclusion"></a>10. Conclusion</h2><p>Now that we've tried out multiple clustering algorithms, it is necessary to determine if we think any of them will work for clustering our patients. For the k-means algorithm, it is imperative that similar clusters are produced for each iteration of the algorithm. We want to make sure that the algorithm is clustering signal as opposed to noise. </p>
-<p>For the sake of the doctors, we also want to have multiple patients in each group so they can compare treatments. We only did some preliminary work to explore the performance of the algorithms, and it is necessary to explore further before making a recomendation. Based on the above analysis are there any algorithms that you would want to investigate further to group patients? </p>
-<p>Remember that it is important the k-mean algorithm seems stable when running multiple iterations. This means that we would see similar groups of patients showing up in the plots from the different iterations of the algorithm. For the hierarchical clustering, we need a method that puts a balanced number of patients in each group. </p>
-
-
-<pre class="line-numbers language-R"><code class="language-R"># Add TRUE if the algorithm shows promise, add FALSE if it does not
-explore_kmeans = TRUE
-explore_hierarch_complete = FALSE
-explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <h2 id="How-to-use-Hexo-and-deploy-to-GitHub-Pages"><a href="#How-to-use-Hexo-and-deploy-to-GitHub-Pages" class="headerlink" title="How to use Hexo and deploy to GitHub Pages"></a>How to use Hexo and deploy to GitHub Pages</h2><ul>
+<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">https://github.com/hexojs/hexo</a></li>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a></li>
+</ul>
+<h3 id="1-Install-Hexo"><a href="#1-Install-Hexo" class="headerlink" title="1. Install Hexo"></a>1. Install Hexo</h3><pre><code>$ sudo npm install -g hexo-cli
+
+$ hexo -v
+hexo-cli: 0.1.9
+os: Darwin 14.3.0 darwin x64
+http_parser: 2.3
+node: 0.12.7
+v8: 3.28.71.19
+uv: 1.6.1
+zlib: 1.2.8
+modules: 14
+openssl: 1.0.1p</code></pre><h3 id="2-Create-a-project-for-your-GitHub-Pages"><a href="#2-Create-a-project-for-your-GitHub-Pages" class="headerlink" title="2. Create a project for your GitHub Pages"></a>2. Create a project for your GitHub Pages</h3><pre><code>$ hexo init yt8yt.github.io
+INFO  Copying data to ~/***/yt8yt.github.io
+INFO  You are almost done! Don&#39;t forget to run &#39;npm install&#39; before you start blogging with Hexo!
+
+$ cd yt8yt.github.io
+
+$ npm install</code></pre><h3 id="3-Run-a-test-server-for-your-page-on-Mac"><a href="#3-Run-a-test-server-for-your-page-on-Mac" class="headerlink" title="3. Run a test server for your page on Mac"></a>3. Run a test server for your page on Mac</h3><pre><code>$ hexo server
+INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code></pre><h3 id="4-Set-information-for-your-new-blog"><a href="#4-Set-information-for-your-new-blog" class="headerlink" title="4. Set information for your new blog"></a>4. Set information for your new blog</h3><p><a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">https://hexo.io/docs/configuration.html</a></p>
+<pre><code>$ vi _config.yml
+
+~~~~~~~~~~~~~~~~~~ _config.yml ~~~~~~~~~~~~~~~~~~
+# Site
+title: yt8yt&#39;s note
+subtitle:
+description: yt8yt&#39;s personal blog
+author: yt8yt
+language:
+timezone: Japan
+
+# URL
+## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39;
+url: http://yt8yt.github.io/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:</code></pre><h3 id="5-Set-information-to-use-Git"><a href="#5-Set-information-to-use-Git" class="headerlink" title="5. Set information to use Git"></a>5. Set information to use Git</h3><p><a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">https://github.com/hexojs/hexo-deployer-git</a></p>
+<pre><code>$ npm install hexo-deployer-git --save
+$ vi _config.yml
+
+~~~~~~~~~~~~~~~~~~ _config.yml ~~~~~~~~~~~~~~~~~~
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:yt8yt/yt8yt.github.io.git
+  branch: master</code></pre><h3 id="6-Set-“watch”-before-starting-your-work"><a href="#6-Set-“watch”-before-starting-your-work" class="headerlink" title="6. Set “watch” before starting your work"></a>6. Set “watch” before starting your work</h3><p>“watch” command can monitor your files.<br><a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">https://hexo.io/docs/generating.html</a></p>
+<pre><code>$ hexo generate --watch</code></pre><h3 id="7-Create-a-new-post-file"><a href="#7-Create-a-new-post-file" class="headerlink" title="7. Create a new post file"></a>7. Create a new post file</h3><pre><code>$ hexo new first-post
+INFO  Created: ~/***/yt8yt.github.io/source/_posts/first-post.md</code></pre><h3 id="8-Edit-the-above-file-with-Markdown-or-Hexo’s-Helper"><a href="#8-Edit-the-above-file-with-Markdown-or-Hexo’s-Helper" class="headerlink" title="8. Edit the above file with Markdown or Hexo’s Helper"></a>8. Edit the above file with Markdown or Hexo’s Helper</h3><p>Hexo’s Helper<br><a href="https://hexo.io/docs/helpers.html" target="_blank" rel="noopener">https://hexo.io/docs/helpers.html</a><br>I use Atom with “shift + control + m” when I use Markdown :-)<br><a href="https://atom.io/" target="_blank" rel="noopener">https://atom.io/</a></p>
+<h3 id="9-Delete-“source-posts-hello-world-md”"><a href="#9-Delete-“source-posts-hello-world-md”" class="headerlink" title="9. Delete “source/_posts/hello-world.md”"></a>9. Delete “source/_posts/hello-world.md”</h3><p>It’s not necessary to deploy.</p>
+<h3 id="10-Deploy-your-new-blog"><a href="#10-Deploy-your-new-blog" class="headerlink" title="10. Deploy your new blog!!"></a>10. Deploy your new blog!!</h3><p><a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></p>
+<pre><code>$ hexo clean
+$ hexo deploy</code></pre><p>After writting the above command, you can see your new blog on GitHub Pages.<br>http://<strong>**</strong>.github.io/</p>
+<h3 id="11-Change-your-blog-theme"><a href="#11-Change-your-blog-theme" class="headerlink" title="11. Change your blog theme"></a>11. Change your blog theme</h3><p><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+<pre><code>For instance, How to use the following theme.
+https://hexo.io/hexo-theme-light/
+
+## Install it
+$ cd yt8yt.github.io
+$ git clone git://github.com/tommy351/hexo-theme-light.git themes/light
+
+## Update the above files
+$ themes/light
+$ git pull
+
+## Set information to use the theme
+$ cd yt8yt.github.io
+$ vi _config.yml
+
+~~~~~~~~~~~~~~~~~~ _config.yml ~~~~~~~~~~~~~~~~~~
+# Extensions
+## Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: light</code></pre><h3 id="12-Create-a-new-page-file"><a href="#12-Create-a-new-page-file" class="headerlink" title="12. Create a new page file"></a>12. Create a new page file</h3><p><a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">https://hexo.io/docs/writing.html</a></p>
+<pre><code>$ hexo new page aboutme
+INFO  Created: ~/***/yt8yt.github.io/source/aboutme/index.md
+
+$ cd source/aboutme/
+
+$ vi index.md</code></pre><h3 id="13-Use-“Read-More”"><a href="#13-Use-“Read-More”" class="headerlink" title="13. Use “Read More”"></a>13. Use “Read More”</h3><p>Write <code>&lt;!-- more --&gt;</code> in your articles.  </p>
+<h3 id="14-Use-Plugins"><a href="#14-Use-Plugins" class="headerlink" title="14. Use Plugins"></a>14. Use Plugins</h3><p><a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Plugins</a></p>
 
             </div>
             <hr />
@@ -907,9 +684,9 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Clustering Heart Disease Patient Data with R》
+                    《ow to use Hexo and deploy to GitHub Pages》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/27/notebook/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/27/hexo-use/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Yuandong Qi
             </a> is licensed under a
@@ -1211,9 +988,10 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2020/04/27/hexo-use/">
                     <div class="card-image">
@@ -1231,9 +1009,9 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1246,6 +1024,7 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1272,31 +1051,31 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/16/sort-algorithms/">
+                <a href="/2020/04/27/notebook/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="十大经典排序算法整理汇总（附代码）">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Clustering Heart Disease Patient Data with R">
                         
-                        <span class="card-title">十大经典排序算法整理汇总（附代码）</span>
+                        <span class="card-title">Clustering Heart Disease Patient Data with R</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
+                            Clustering algorithms are used to group together items that are similar to one another. There are many industries where it would be beneficial and insightful to use an unsupervised learning algorithm - retailers want to group similar customers for targeted ad campaigns, biologists want to find plants that share similar characteristics, and more. We are going to explore if it would be appropriate to use some clustering algorithms to group medical patients.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程算法/" class="post-category" target="_blank">
-                                    编程算法
+                            <a href="/categories/Clustering-Analysis/" class="post-category" target="_blank">
+                                    Clustering Analysis
                                 </a>
                             
                             
@@ -1306,12 +1085,12 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/" target="_blank">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/data-science/" target="_blank">
+                        <span class="chip bg-color">data science</span>
                     </a>
                     
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/machine-learning/" target="_blank">
+                        <span class="chip bg-color">machine learning</span>
                     </a>
                     
                 </div>
