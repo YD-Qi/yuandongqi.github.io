@@ -395,12 +395,21 @@ Engl">
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    60
+                </div>
+                
 
                 
-                <div id="busuanzi_container_page_pv" class="info-break-policy">
-                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
-                    <span id="busuanzi_value_page_pv"></span>
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    1 Min
                 </div>
+                
+                
+
                 
             </div>
         </div>
@@ -608,6 +617,28 @@ Engl">
         </div>
     </div>
 
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3f4488743f6373c542f5',
+        clientSecret: 'b0368078c4c52c2734696a9c8ffe8d05a56932a3',
+        repo: 'yuandongqi.github.io',
+        owner: 'yuandongqi',
+        admin: "yuandongqi",
+        id: '2020/04/27/collection/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -1164,27 +1195,17 @@ Engl">
             &copy; Yuandong Qi.
 
             
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Site word counts:&nbsp;
+            <span class="white-color">4.7k</span>
+            
 
             <br>
             <span id="sitetime"></span>
 
             
             
-            <br>
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-            </span>
-            
-            
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/yuandongqi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -1217,8 +1238,8 @@ Engl">
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -1322,8 +1343,6 @@ $(function () {
 
     
 
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     <!-- 雪花特效 -->

@@ -392,12 +392,21 @@ contents, such as our posts">
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    208
+                </div>
+                
 
                 
-                <div id="busuanzi_container_page_pv" class="info-break-policy">
-                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
-                    <span id="busuanzi_value_page_pv"></span>
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    1 Min
                 </div>
+                
+                
+
                 
             </div>
         </div>
@@ -614,6 +623,28 @@ menu:
         </div>
     </div>
 
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3f4488743f6373c542f5',
+        clientSecret: 'b0368078c4c52c2734696a9c8ffe8d05a56932a3',
+        repo: 'yuandongqi.github.io',
+        owner: 'yuandongqi',
+        admin: "yuandongqi",
+        id: '2020/04/27/customize-pages/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -952,19 +983,19 @@ menu:
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/27/notebook/">
+                <a href="/2020/04/27/hexo-use/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Clustering Heart Disease Patient Data with R">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="How to use Hexo and deploy to GitHub Pages">
                         
-                        <span class="card-title">Clustering Heart Disease Patient Data with R</span>
+                        <span class="card-title">How to use Hexo and deploy to GitHub Pages</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Clustering algorithms are used to group together items that are similar to one another. There are many industries where it would be beneficial and insightful to use an unsupervised learning algorithm - retailers want to group similar customers for targeted ad campaigns, biologists want to find plants that share similar characteristics, and more. We are going to explore if it would be appropriate to use some clustering algorithms to group medical patients.
+                            How to use Hexo and deploy to GitHub Pages
                         
                     </div>
                     <div class="publish-info">
@@ -975,8 +1006,8 @@ menu:
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Clustering/" class="post-category" target="_blank">
-                                    Clustering
+                            <a href="/categories/Tips/" class="post-category" target="_blank">
+                                    Tips
                                 </a>
                             
                             
@@ -986,12 +1017,16 @@ menu:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/data-science/" target="_blank">
-                        <span class="chip bg-color">data science</span>
+                    <a href="/tags/hexo/" target="_blank">
+                        <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/machine-learning/" target="_blank">
-                        <span class="chip bg-color">machine learning</span>
+                    <a href="/tags/github-pages/" target="_blank">
+                        <span class="chip bg-color">github pages</span>
+                    </a>
+                    
+                    <a href="/tags/web-sites/" target="_blank">
+                        <span class="chip bg-color">web sites</span>
                     </a>
                     
                 </div>
@@ -1164,27 +1199,17 @@ menu:
             &copy; Yuandong Qi.
 
             
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Site word counts:&nbsp;
+            <span class="white-color">4.7k</span>
+            
 
             <br>
             <span id="sitetime"></span>
 
             
             
-            <br>
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-            </span>
-            
-            
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/yuandongqi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -1217,8 +1242,8 @@ menu:
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -1322,8 +1347,6 @@ $(function () {
 
     
 
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     <!-- 雪花特效 -->

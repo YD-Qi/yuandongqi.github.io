@@ -283,29 +283,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/data-science/" title="data science: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="data science" style="background-color: #E8F8F5;">data science
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/machine-learning/" title="machine learning: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="machine learning" style="background-color: #FEF9E7;">machine learning
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/github-pages/" title="github pages: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="github pages" style="background-color: #F8F9F9;">github pages
+                            data-tagname="github pages" style="background-color: #E8F8F5;">github pages
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/web-sites/" title="web sites: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="web sites" style="background-color: #FEF9E7;">web sites
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -313,7 +304,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/leetcode/" title="leetcode: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="leetcode" style="background-color: #82E0AA;">leetcode
+                            data-tagname="leetcode" style="background-color: #F8F9F9;">leetcode
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -322,16 +313,25 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/算法/" title="算法: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="算法" style="background-color: #D7BDE2;">算法
+                            data-tagname="算法" style="background-color: #82E0AA;">算法
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/web-sites/" title="web sites: 1">
+                <a href="/tags/data-science/" title="data science: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="web sites" style="background-color: #A3E4D7;">web sites
+                            data-tagname="data science" style="background-color: #D7BDE2;">data science
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/machine-learning/" title="machine learning: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="machine learning" style="background-color: #A3E4D7;">machine learning
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -421,27 +421,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             &copy; Yuandong Qi.
 
             
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Site word counts:&nbsp;
+            <span class="white-color">4.7k</span>
+            
 
             <br>
             <span id="sitetime"></span>
 
             
             
-            <br>
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-            </span>
-            
-            
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/yuandongqi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -474,8 +464,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -579,8 +569,6 @@ $(function () {
 
     
 
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     <!-- 雪花特效 -->

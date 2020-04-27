@@ -386,12 +386,21 @@
                 </div>
 
                 
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
 
                 
-                <div id="busuanzi_container_page_pv" class="info-break-policy">
-                    <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
-                    <span id="busuanzi_value_page_pv"></span>
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    14 Min
                 </div>
+                
+                
+
                 
             </div>
         </div>
@@ -899,6 +908,28 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3f4488743f6373c542f5',
+        clientSecret: 'b0368078c4c52c2734696a9c8ffe8d05a56932a3',
+        repo: 'yuandongqi.github.io',
+        owner: 'yuandongqi',
+        admin: "yuandongqi",
+        id: '2020/04/27/notebook/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -1179,19 +1210,19 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/27/customize-pages/">
+                <a href="/2020/04/27/hexo-use/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="customize-pages">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="How to use Hexo and deploy to GitHub Pages">
                         
-                        <span class="card-title">customize-pages</span>
+                        <span class="card-title">How to use Hexo and deploy to GitHub Pages</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            We cloned a nice theme! Though it is a charm in many ways, we still want to customize it to fit our personal tastes, like deleting some pages, or adding new pages, how are we going do it?
+                            How to use Hexo and deploy to GitHub Pages
                         
                     </div>
                     <div class="publish-info">
@@ -1217,12 +1248,12 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                         <span class="chip bg-color">hexo</span>
                     </a>
                     
-                    <a href="/tags/custom/" target="_blank">
-                        <span class="chip bg-color">custom</span>
-                    </a>
-                    
                     <a href="/tags/github-pages/" target="_blank">
                         <span class="chip bg-color">github pages</span>
+                    </a>
+                    
+                    <a href="/tags/web-sites/" target="_blank">
+                        <span class="chip bg-color">web sites</span>
                     </a>
                     
                 </div>
@@ -1236,31 +1267,31 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/27/hexo-use/">
+                <a href="/2020/02/16/sort-algorithms/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="How to use Hexo and deploy to GitHub Pages">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="十大经典排序算法整理汇总（附代码）">
                         
-                        <span class="card-title">How to use Hexo and deploy to GitHub Pages</span>
+                        <span class="card-title">十大经典排序算法整理汇总（附代码）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            How to use Hexo and deploy to GitHub Pages
+                            本文整理并总结了十大经典的排序算法（冒泡排序、选择排序、插入排序、快速排序、归并排序、希尔排序、计数排序、基数排序、桶排序、堆排序）的时间复杂度、空间复杂度等性质。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tips/" class="post-category" target="_blank">
-                                    Tips
+                            <a href="/categories/编程算法/" class="post-category" target="_blank">
+                                    编程算法
                                 </a>
                             
                             
@@ -1270,16 +1301,12 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/" target="_blank">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/leetcode/" target="_blank">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
-                    <a href="/tags/github-pages/" target="_blank">
-                        <span class="chip bg-color">github pages</span>
-                    </a>
-                    
-                    <a href="/tags/web-sites/" target="_blank">
-                        <span class="chip bg-color">web sites</span>
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1452,27 +1479,17 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
             &copy; Yuandong Qi.
 
             
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Site word counts:&nbsp;
+            <span class="white-color">4.7k</span>
+            
 
             <br>
             <span id="sitetime"></span>
 
             
             
-            <br>
-            
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <i class="fa fa-heart-o"></i>
-                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv" style='display:none'>
-                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-            </span>
-            
-            
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/yuandongqi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -1505,8 +1522,8 @@ explore_hierarch_single = FALSE<span aria-hidden="true" class="line-numbers-rows
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -1610,8 +1627,6 @@ $(function () {
 
     
 
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     <!-- 雪花特效 -->
