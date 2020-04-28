@@ -79,6 +79,38 @@
   </entry>
   
   <entry>
+    <title>Introduction to Python from data science perspective</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/basics-concepts/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/basics-concepts/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-04-27T20:13:11.712Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;p&gt;is a general-purpose programming language that is
+        
+      
+    
+    </summary>
+    
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+    
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+  </entry>
+  
+  <entry>
     <title>How to use Hexo and deploy to GitHub Pages</title>
     <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
     <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
@@ -133,38 +165,6 @@
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Introduction to Python from data science perspective</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/basics-concepts/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/basics-concepts/</id>
-    <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T20:13:11.712Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;p&gt;is a general-purpose programming language that is
-        
-      
-    
-    </summary>
-    
-      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
-    
-    
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
-    
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
-      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
     
   </entry>
   
