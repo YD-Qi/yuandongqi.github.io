@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-04-27T16:36:32.065Z</updated>
+  <updated>2020-04-28T02:09:14.544Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuandongqi.github.io/2020/04/27/collection/"/>
     <id>https://yuandongqi.github.io/2020/04/27/collection/</id>
     <published>2020-04-27T15:05:12.000Z</published>
-    <updated>2020-04-27T16:36:32.065Z</updated>
+    <updated>2020-04-28T02:09:14.544Z</updated>
     
     <summary type="html">
     
@@ -75,6 +75,38 @@
       <category term="custom" scheme="https://yuandongqi.github.io/tags/custom/"/>
     
       <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction to Python from data science perspective</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/basics-concepts/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/basics-concepts/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-04-27T20:13:11.712Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;p&gt;is a general-purpose programming language that is
+        
+      
+    
+    </summary>
+    
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+    
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
     
   </entry>
   
@@ -141,7 +173,7 @@
     <link href="https://yuandongqi.github.io/2020/02/16/sort-algorithms/"/>
     <id>https://yuandongqi.github.io/2020/02/16/sort-algorithms/</id>
     <published>2020-02-16T20:09:23.000Z</published>
-    <updated>2020-04-27T14:38:25.576Z</updated>
+    <updated>2020-04-27T20:12:23.010Z</updated>
     
     <summary type="html">
     
