@@ -79,11 +79,11 @@
   </entry>
   
   <entry>
-    <title>Introduction to Python from data science perspective</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/basics-concepts/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/basics-concepts/</id>
+    <title>How to use Hexo and deploy to GitHub Pages</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
     <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T20:13:11.712Z</updated>
+    <updated>2020-04-27T12:46:28.067Z</updated>
     
     <summary type="html">
     
@@ -91,22 +91,20 @@
       
         
         
-          &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;p&gt;is a general-purpose programming language that is
+          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
         
       
     
     </summary>
     
-      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
     
     
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
     
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
     
-      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
     
   </entry>
   
@@ -139,11 +137,11 @@
   </entry>
   
   <entry>
-    <title>How to use Hexo and deploy to GitHub Pages</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
+    <title>Introduction to Python from data science perspective</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/basics-concepts/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/basics-concepts/</id>
     <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T12:46:28.067Z</updated>
+    <updated>2020-04-27T20:13:11.712Z</updated>
     
     <summary type="html">
     
@@ -151,20 +149,22 @@
       
         
         
-          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
+          &lt;h1 id=&quot;Python&quot;&gt;&lt;a href=&quot;#Python&quot; class=&quot;headerlink&quot; title=&quot;Python&quot;&gt;&lt;/a&gt;Python&lt;/h1&gt;&lt;p&gt;is a general-purpose programming language that is
         
       
     
     </summary>
     
-      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
-      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
-      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
     
   </entry>
   
