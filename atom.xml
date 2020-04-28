@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-04-28T02:09:14.544Z</updated>
+  <updated>2020-04-28T21:10:00.206Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Introduction to R from data science perspective</title>
+    <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
+    <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
+    <published>2020-04-28T05:00:00.000Z</published>
+    <updated>2020-04-28T21:10:00.206Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;R-Crash-Course-Introduction&quot;&gt;&lt;a href=&quot;#R-Crash-Course-Introduction&quot; class=&quot;headerlink&quot; title=&quot;R Crash Course - Introduction&quot;&gt;&lt;/a&gt;R
+        
+      
+    
+    </summary>
+    
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+    
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>Resources for reference</title>
@@ -80,8 +112,8 @@
   
   <entry>
     <title>Introduction to Python from data science perspective</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/basics-concepts/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/basics-concepts/</id>
+    <link href="https://yuandongqi.github.io/2020/04/27/1-py-intro/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/1-py-intro/</id>
     <published>2020-04-27T05:00:00.000Z</published>
     <updated>2020-04-28T17:58:15.493Z</updated>
     
@@ -142,8 +174,8 @@
   
   <entry>
     <title>Clustering Heart Disease Patient Data with R</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/notebook/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/notebook/</id>
+    <link href="https://yuandongqi.github.io/2020/04/27/pro-heart-disease/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</id>
     <published>2020-04-27T05:00:00.000Z</published>
     <updated>2020-04-27T14:44:54.803Z</updated>
     
@@ -165,38 +197,6 @@
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>十大经典排序算法整理汇总（附代码）</title>
-    <link href="https://yuandongqi.github.io/2020/02/16/sort-algorithms/"/>
-    <id>https://yuandongqi.github.io/2020/02/16/sort-algorithms/</id>
-    <published>2020-02-16T20:09:23.000Z</published>
-    <updated>2020-04-27T20:12:23.010Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【算法码上来】，每日算法干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;/medias/contact.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="编程算法" scheme="https://yuandongqi.github.io/categories/%E7%BC%96%E7%A8%8B%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="leetcode" scheme="https://yuandongqi.github.io/tags/leetcode/"/>
-    
-      <category term="算法" scheme="https://yuandongqi.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
