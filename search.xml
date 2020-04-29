@@ -162,7 +162,7 @@
       
       <categories>
           
-          <category> Clustering </category>
+          <category> Projects </category>
           
       </categories>
       
@@ -171,7 +171,13 @@
             
             <tag> data science </tag>
             
+            <tag> R </tag>
+            
             <tag> machine learning </tag>
+            
+            <tag> Unsupervised learning </tag>
+            
+            <tag> Clustering </tag>
             
         </tags>
       

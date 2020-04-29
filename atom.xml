@@ -177,7 +177,7 @@
     <link href="https://yuandongqi.github.io/2020/04/27/pro-heart-disease/"/>
     <id>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</id>
     <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T14:44:54.803Z</updated>
+    <updated>2020-04-29T01:01:27.622Z</updated>
     
     <summary type="html">
     
@@ -191,12 +191,18 @@
     
     </summary>
     
-      <category term="Clustering" scheme="https://yuandongqi.github.io/categories/Clustering/"/>
+      <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
     
     
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
+    
+      <category term="Unsupervised learning" scheme="https://yuandongqi.github.io/tags/Unsupervised-learning/"/>
+    
+      <category term="Clustering" scheme="https://yuandongqi.github.io/tags/Clustering/"/>
     
   </entry>
   
