@@ -143,6 +143,40 @@
   </entry>
   
   <entry>
+    <title>Clustering Heart Disease Patient Data with R</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/pro-heart-disease/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-04-29T01:03:00.696Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1-Targeting-treatment-for-heart-disease-patients&quot;&gt;&lt;a href=&quot;#1-Targeting-treatment-for-heart-disease-patients&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
+    
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
+    
+      <category term="unsupervised learning" scheme="https://yuandongqi.github.io/tags/unsupervised-learning/"/>
+    
+      <category term="clustering" scheme="https://yuandongqi.github.io/tags/clustering/"/>
+    
+  </entry>
+  
+  <entry>
     <title>How to use Hexo and deploy to GitHub Pages</title>
     <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
     <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
@@ -169,40 +203,6 @@
       <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
     
       <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Clustering Heart Disease Patient Data with R</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/pro-heart-disease/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</id>
-    <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-29T01:01:27.622Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;1-Targeting-treatment-for-heart-disease-patients&quot;&gt;&lt;a href=&quot;#1-Targeting-treatment-for-heart-disease-patients&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
-    
-    
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
-      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-      <category term="Unsupervised learning" scheme="https://yuandongqi.github.io/tags/Unsupervised-learning/"/>
-    
-      <category term="Clustering" scheme="https://yuandongqi.github.io/tags/Clustering/"/>
     
   </entry>
   
