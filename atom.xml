@@ -38,13 +38,13 @@
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -132,13 +132,13 @@
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
@@ -194,9 +194,9 @@
       <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     

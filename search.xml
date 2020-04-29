@@ -20,13 +20,13 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
+            
+            <tag> R </tag>
             
         </tags>
       
@@ -109,13 +109,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
-            
-            <tag> python </tag>
             
         </tags>
       
@@ -169,9 +169,9 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
+            
+            <tag> R </tag>
             
             <tag> machine learning </tag>
             
