@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-05-06T14:03:29.733Z</updated>
+  <updated>2020-05-06T14:18:19.567Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Intermediate R</title>
-    <link href="https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/"/>
-    <id>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</id>
-    <published>2020-05-06T05:00:00.000Z</published>
-    <updated>2020-05-06T14:03:29.733Z</updated>
+    <title></title>
+    <link href="https://yuandongqi.github.io/2020/04/29/2-r-intermed-cn/"/>
+    <id>https://yuandongqi.github.io/2020/04/29/2-r-intermed-cn/</id>
+    <published>2020-04-29T14:18:31.070Z</published>
+    <updated>2020-05-06T14:18:19.567Z</updated>
     
     <summary type="html">
     
@@ -29,24 +29,12 @@
       
         
         
-          &lt;h2 id=&quot;Equality-等效逻辑判断&quot;&gt;&lt;a href=&quot;#Equality-等效逻辑判断&quot; class=&quot;headerlink&quot; title=&quot;Equality 等效逻辑判断&quot;&gt;&lt;/a&gt;Equality
+          &lt;h2 id=&quot;1-Boolean-逻辑判断&quot;&gt;&lt;a href=&quot;#1-Boolean-逻辑判断&quot; class=&quot;headerlink&quot; title=&quot;1. Boolean 逻辑判断&quot;&gt;&lt;/a&gt;1. Boolean 逻辑判断&lt;/h2&gt;&lt;h3
         
       
     
     </summary>
     
-      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
-    
-    
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
-    
-      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
-      <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
-    
-      <category term="intermediate" scheme="https://yuandongqi.github.io/tags/intermediate/"/>
     
   </entry>
   
@@ -230,13 +218,13 @@
     
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
       <category term="unsupervised learning" scheme="https://yuandongqi.github.io/tags/unsupervised-learning/"/>
     
       <category term="clustering" scheme="https://yuandongqi.github.io/tags/clustering/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
