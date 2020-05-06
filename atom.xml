@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-04-29T14:20:53.547Z</updated>
+  <updated>2020-05-06T14:03:29.733Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Intermediate R</title>
-    <link href="https://yuandongqi.github.io/2020/04/29/2-r-intermed-cn/"/>
-    <id>https://yuandongqi.github.io/2020/04/29/2-r-intermed-cn/</id>
-    <published>2020-04-29T05:00:00.000Z</published>
-    <updated>2020-04-29T14:20:53.547Z</updated>
+    <link href="https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/"/>
+    <id>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</id>
+    <published>2020-05-06T05:00:00.000Z</published>
+    <updated>2020-05-06T14:03:29.733Z</updated>
     
     <summary type="html">
     
@@ -43,6 +43,8 @@
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
       <category term="intermediate" scheme="https://yuandongqi.github.io/tags/intermediate/"/>
     
