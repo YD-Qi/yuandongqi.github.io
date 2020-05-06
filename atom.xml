@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-05-06T14:20:09.597Z</updated>
+  <updated>2020-05-06T14:34:30.047Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://yuandongqi.github.io/2020/04/29/2-r-intermed-cn/"/>
-    <id>https://yuandongqi.github.io/2020/04/29/2-r-intermed-cn/</id>
-    <published>2020-04-29T14:18:31.070Z</published>
-    <updated>2020-05-06T14:20:09.597Z</updated>
+    <title>Intermediate R</title>
+    <link href="https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/"/>
+    <id>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</id>
+    <published>2020-05-06T05:00:00.000Z</published>
+    <updated>2020-05-06T14:34:30.047Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,16 @@
     
     </summary>
     
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+    
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
   </entry>
   

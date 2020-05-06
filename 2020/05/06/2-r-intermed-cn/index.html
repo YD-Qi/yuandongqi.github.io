@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="MachineLearning Yuandong Finance">
+    <meta name="keywords" content="Intermediate R, MachineLearning Yuandong Finance">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
@@ -20,7 +20,7 @@ TRUE == FALSE
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Data Science Portfolio</title>
+    <title>Intermediate R | Data Science Portfolio</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -234,13 +234,13 @@ TRUE == FALSE
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        Intermediate R
                     </div>
                 </div>
             </div>
@@ -350,11 +350,36 @@ TRUE == FALSE
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">No tag</span>
+                        
+                        <a href="/tags/data-science/" target="_blank">
+                            <span class="chip bg-color">data science</span>
+                        </a>
+                        
+                        <a href="/tags/concepts/" target="_blank">
+                            <span class="chip bg-color">concepts</span>
+                        </a>
+                        
+                        <a href="/tags/R/" target="_blank">
+                            <span class="chip bg-color">R</span>
+                        </a>
+                        
+                        <a href="/tags/advanced/" target="_blank">
+                            <span class="chip bg-color">advanced</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Courses/" class="post-category" target="_blank">
+                            Courses
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -362,7 +387,7 @@ TRUE == FALSE
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-29
+                    2020-05-06
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -445,13 +470,7 @@ weibo <- c(15, 9, 13, 6, 7, 14, 14)
 twitter <- c(20, 7, 6, 16, 9, 13, 14)
 
 # Popular days
-weibo > 16
-
-# Quiet days
-weibo <= 10
-
-# weibo more popular than twitter
-weibo > twitter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+weibo > 16<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>FALSE</li>
     <li>FALSE</li>
@@ -465,6 +484,8 @@ weibo > twitter<span aria-hidden="true" class="line-numbers-rows"><span></span><
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># Quiet days
+weibo <= 10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>FALSE</li>
     <li>TRUE</li>
@@ -478,6 +499,8 @@ weibo > twitter<span aria-hidden="true" class="line-numbers-rows"><span></span><
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># weibo more popular than twitter
+weibo > twitter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>FALSE</li>
     <li>TRUE</li>
@@ -1049,7 +1072,7 @@ qplot(mtcars$wt, mtcars$hp)<span aria-hidden="true" class="line-numbers-rows"><s
   method         from 
   [.quosures     rlang
   c.quosures     rlang
-  print.quosures rlang</code></pre><p><img src="2-r-intermed-cn_files/2-r-intermed-cn_59_1.png" alt="png"></p>
+  print.quosures rlang</code></pre><p><img src="2-r-intermed-cn_files/2-r-intermed-cn_61_1.png" alt="png"></p>
 <h2 id="5-apply-family"><a href="#5-apply-family" class="headerlink" title="5. apply family"></a>5. apply family</h2><h3 id="lapply-and-anonymous-functions"><a href="#lapply-and-anonymous-functions" class="headerlink" title="lapply and anonymous functions"></a>lapply and anonymous functions</h3><pre class="line-numbers language-R"><code class="language-R"># Definition of split_low
 pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
 split <- strsplit(pioneers, split = ":")
@@ -1142,16 +1165,7 @@ years<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
 
 <h3 id="How-to-use-sapply"><a href="#How-to-use-sapply" class="headerlink" title="How to use sapply"></a>How to use sapply</h3><pre class="line-numbers language-R"><code class="language-R">temp<-list(c(3,7,9,6,-1),c(6,9,12,13,5),c(4,8,3,-1,-3),c(1,4,7,2,-2),c(5,7,9,4,2),c(-3,5,8,9,4),c(3,6,9,4,1))
 # Use lapply() to find each day's minimum temperature
-lapply(temp, min)
-
-# Use sapply() to find each day's minimum temperature
-sapply(temp, min)
-
-# Use lapply() to find each day's maximum temperature
-lapply(temp, max)
-
-# Use sapply() to find each day's maximum temperature
-sapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+lapply(temp, min)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol>
     <li>-1</li>
     <li>5</li>
@@ -1165,6 +1179,8 @@ sapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># Use sapply() to find each day's minimum temperature
+sapply(temp, min)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>-1</li>
     <li>5</li>
@@ -1178,6 +1194,8 @@ sapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># Use lapply() to find each day's maximum temperature
+lapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol>
     <li>9</li>
     <li>13</li>
@@ -1191,6 +1209,8 @@ sapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># Use sapply() to find each day's maximum temperature
+sapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>9</li>
     <li>13</li>
@@ -1208,10 +1228,7 @@ sapply(temp, max)<span aria-hidden="true" class="line-numbers-rows"><span></span
 }
 
 # Apply extremes_avg() over temp using sapply()
-sapply(temp, extremes_avg)
-
-# Apply extremes_avg() over temp using lapply()
-lapply(temp, extremes_avg)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+sapply(temp, extremes_avg)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>4</li>
     <li>9</li>
@@ -1225,6 +1242,8 @@ lapply(temp, extremes_avg)<span aria-hidden="true" class="line-numbers-rows"><sp
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># Apply extremes_avg() over temp using lapply()
+lapply(temp, extremes_avg)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol>
     <li>4</li>
     <li>9</li>
@@ -1243,10 +1262,7 @@ extremes <- function(x) {
 }
 
 # Apply extremes() over temp with sapply()
-sapply(temp, extremes)
-
-# Apply extremes() over temp with lapply()
-lapply(temp, extremes)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+sapply(temp, extremes)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <table>
 <tbody>
     <tr><th scope="row">min</th><td>-1</td><td> 5</td><td>-3</td><td>-2</td><td>2 </td><td>-3</td><td>1 </td></tr>
@@ -1257,6 +1273,8 @@ lapply(temp, extremes)<span aria-hidden="true" class="line-numbers-rows"><span><
 
 
 
+<pre class="line-numbers language-R"><code class="language-R"># Apply extremes() over temp with lapply()
+lapply(temp, extremes)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol>
     <li><dl class="dl-horizontal">
     <dt>min</dt>
@@ -1318,12 +1336,27 @@ below_zero <- function(x) {
 
 # Apply below_zero over temp using sapply(): freezing_s
 freezing_s <- sapply(temp, below_zero)
-freezing_s
-# Apply below_zero over temp using lapply(): freezing_l
+freezing_s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+    <li>-1</li>
+    <li></li>
+    <li><ol class="list-inline">
+    <li>-1</li>
+    <li>-3</li>
+</ol>
+</li>
+    <li>-2</li>
+    <li></li>
+    <li>-3</li>
+    <li></li>
+</ol>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Apply below_zero over temp using lapply(): freezing_l
 freezing_l <- lapply(temp, below_zero)
-freezing_l
-# Are freezing_s and freezing_l identical?
-identical(freezing_s, freezing_l)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+freezing_l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol>
     <li>-1</li>
     <li></li>
@@ -1341,23 +1374,8 @@ identical(freezing_s, freezing_l)<span aria-hidden="true" class="line-numbers-ro
 
 
 
-<ol>
-    <li>-1</li>
-    <li></li>
-    <li><ol class="list-inline">
-    <li>-1</li>
-    <li>-3</li>
-</ol>
-</li>
-    <li>-2</li>
-    <li></li>
-    <li>-3</li>
-    <li></li>
-</ol>
-
-
-
-
+<pre class="line-numbers language-R"><code class="language-R"># Are freezing_s and freezing_l identical?
+identical(freezing_s, freezing_l)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>TRUE</p>
 <h3 id="sapply-with-functions-that-return-NULL"><a href="#sapply-with-functions-that-return-NULL" class="headerlink" title="sapply with functions that return NULL"></a>sapply with functions that return NULL</h3><pre class="line-numbers language-R"><code class="language-R"># Definition of print_info()
 print_info <- function(x) {
@@ -1425,36 +1443,36 @@ vapply(temp, basics, numeric(3))<span aria-hidden="true" class="line-numbers-row
 
 
 <pre class="line-numbers language-R"><code class="language-R">sapply(temp, max)
-vapply(temp, max, numeric(1))
-# Convert to vapply() expression
+vapply(temp, max, numeric(1))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol class="list-inline">
+    <li>9</li>
+    <li>13</li>
+    <li>8</li>
+    <li>7</li>
+    <li>9</li>
+    <li>9</li>
+    <li>9</li>
+</ol>
+
+
+
+
+<ol class="list-inline">
+    <li>9</li>
+    <li>13</li>
+    <li>8</li>
+    <li>7</li>
+    <li>9</li>
+    <li>9</li>
+    <li>9</li>
+</ol>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Convert to vapply() expression
 sapply(temp, function(x, y) { mean(x) > y }, y = 5)
-vapply(temp, function(x, y) { mean(x) > y }, y = 5, logical(1))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol class="list-inline">
-    <li>9</li>
-    <li>13</li>
-    <li>8</li>
-    <li>7</li>
-    <li>9</li>
-    <li>9</li>
-    <li>9</li>
-</ol>
-
-
-
-
-<ol class="list-inline">
-    <li>9</li>
-    <li>13</li>
-    <li>8</li>
-    <li>7</li>
-    <li>9</li>
-    <li>9</li>
-    <li>9</li>
-</ol>
-
-
-
-
+vapply(temp, function(x, y) { mean(x) > y }, y = 5, logical(1))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>FALSE</li>
     <li>TRUE</li>
@@ -1502,14 +1520,7 @@ facebook <- list(17, 7, 5, 16, 8, 13, 14)
 
 # Convert linkedin and facebook to a vector: li_vec and fb_vec
 li_vec <- unlist(linkedin)
-li_vec
-fb_vec <- unlist(facebook)
-fb_vec
-# Append fb_vec to li_vec: social_vec
-social_vec <- append(li_vec, fb_vec)
-
-# Sort social_vec
-sort(social_vec, decreasing = TRUE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+li_vec<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>16</li>
     <li>9</li>
@@ -1523,19 +1534,12 @@ sort(social_vec, decreasing = TRUE)<span aria-hidden="true" class="line-numbers-
 
 
 
-<ol class="list-inline">
-    <li>17</li>
-    <li>7</li>
-    <li>5</li>
-    <li>16</li>
-    <li>8</li>
-    <li>13</li>
-    <li>14</li>
-</ol>
+<pre class="line-numbers language-R"><code class="language-R">fb_vec <- unlist(facebook)
+# Append fb_vec to li_vec: social_vec
+social_vec <- append(li_vec, fb_vec)
 
-
-
-
+# Sort social_vec
+sort(social_vec, decreasing = TRUE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol class="list-inline">
     <li>17</li>
     <li>17</li>
@@ -1557,40 +1561,6 @@ sort(social_vec, decreasing = TRUE)<span aria-hidden="true" class="line-numbers-
 
 
 <pre class="line-numbers language-R"><code class="language-R">rep(seq(1, 7, by = 2), times = 7)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ol class="list-inline">
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-    <li>1</li>
-    <li>3</li>
-    <li>5</li>
-    <li>7</li>
-</ol>
-
-
-
-
 <pre class="line-numbers language-R"><code class="language-R"># Create first sequence: seq1
 seq1 <- seq(1, 500, by = 3)
 
@@ -1599,222 +1569,6 @@ seq2 <- seq(1200, 900, by = -7)<span aria-hidden="true" class="line-numbers-rows
 <pre class="line-numbers language-R"><code class="language-R"># Calculate total sum of the sequences
 sum(c(seq1, seq2))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>87029</p>
-<pre class="line-numbers language-R"><code class="language-R">c(seq1, seq2)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ol class="list-inline">
-    <li>1</li>
-    <li>4</li>
-    <li>7</li>
-    <li>10</li>
-    <li>13</li>
-    <li>16</li>
-    <li>19</li>
-    <li>22</li>
-    <li>25</li>
-    <li>28</li>
-    <li>31</li>
-    <li>34</li>
-    <li>37</li>
-    <li>40</li>
-    <li>43</li>
-    <li>46</li>
-    <li>49</li>
-    <li>52</li>
-    <li>55</li>
-    <li>58</li>
-    <li>61</li>
-    <li>64</li>
-    <li>67</li>
-    <li>70</li>
-    <li>73</li>
-    <li>76</li>
-    <li>79</li>
-    <li>82</li>
-    <li>85</li>
-    <li>88</li>
-    <li>91</li>
-    <li>94</li>
-    <li>97</li>
-    <li>100</li>
-    <li>103</li>
-    <li>106</li>
-    <li>109</li>
-    <li>112</li>
-    <li>115</li>
-    <li>118</li>
-    <li>121</li>
-    <li>124</li>
-    <li>127</li>
-    <li>130</li>
-    <li>133</li>
-    <li>136</li>
-    <li>139</li>
-    <li>142</li>
-    <li>145</li>
-    <li>148</li>
-    <li>151</li>
-    <li>154</li>
-    <li>157</li>
-    <li>160</li>
-    <li>163</li>
-    <li>166</li>
-    <li>169</li>
-    <li>172</li>
-    <li>175</li>
-    <li>178</li>
-    <li>181</li>
-    <li>184</li>
-    <li>187</li>
-    <li>190</li>
-    <li>193</li>
-    <li>196</li>
-    <li>199</li>
-    <li>202</li>
-    <li>205</li>
-    <li>208</li>
-    <li>211</li>
-    <li>214</li>
-    <li>217</li>
-    <li>220</li>
-    <li>223</li>
-    <li>226</li>
-    <li>229</li>
-    <li>232</li>
-    <li>235</li>
-    <li>238</li>
-    <li>241</li>
-    <li>244</li>
-    <li>247</li>
-    <li>250</li>
-    <li>253</li>
-    <li>256</li>
-    <li>259</li>
-    <li>262</li>
-    <li>265</li>
-    <li>268</li>
-    <li>271</li>
-    <li>274</li>
-    <li>277</li>
-    <li>280</li>
-    <li>283</li>
-    <li>286</li>
-    <li>289</li>
-    <li>292</li>
-    <li>295</li>
-    <li>298</li>
-    <li>301</li>
-    <li>304</li>
-    <li>307</li>
-    <li>310</li>
-    <li>313</li>
-    <li>316</li>
-    <li>319</li>
-    <li>322</li>
-    <li>325</li>
-    <li>328</li>
-    <li>331</li>
-    <li>334</li>
-    <li>337</li>
-    <li>340</li>
-    <li>343</li>
-    <li>346</li>
-    <li>349</li>
-    <li>352</li>
-    <li>355</li>
-    <li>358</li>
-    <li>361</li>
-    <li>364</li>
-    <li>367</li>
-    <li>370</li>
-    <li>373</li>
-    <li>376</li>
-    <li>379</li>
-    <li>382</li>
-    <li>385</li>
-    <li>388</li>
-    <li>391</li>
-    <li>394</li>
-    <li>397</li>
-    <li>400</li>
-    <li>403</li>
-    <li>406</li>
-    <li>409</li>
-    <li>412</li>
-    <li>415</li>
-    <li>418</li>
-    <li>421</li>
-    <li>424</li>
-    <li>427</li>
-    <li>430</li>
-    <li>433</li>
-    <li>436</li>
-    <li>439</li>
-    <li>442</li>
-    <li>445</li>
-    <li>448</li>
-    <li>451</li>
-    <li>454</li>
-    <li>457</li>
-    <li>460</li>
-    <li>463</li>
-    <li>466</li>
-    <li>469</li>
-    <li>472</li>
-    <li>475</li>
-    <li>478</li>
-    <li>481</li>
-    <li>484</li>
-    <li>487</li>
-    <li>490</li>
-    <li>493</li>
-    <li>496</li>
-    <li>499</li>
-    <li>1200</li>
-    <li>1193</li>
-    <li>1186</li>
-    <li>1179</li>
-    <li>1172</li>
-    <li>1165</li>
-    <li>1158</li>
-    <li>1151</li>
-    <li>1144</li>
-    <li>1137</li>
-    <li>1130</li>
-    <li>1123</li>
-    <li>1116</li>
-    <li>1109</li>
-    <li>1102</li>
-    <li>1095</li>
-    <li>1088</li>
-    <li>1081</li>
-    <li>1074</li>
-    <li>1067</li>
-    <li>1060</li>
-    <li>1053</li>
-    <li>1046</li>
-    <li>1039</li>
-    <li>1032</li>
-    <li>1025</li>
-    <li>1018</li>
-    <li>1011</li>
-    <li>1004</li>
-    <li>997</li>
-    <li>990</li>
-    <li>983</li>
-    <li>976</li>
-    <li>969</li>
-    <li>962</li>
-    <li>955</li>
-    <li>948</li>
-    <li>941</li>
-    <li>934</li>
-    <li>927</li>
-    <li>920</li>
-    <li>913</li>
-    <li>906</li>
-</ol>
-
-
-
 <h3 id="grepl-amp-grep"><a href="#grepl-amp-grep" class="headerlink" title="grepl &amp; grep"></a>grepl &amp; grep</h3><p>In their most basic form, regular expressions can be used to see whether a pattern exists inside a character string or a vector of character strings. For this purpose, you can use:</p>
 <ul>
 <li><code>grepl()</code>, which returns TRUE when a pattern is found in the corresponding character string.</li>
@@ -2182,8 +1936,7 @@ astro_dates - meteo_dates<span aria-hidden="true" class="line-numbers-rows"><spa
 <pre><code>Time differences in days
 [1] 19 24 22 21</code></pre><pre class="line-numbers language-R"><code class="language-R"># Calculate the maximum absolute difference between astro_dates and meteo_dates
 max(abs(astro_dates - meteo_dates))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre><code>Time difference of 24 days</code></pre><p>完结撒花！<br><img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>
-
+<pre><code>Time difference of 24 days</code></pre>
             </div>
             <hr />
 
@@ -2217,9 +1970,9 @@ max(abs(astro_dates - meteo_dates))<span aria-hidden="true" class="line-numbers-
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《》
+                    《Intermediate R》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/29/2-r-intermed-cn/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/06/2-r-intermed-cn/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Yuandong Qi
             </a> is licensed under a
@@ -2260,7 +2013,7 @@ max(abs(astro_dates - meteo_dates))<span aria-hidden="true" class="line-numbers-
         repo: 'yuandongqi.github.io',
         owner: 'yuandongqi',
         admin: "yuandongqi",
-        id: '2020/04/29/2-r-intermed-cn/',
+        id: '2020/05/06/2-r-intermed-cn/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -2548,35 +2301,58 @@ max(abs(astro_dates - meteo_dates))<span aria-hidden="true" class="line-numbers-
                 <i class="fa fa-dot-circle-o"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2020/04/29/2-r-intermed-cn/">
+                <a href="/2020/05/06/2-r-intermed-cn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Intermediate R">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Intermediate R</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. Boolean 逻辑判断Equality 等效逻辑判断R用==用来判别其左右两边的语句是否等价，如果等价，返回逻辑值TRUE, 否则返回FALSE
-# Comparison of logicals
-TRUE == FALSE
-
-# C
+                            This course brings up your R skills to the next level
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-06
                             </span>
                         <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Courses/" class="post-category" target="_blank">
+                                    Courses
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/data-science/" target="_blank">
+                        <span class="chip bg-color">data science</span>
+                    </a>
+                    
+                    <a href="/tags/concepts/" target="_blank">
+                        <span class="chip bg-color">concepts</span>
+                    </a>
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/advanced/" target="_blank">
+                        <span class="chip bg-color">advanced</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -2743,6 +2519,25 @@ TRUE == FALSE
     
 
 </main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
 
     <footer class="page-footer bg-color">
