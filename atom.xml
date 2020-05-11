@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-05-06T14:34:30.047Z</updated>
+  <updated>2020-05-11T00:10:19.401Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Introduction to data manipulation</title>
+    <link href="https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/"/>
+    <id>https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/</id>
+    <published>2020-05-10T05:00:00.000Z</published>
+    <updated>2020-05-11T00:10:19.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Introduction-to-data-manipulation-–-dplyr&quot;&gt;&lt;a href=&quot;#Introduction-to-data-manipulation-–-dplyr&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+    
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="dplyr" scheme="https://yuandongqi.github.io/tags/dplyr/"/>
+    
+      <category term="tidyverse" scheme="https://yuandongqi.github.io/tags/tidyverse/"/>
+    
+  </entry>
   
   <entry>
     <title>Intermediate R</title>
@@ -85,7 +121,7 @@
     <link href="https://yuandongqi.github.io/2020/04/27/collection/"/>
     <id>https://yuandongqi.github.io/2020/04/27/collection/</id>
     <published>2020-04-27T15:05:12.000Z</published>
-    <updated>2020-04-28T21:22:42.138Z</updated>
+    <updated>2020-05-08T20:55:00.122Z</updated>
     
     <summary type="html">
     
@@ -94,8 +130,7 @@
         
         
           &lt;p&gt;Here I collected and am still collecting useful web pages for future reference:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Documents for
+&lt;h3 id=&quot;Documents-for-hexo-theme-matery&quot;&gt;&lt;a
         
       
     
@@ -235,6 +270,35 @@
       <category term="unsupervised learning" scheme="https://yuandongqi.github.io/tags/unsupervised-learning/"/>
     
       <category term="clustering" scheme="https://yuandongqi.github.io/tags/clustering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://yuandongqi.github.io/2018/11/19/tidyverse-4/"/>
+    <id>https://yuandongqi.github.io/2018/11/19/tidyverse-4/</id>
+    <published>2018-11-19T22:01:36.000Z</published>
+    <updated>2018-11-19T22:01:36.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!DOCTYPE html&gt;
+
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+
+&lt;head&gt;
+
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot;
+        
+      
+    
+    </summary>
+    
     
   </entry>
   

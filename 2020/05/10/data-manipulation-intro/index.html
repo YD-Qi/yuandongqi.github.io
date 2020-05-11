@@ -1,0 +1,2344 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Introduction to data manipulation, MachineLearning Yuandong Finance">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="Introduction to data manipulation – dplyrIn this part, We’ll learn
+
+‘select’ for certain variables
+filter for particular">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Introduction to data manipulation | Data Science Portfolio</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Data Science Portfolio</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Data Science Portfolio</div>
+        <div class="logo-desc">
+            
+            Economics | Data Science | Finance
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Introduction to data manipulation
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/data-science/" target="_blank">
+                            <span class="chip bg-color">data science</span>
+                        </a>
+                        
+                        <a href="/tags/concepts/" target="_blank">
+                            <span class="chip bg-color">concepts</span>
+                        </a>
+                        
+                        <a href="/tags/R/" target="_blank">
+                            <span class="chip bg-color">R</span>
+                        </a>
+                        
+                        <a href="/tags/data-manipulation/" target="_blank">
+                            <span class="chip bg-color">data manipulation</span>
+                        </a>
+                        
+                        <a href="/tags/dplyr/" target="_blank">
+                            <span class="chip bg-color">dplyr</span>
+                        </a>
+                        
+                        <a href="/tags/tidyverse/" target="_blank">
+                            <span class="chip bg-color">tidyverse</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Courses/" class="post-category" target="_blank">
+                            Courses
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-05-10
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                    Yuandong Qi
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    4.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    30 Min
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="Introduction-to-data-manipulation-–-dplyr"><a href="#Introduction-to-data-manipulation-–-dplyr" class="headerlink" title="Introduction to data manipulation – dplyr"></a>Introduction to data manipulation – dplyr</h2><p>In this part, We’ll learn</p>
+<ul>
+<li>‘select’ for certain variables</li>
+<li><code>filter</code> for particular observations, </li>
+<li><code>arrange</code> the observations in a desired order, and </li>
+<li><code>mutate</code> to add or change a column </li>
+<li>You’ll see how each of these steps allows you to answer questions about your data.</li>
+<li>the group by and summarize verbs collapse large datasets into manageable summaries.</li>
+</ul>
+<pre class="line-numbers language-R"><code class="language-R"># turn off warning globally
+options(warn=-1)
+
+# control max rows and columns to disoplay
+options(repr.matrix.max.rows=10, repr.matrix.max.cols=10)
+
+# Load packages
+library(gapminder)
+library(dplyr)
+library(ggplot2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-R"><code class="language-R"># install.packages('gapminder', repos='http://cran.us.r-project.org')
+# install.packages('googledrive', repos='http://cran.us.r-project.org')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-R"><code class="language-R"># Look at the gapminder dataset
+head(gapminder)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1952       </td><td>28.801     </td><td> 8425333   </td><td>779.4453   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1957       </td><td>30.332     </td><td> 9240934   </td><td>820.8530   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1962       </td><td>31.997     </td><td>10267083   </td><td>853.1007   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1967       </td><td>34.020     </td><td>11537966   </td><td>836.1971   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1972       </td><td>36.088     </td><td>13079460   </td><td>739.9811   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1977       </td><td>38.438     </td><td>14880372   </td><td>786.1134   </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># observe the data
+glimpse(gapminder)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>Observations: 1,704
+Variables: 6
+$ country   &lt;fct&gt; Afghanistan, Afghanistan, Afghanistan, Afghanistan, Afghani…
+$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia,…
+$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997,…
+$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.…
+$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 1…
+$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134,…</code></pre><pre class="line-numbers language-R"><code class="language-R">str(gapminder)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>Classes ‘tbl_df’, ‘tbl’ and &#39;data.frame&#39;:    1704 obs. of  6 variables:
+ $ country  : Factor w/ 142 levels &quot;Afghanistan&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ continent: Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+ $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+ $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
+ $ gdpPercap: num  779 821 853 836 740 ...</code></pre><h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><ul>
+<li>select certain variables</li>
+<li>use <code>select</code> in combination with <code>contains()</code>, <code>starts_with()</code>, <code>ends_with()</code>, <code>last_col()</code></li>
+<li>these select helpers above are very useful for selecting variables you are interested in</li>
+<li>you can remove a variable, but adding <code>-</code>before a variable</li>
+</ul>
+<pre class="line-numbers language-R"><code class="language-R">counties<-readRDS('/Users/yd/Dropbox/Public/counties.rds')
+glimpse(counties)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>Observations: 3,138
+Variables: 40
+$ census_id          &lt;chr&gt; &quot;1001&quot;, &quot;1003&quot;, &quot;1005&quot;, &quot;1007&quot;, &quot;1009&quot;, &quot;1011&quot;, &quot;1…
+$ state              &lt;chr&gt; &quot;Alabama&quot;, &quot;Alabama&quot;, &quot;Alabama&quot;, &quot;Alabama&quot;, &quot;Alaba…
+$ county             &lt;chr&gt; &quot;Autauga&quot;, &quot;Baldwin&quot;, &quot;Barbour&quot;, &quot;Bibb&quot;, &quot;Blount&quot;,…
+$ region             &lt;chr&gt; &quot;South&quot;, &quot;South&quot;, &quot;South&quot;, &quot;South&quot;, &quot;South&quot;, &quot;Sout…
+$ metro              &lt;chr&gt; &quot;Metro&quot;, &quot;Metro&quot;, &quot;Nonmetro&quot;, &quot;Metro&quot;, &quot;Metro&quot;, &quot;N…
+$ population         &lt;dbl&gt; 55221, 195121, 26932, 22604, 57710, 10678, 20354, …
+$ men                &lt;dbl&gt; 26745, 95314, 14497, 12073, 28512, 5660, 9502, 562…
+$ women              &lt;dbl&gt; 28476, 99807, 12435, 10531, 29198, 5018, 10852, 60…
+$ hispanic           &lt;dbl&gt; 2.6, 4.5, 4.6, 2.2, 8.6, 4.4, 1.2, 3.5, 0.4, 1.5, …
+$ white              &lt;dbl&gt; 75.8, 83.1, 46.2, 74.5, 87.9, 22.2, 53.3, 73.0, 57…
+$ black              &lt;dbl&gt; 18.5, 9.5, 46.7, 21.4, 1.5, 70.7, 43.8, 20.3, 40.3…
+$ native             &lt;dbl&gt; 0.4, 0.6, 0.2, 0.4, 0.3, 1.2, 0.1, 0.2, 0.2, 0.6, …
+$ asian              &lt;dbl&gt; 1.0, 0.7, 0.4, 0.1, 0.1, 0.2, 0.4, 0.9, 0.8, 0.3, …
+$ pacific            &lt;dbl&gt; 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, …
+$ citizens           &lt;dbl&gt; 40725, 147695, 20714, 17495, 42345, 8057, 15581, 8…
+$ income             &lt;dbl&gt; 51281, 50254, 32964, 38678, 45813, 31938, 32229, 4…
+$ income_err         &lt;dbl&gt; 2391, 1263, 2973, 3995, 3141, 5884, 1793, 925, 294…
+$ income_per_cap     &lt;dbl&gt; 24974, 27317, 16824, 18431, 20532, 17580, 18390, 2…
+$ income_per_cap_err &lt;dbl&gt; 1080, 711, 798, 1618, 708, 2055, 714, 489, 1366, 1…
+$ poverty            &lt;dbl&gt; 12.9, 13.4, 26.7, 16.8, 16.7, 24.6, 25.4, 20.5, 21…
+$ child_poverty      &lt;dbl&gt; 18.6, 19.2, 45.3, 27.9, 27.2, 38.4, 39.2, 31.6, 37…
+$ professional       &lt;dbl&gt; 33.2, 33.1, 26.8, 21.5, 28.5, 18.8, 27.5, 27.3, 23…
+$ service            &lt;dbl&gt; 17.0, 17.7, 16.1, 17.9, 14.1, 15.0, 16.6, 17.7, 14…
+$ office             &lt;dbl&gt; 24.2, 27.1, 23.1, 17.8, 23.9, 19.7, 21.9, 24.2, 26…
+$ construction       &lt;dbl&gt; 8.6, 10.8, 10.8, 19.0, 13.5, 20.1, 10.3, 10.5, 11.…
+$ production         &lt;dbl&gt; 17.1, 11.2, 23.1, 23.7, 19.9, 26.4, 23.7, 20.4, 24…
+$ drive              &lt;dbl&gt; 87.5, 84.7, 83.8, 83.2, 84.9, 74.9, 84.5, 85.3, 85…
+$ carpool            &lt;dbl&gt; 8.8, 8.8, 10.9, 13.5, 11.2, 14.9, 12.4, 9.4, 11.9,…
+$ transit            &lt;dbl&gt; 0.1, 0.1, 0.4, 0.5, 0.4, 0.7, 0.0, 0.2, 0.2, 0.2, …
+$ walk               &lt;dbl&gt; 0.5, 1.0, 1.8, 0.6, 0.9, 5.0, 0.8, 1.2, 0.3, 0.6, …
+$ other_transp       &lt;dbl&gt; 1.3, 1.4, 1.5, 1.5, 0.4, 1.7, 0.6, 1.2, 0.4, 0.7, …
+$ work_at_home       &lt;dbl&gt; 1.8, 3.9, 1.6, 0.7, 2.3, 2.8, 1.7, 2.7, 2.1, 2.5, …
+$ mean_commute       &lt;dbl&gt; 26.5, 26.4, 24.1, 28.8, 34.9, 27.5, 24.6, 24.1, 25…
+$ employed           &lt;dbl&gt; 23986, 85953, 8597, 8294, 22189, 3865, 7813, 47401…
+$ private_work       &lt;dbl&gt; 73.6, 81.5, 71.8, 76.8, 82.0, 79.5, 77.4, 74.1, 85…
+$ public_work        &lt;dbl&gt; 20.9, 12.3, 20.8, 16.1, 13.5, 15.1, 16.2, 20.8, 12…
+$ self_employed      &lt;dbl&gt; 5.5, 5.8, 7.3, 6.7, 4.2, 5.4, 6.2, 5.0, 2.8, 7.9, …
+$ family_work        &lt;dbl&gt; 0.0, 0.4, 0.1, 0.4, 0.4, 0.0, 0.2, 0.1, 0.0, 0.5, …
+$ unemployment       &lt;dbl&gt; 7.6, 7.5, 17.6, 8.3, 7.7, 18.0, 10.9, 12.3, 8.9, 7…
+$ land_area          &lt;dbl&gt; 594.44, 1589.78, 884.88, 622.58, 644.78, 622.81, 7…</code></pre><pre class="line-numbers language-R"><code class="language-R"># select a range
+counties %>% 
+    select(state:asian, unemployment)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">region</th><th scope="col">metro</th><th scope="col">population</th><th scope="col">...</th><th scope="col">white</th><th scope="col">black</th><th scope="col">native</th><th scope="col">asian</th><th scope="col">unemployment</th></tr></thead>
+<tbody>
+    <tr><td>Alabama </td><td>Autauga </td><td>South   </td><td>Metro   </td><td> 55221  </td><td>...     </td><td>75.8    </td><td>18.5    </td><td>0.4     </td><td>1.0     </td><td> 7.6    </td></tr>
+    <tr><td>Alabama </td><td>Baldwin </td><td>South   </td><td>Metro   </td><td>195121  </td><td>...     </td><td>83.1    </td><td> 9.5    </td><td>0.6     </td><td>0.7     </td><td> 7.5    </td></tr>
+    <tr><td>Alabama </td><td>Barbour </td><td>South   </td><td>Nonmetro</td><td> 26932  </td><td>...     </td><td>46.2    </td><td>46.7    </td><td>0.2     </td><td>0.4     </td><td>17.6    </td></tr>
+    <tr><td>Alabama </td><td>Bibb    </td><td>South   </td><td>Metro   </td><td> 22604  </td><td>...     </td><td>74.5    </td><td>21.4    </td><td>0.4     </td><td>0.1     </td><td> 8.3    </td></tr>
+    <tr><td>Alabama </td><td>Blount  </td><td>South   </td><td>Metro   </td><td> 57710  </td><td>...     </td><td>87.9    </td><td> 1.5    </td><td>0.3     </td><td>0.1     </td><td> 7.7    </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>   </td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>West      </td><td>Nonmetro  </td><td>44772     </td><td>...       </td><td>79.9      </td><td>0.8       </td><td>0.2       </td><td>0.9       </td><td>5.4       </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>West      </td><td>Nonmetro  </td><td>22311     </td><td>...       </td><td>81.2      </td><td>0.2       </td><td>0.4       </td><td>1.9       </td><td>2.6       </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>West      </td><td>Nonmetro  </td><td>20930     </td><td>...       </td><td>87.8      </td><td>0.2       </td><td>0.4       </td><td>0.1       </td><td>4.4       </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>West      </td><td>Nonmetro  </td><td> 8400     </td><td>...       </td><td>82.4      </td><td>0.7       </td><td>0.3       </td><td>0.2       </td><td>6.8       </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>West      </td><td>Nonmetro  </td><td> 7152     </td><td>...       </td><td>92.2      </td><td>0.2       </td><td>0.7       </td><td>0.5       </td><td>5.2       </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># select variables containing "work"
+counties %>% 
+    select(state, county, contains("work"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">work_at_home</th><th scope="col">private_work</th><th scope="col">public_work</th><th scope="col">family_work</th></tr></thead>
+<tbody>
+    <tr><td>Alabama</td><td>Autauga</td><td>1.8    </td><td>73.6   </td><td>20.9   </td><td>0.0    </td></tr>
+    <tr><td>Alabama</td><td>Baldwin</td><td>3.9    </td><td>81.5   </td><td>12.3   </td><td>0.4    </td></tr>
+    <tr><td>Alabama</td><td>Barbour</td><td>1.6    </td><td>71.8   </td><td>20.8   </td><td>0.1    </td></tr>
+    <tr><td>Alabama</td><td>Bibb   </td><td>0.7    </td><td>76.8   </td><td>16.1   </td><td>0.4    </td></tr>
+    <tr><td>Alabama</td><td>Blount </td><td>2.3    </td><td>82.0   </td><td>13.5   </td><td>0.4    </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>1.6       </td><td>78.6      </td><td>17.7      </td><td>0.0       </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>5.5       </td><td>81.3      </td><td>11.2      </td><td>0.0       </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>3.0       </td><td>75.4      </td><td>19.0      </td><td>0.0       </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>4.5       </td><td>70.5      </td><td>21.5      </td><td>0.5       </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>5.5       </td><td>70.2      </td><td>20.2      </td><td>1.3       </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># select variables starting with income
+counties %>% 
+    select(state, county, starts_with("income"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">income</th><th scope="col">income_err</th><th scope="col">income_per_cap</th><th scope="col">income_per_cap_err</th></tr></thead>
+<tbody>
+    <tr><td>Alabama</td><td>Autauga</td><td>51281  </td><td>2391   </td><td>24974  </td><td>1080   </td></tr>
+    <tr><td>Alabama</td><td>Baldwin</td><td>50254  </td><td>1263   </td><td>27317  </td><td> 711   </td></tr>
+    <tr><td>Alabama</td><td>Barbour</td><td>32964  </td><td>2973   </td><td>16824  </td><td> 798   </td></tr>
+    <tr><td>Alabama</td><td>Bibb   </td><td>38678  </td><td>3995   </td><td>18431  </td><td>1618   </td></tr>
+    <tr><td>Alabama</td><td>Blount </td><td>45813  </td><td>3141   </td><td>20532  </td><td> 708   </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>69022     </td><td>4015      </td><td>30568     </td><td> 944      </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>75325     </td><td>7370      </td><td>44231     </td><td>4473      </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>56569     </td><td>4738      </td><td>25772     </td><td>1763      </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>47652     </td><td>4384      </td><td>27394     </td><td>2542      </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>57738     </td><td>5291      </td><td>30245     </td><td>2787      </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># select variables ending with work
+counties %>% 
+    select(state, county, ends_with("work"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">private_work</th><th scope="col">public_work</th><th scope="col">family_work</th></tr></thead>
+<tbody>
+    <tr><td>Alabama</td><td>Autauga</td><td>73.6   </td><td>20.9   </td><td>0.0    </td></tr>
+    <tr><td>Alabama</td><td>Baldwin</td><td>81.5   </td><td>12.3   </td><td>0.4    </td></tr>
+    <tr><td>Alabama</td><td>Barbour</td><td>71.8   </td><td>20.8   </td><td>0.1    </td></tr>
+    <tr><td>Alabama</td><td>Bibb   </td><td>76.8   </td><td>16.1   </td><td>0.4    </td></tr>
+    <tr><td>Alabama</td><td>Blount </td><td>82.0   </td><td>13.5   </td><td>0.4    </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>78.6      </td><td>17.7      </td><td>0.0       </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>81.3      </td><td>11.2      </td><td>0.0       </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>75.4      </td><td>19.0      </td><td>0.0       </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>70.5      </td><td>21.5      </td><td>0.5       </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>70.2      </td><td>20.2      </td><td>1.3       </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># get the last variable
+counties %>% 
+    select(last_col())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">land_area</th></tr></thead>
+<tbody>
+    <tr><td> 594.44</td></tr>
+    <tr><td>1589.78</td></tr>
+    <tr><td> 884.88</td></tr>
+    <tr><td> 622.58</td></tr>
+    <tr><td> 644.78</td></tr>
+    <tr><td>...</td></tr>
+    <tr><td>10426.65</td></tr>
+    <tr><td> 3995.38</td></tr>
+    <tr><td> 2081.26</td></tr>
+    <tr><td> 2238.55</td></tr>
+    <tr><td> 2398.09</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># remove a variable census_id
+counties %>% 
+    select(-census_id)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">region</th><th scope="col">metro</th><th scope="col">population</th><th scope="col">...</th><th scope="col">public_work</th><th scope="col">self_employed</th><th scope="col">family_work</th><th scope="col">unemployment</th><th scope="col">land_area</th></tr></thead>
+<tbody>
+    <tr><td>Alabama </td><td>Autauga </td><td>South   </td><td>Metro   </td><td> 55221  </td><td>...     </td><td>20.9    </td><td>5.5     </td><td>0.0     </td><td> 7.6    </td><td> 594.44 </td></tr>
+    <tr><td>Alabama </td><td>Baldwin </td><td>South   </td><td>Metro   </td><td>195121  </td><td>...     </td><td>12.3    </td><td>5.8     </td><td>0.4     </td><td> 7.5    </td><td>1589.78 </td></tr>
+    <tr><td>Alabama </td><td>Barbour </td><td>South   </td><td>Nonmetro</td><td> 26932  </td><td>...     </td><td>20.8    </td><td>7.3     </td><td>0.1     </td><td>17.6    </td><td> 884.88 </td></tr>
+    <tr><td>Alabama </td><td>Bibb    </td><td>South   </td><td>Metro   </td><td> 22604  </td><td>...     </td><td>16.1    </td><td>6.7     </td><td>0.4     </td><td> 8.3    </td><td> 622.58 </td></tr>
+    <tr><td>Alabama </td><td>Blount  </td><td>South   </td><td>Metro   </td><td> 57710  </td><td>...     </td><td>13.5    </td><td>4.2     </td><td>0.4     </td><td> 7.7    </td><td> 644.78 </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>   </td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>West      </td><td>Nonmetro  </td><td>44772     </td><td>...       </td><td>17.7      </td><td>3.7       </td><td>0.0       </td><td>5.4       </td><td>10426.65  </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>West      </td><td>Nonmetro  </td><td>22311     </td><td>...       </td><td>11.2      </td><td>7.5       </td><td>0.0       </td><td>2.6       </td><td> 3995.38  </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>West      </td><td>Nonmetro  </td><td>20930     </td><td>...       </td><td>19.0      </td><td>5.6       </td><td>0.0       </td><td>4.4       </td><td> 2081.26  </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>West      </td><td>Nonmetro  </td><td> 8400     </td><td>...       </td><td>21.5      </td><td>7.6       </td><td>0.5       </td><td>6.8       </td><td> 2238.55  </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>West      </td><td>Nonmetro  </td><td> 7152     </td><td>...       </td><td>20.2      </td><td>8.3       </td><td>1.3       </td><td>5.2       </td><td> 2398.09  </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Renaming-a-column-as-part-of-a-select"><a href="#Renaming-a-column-as-part-of-a-select" class="headerlink" title="Renaming a column as part of a select"></a>Renaming a column as part of a select</h3><pre class="line-numbers language-R"><code class="language-R"># Select state, county, and poverty as poverty_rate
+counties %>%
+  select(state, county, poverty_rate = poverty)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">poverty_rate</th></tr></thead>
+<tbody>
+    <tr><td>Alabama</td><td>Autauga</td><td>12.9   </td></tr>
+    <tr><td>Alabama</td><td>Baldwin</td><td>13.4   </td></tr>
+    <tr><td>Alabama</td><td>Barbour</td><td>26.7   </td></tr>
+    <tr><td>Alabama</td><td>Bibb   </td><td>16.8   </td></tr>
+    <tr><td>Alabama</td><td>Blount </td><td>16.7   </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>11.5      </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td> 7.4      </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>13.7      </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>13.8      </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>14.1      </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Filtering-for-one-year"><a href="#Filtering-for-one-year" class="headerlink" title="Filtering for one year"></a>Filtering for one year</h3><p>The filter verb extracts particular observations based on a condition. In this exercise you’ll filter for observations from a particular year.</p>
+<p>Add a filter() line after the pipe (%&gt;%) to extract only the observations from the year 1957. Remember that you use == to compare two values.</p>
+<p>HINT The condition within the filter() will be year == 1957.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Filter the gapminder dataset for the year 1957
+gapminder_1957<-gapminder %>%
+  filter(year == 1957)
+head(gapminder_1957)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1957       </td><td>30.332     </td><td> 9240934   </td><td>  820.853  </td></tr>
+    <tr><td>Albania    </td><td>Europe     </td><td>1957       </td><td>59.280     </td><td> 1476505   </td><td> 1942.284  </td></tr>
+    <tr><td>Algeria    </td><td>Africa     </td><td>1957       </td><td>45.685     </td><td>10270856   </td><td> 3013.976  </td></tr>
+    <tr><td>Angola     </td><td>Africa     </td><td>1957       </td><td>31.999     </td><td> 4561361   </td><td> 3827.940  </td></tr>
+    <tr><td>Argentina  </td><td>Americas   </td><td>1957       </td><td>64.399     </td><td>19610538   </td><td> 6856.856  </td></tr>
+    <tr><td>Australia  </td><td>Oceania    </td><td>1957       </td><td>70.330     </td><td> 9712569   </td><td>10949.650  </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Filtering-for-one-country-and-one-year"><a href="#Filtering-for-one-country-and-one-year" class="headerlink" title="Filtering for one country and one year"></a>Filtering for one country and one year</h3><p>You can also use the filter() verb to set two conditions, which could retrieve a single observation.</p>
+<p>Just like in the last exercise, you can do this in two lines of code, starting with gapminder %&gt;% and having the filter() on the second line. Keeping one verb on each line helps keep the code readable. Note that each time, you’ll put the pipe %&gt;% at the end of the first line (like gapminder %&gt;%); putting the pipe at the beginning of the second line will throw an error.</p>
+<p>Filter the gapminder data to retrieve only the observation from China in the year 2002.</p>
+<p>HINT You’ll need to provide two conditions inside the filter(), separated by a comma. The year condition will be similar to the last exercise, and remember to put “China” in quotes.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Filter for China in 2002
+gapminder %>%
+  filter(country == "China", year == 2002)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>China     </td><td>Asia      </td><td>2002      </td><td>72.028    </td><td>1280400000</td><td>3119.281  </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Arranging-observations-by-life-expectancy"><a href="#Arranging-observations-by-life-expectancy" class="headerlink" title="Arranging observations by life expectancy"></a>Arranging observations by life expectancy</h3><p>You use arrange() to sort observations in ascending or descending order of a particular variable. In this case, you’ll sort the dataset based on the lifeExp variable.</p>
+<p>Sort the gapminder dataset in ascending order of life expectancy (lifeExp). Sort the gapminder dataset in descending order of life expectancy.</p>
+<p>HINT To specify that you want the output in descending order, use <code>desc(lifeExp)</code> inside the arrange().</p>
+<pre class="line-numbers language-R"><code class="language-R"># Sort in ascending order of lifeExp
+gapminder %>%
+  arrange(lifeExp)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Rwanda      </td><td>Africa      </td><td>1992        </td><td>23.599      </td><td>7290203     </td><td> 737.0686   </td></tr>
+    <tr><td>Afghanistan </td><td>Asia        </td><td>1952        </td><td>28.801      </td><td>8425333     </td><td> 779.4453   </td></tr>
+    <tr><td>Gambia      </td><td>Africa      </td><td>1952        </td><td>30.000      </td><td> 284320     </td><td> 485.2307   </td></tr>
+    <tr><td>Angola      </td><td>Africa      </td><td>1952        </td><td>30.015      </td><td>4232095     </td><td>3520.6103   </td></tr>
+    <tr><td>Sierra Leone</td><td>Africa      </td><td>1952        </td><td>30.331      </td><td>2143249     </td><td> 879.7877   </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Switzerland     </td><td>Europe          </td><td>2007            </td><td>81.701          </td><td>  7554661       </td><td>37506.42        </td></tr>
+    <tr><td>Iceland         </td><td>Europe          </td><td>2007            </td><td>81.757          </td><td>   301931       </td><td>36180.79        </td></tr>
+    <tr><td>Japan           </td><td>Asia            </td><td>2002            </td><td>82.000          </td><td>127065841       </td><td>28604.59        </td></tr>
+    <tr><td>Hong Kong, China</td><td>Asia            </td><td>2007            </td><td>82.208          </td><td>  6980412       </td><td>39724.98        </td></tr>
+    <tr><td>Japan           </td><td>Asia            </td><td>2007            </td><td>82.603          </td><td>127467972       </td><td>31656.07        </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Sort in descending order of lifeExp
+gapminder %>%
+  arrange(desc(lifeExp))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Japan           </td><td>Asia            </td><td>2007            </td><td>82.603          </td><td>127467972       </td><td>31656.07        </td></tr>
+    <tr><td>Hong Kong, China</td><td>Asia            </td><td>2007            </td><td>82.208          </td><td>  6980412       </td><td>39724.98        </td></tr>
+    <tr><td>Japan           </td><td>Asia            </td><td>2002            </td><td>82.000          </td><td>127065841       </td><td>28604.59        </td></tr>
+    <tr><td>Iceland         </td><td>Europe          </td><td>2007            </td><td>81.757          </td><td>   301931       </td><td>36180.79        </td></tr>
+    <tr><td>Switzerland     </td><td>Europe          </td><td>2007            </td><td>81.701          </td><td>  7554661       </td><td>37506.42        </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Sierra Leone</td><td>Africa      </td><td>1952        </td><td>30.331      </td><td>2143249     </td><td> 879.7877   </td></tr>
+    <tr><td>Angola      </td><td>Africa      </td><td>1952        </td><td>30.015      </td><td>4232095     </td><td>3520.6103   </td></tr>
+    <tr><td>Gambia      </td><td>Africa      </td><td>1952        </td><td>30.000      </td><td> 284320     </td><td> 485.2307   </td></tr>
+    <tr><td>Afghanistan </td><td>Asia        </td><td>1952        </td><td>28.801      </td><td>8425333     </td><td> 779.4453   </td></tr>
+    <tr><td>Rwanda      </td><td>Africa      </td><td>1992        </td><td>23.599      </td><td>7290203     </td><td> 737.0686   </td></tr>
+</tbody>
+</table>
+
+
+
+<p>Filtering and arranging You’ll often need to use the pipe operator (%&gt;%) to combine multiple dplyr verbs in a row. In this case, you’ll combine a filter() with an arrange() to find the highest population countries in a particular year.</p>
+<p>Use filter() to extract observations from just the year 1957, then use arrange() to sort in descending order of population (pop).</p>
+<p>HINT Right after the filter(year == 1957), you should immediately have another %&gt;%, followed by your arrange() step.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Filter for the year 1957, then arrange in descending order of population
+gapminder %>%
+  filter(year == 1957) %>%
+  arrange(desc(pop))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>China        </td><td>Asia         </td><td>1957         </td><td>50.54896     </td><td>637408000    </td><td>  575.9870   </td></tr>
+    <tr><td>India        </td><td>Asia         </td><td>1957         </td><td>40.24900     </td><td>409000000    </td><td>  590.0620   </td></tr>
+    <tr><td>United States</td><td>Americas     </td><td>1957         </td><td>69.49000     </td><td>171984000    </td><td>14847.1271   </td></tr>
+    <tr><td>Japan        </td><td>Asia         </td><td>1957         </td><td>65.50000     </td><td> 91563009    </td><td> 4317.6944   </td></tr>
+    <tr><td>Indonesia    </td><td>Asia         </td><td>1957         </td><td>39.91800     </td><td> 90124000    </td><td>  858.9003   </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Comoros              </td><td>Africa               </td><td>1957                 </td><td>42.460               </td><td>170928               </td><td> 1211.1485           </td></tr>
+    <tr><td>Iceland              </td><td>Europe               </td><td>1957                 </td><td>73.470               </td><td>165110               </td><td> 9244.0014           </td></tr>
+    <tr><td>Bahrain              </td><td>Asia                 </td><td>1957                 </td><td>53.832               </td><td>138655               </td><td>11635.7995           </td></tr>
+    <tr><td>Djibouti             </td><td>Africa               </td><td>1957                 </td><td>37.328               </td><td> 71851               </td><td> 2864.9691           </td></tr>
+    <tr><td>Sao Tome and Principe</td><td>Africa               </td><td>1957                 </td><td>48.945               </td><td> 61325               </td><td>  860.7369           </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">## arrange country by population in 2007 from top
+gapminder %>% 
+    filter(year==2007) %>%
+    select(country, pop) %>%
+    arrange(desc(pop))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">pop</th></tr></thead>
+<tbody>
+    <tr><td>China        </td><td>1318683096   </td></tr>
+    <tr><td>India        </td><td>1110396331   </td></tr>
+    <tr><td>United States</td><td> 301139947   </td></tr>
+    <tr><td>Indonesia    </td><td> 223547000   </td></tr>
+    <tr><td>Brazil       </td><td> 190010647   </td></tr>
+    <tr><td>...</td><td>...</td></tr>
+    <tr><td>Montenegro           </td><td>684736               </td></tr>
+    <tr><td>Equatorial Guinea    </td><td>551201               </td></tr>
+    <tr><td>Djibouti             </td><td>496374               </td></tr>
+    <tr><td>Iceland              </td><td>301931               </td></tr>
+    <tr><td>Sao Tome and Principe</td><td>199579               </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Using-mutate-to-change-or-create-a-column"><a href="#Using-mutate-to-change-or-create-a-column" class="headerlink" title="Using mutate to change or create a column"></a>Using mutate to change or create a column</h3><p>Suppose we want life expectancy to be measured in months instead of years: you’d have to multiply the existing value by 12. You can use the mutate() verb to change this column, or to create a new column that’s calculated this way.</p>
+<p>Use mutate() to change the existing lifeExp column, by multiplying it by 12: 12 <em> lifeExp. Use mutate() to add a new column, called lifeExpMonths, calculated as 12 </em> lifeExp.</p>
+<p>HINT The code in the first mutate should be lifeExp = 12 * lifeExp. The second is similar, but with a different column name on the left side of the equals.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Use mutate to change lifeExp to be in months
+gapminder %>%
+  mutate(lifeExp = lifeExp * 12)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1952       </td><td>345.612    </td><td> 8425333   </td><td>779.4453   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1957       </td><td>363.984    </td><td> 9240934   </td><td>820.8530   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1962       </td><td>383.964    </td><td>10267083   </td><td>853.1007   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1967       </td><td>408.240    </td><td>11537966   </td><td>836.1971   </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1972       </td><td>433.056    </td><td>13079460   </td><td>739.9811   </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>1987    </td><td>748.212 </td><td> 9216418</td><td>706.1573</td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>1992    </td><td>724.524 </td><td>10704340</td><td>693.4208</td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>1997    </td><td>561.708 </td><td>11404948</td><td>792.4500</td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>2002    </td><td>479.868 </td><td>11926563</td><td>672.0386</td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>2007    </td><td>521.844 </td><td>12311143</td><td>469.7093</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Use mutate to create a new column called lifeExpMonths
+gapminder %>%
+  mutate(lifeExpMonths = lifeExp * 12)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th><th scope="col">lifeExpMonths</th></tr></thead>
+<tbody>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1952       </td><td>28.801     </td><td> 8425333   </td><td>779.4453   </td><td>345.612    </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1957       </td><td>30.332     </td><td> 9240934   </td><td>820.8530   </td><td>363.984    </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1962       </td><td>31.997     </td><td>10267083   </td><td>853.1007   </td><td>383.964    </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1967       </td><td>34.020     </td><td>11537966   </td><td>836.1971   </td><td>408.240    </td></tr>
+    <tr><td>Afghanistan</td><td>Asia       </td><td>1972       </td><td>36.088     </td><td>13079460   </td><td>739.9811   </td><td>433.056    </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>1987    </td><td>62.351  </td><td> 9216418</td><td>706.1573</td><td>748.212 </td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>1992    </td><td>60.377  </td><td>10704340</td><td>693.4208</td><td>724.524 </td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>1997    </td><td>46.809  </td><td>11404948</td><td>792.4500</td><td>561.708 </td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>2002    </td><td>39.989  </td><td>11926563</td><td>672.0386</td><td>479.868 </td></tr>
+    <tr><td>Zimbabwe</td><td>Africa  </td><td>2007    </td><td>43.487  </td><td>12311143</td><td>469.7093</td><td>521.844 </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Combining-filter-mutate-and-arrange"><a href="#Combining-filter-mutate-and-arrange" class="headerlink" title="Combining filter, mutate, and arrange"></a>Combining filter, mutate, and arrange</h3><p>In this exercise, you’ll combine all three of the verbs you’ve learned in this chapter, to find the countries with the highest life expectancy, in months, in the year 2007.</p>
+<p>In one sequence of pipes on the gapminder dataset: filter() for observations from the year 2007, mutate() to create a column lifeExpMonths, calculated as 12 * lifeExp, and arrange() in descending order of that new column</p>
+<p>HINT You’ve done each of these individually before: just make sure that you put a %&gt;% after each step. For example, the first step looks like filter(year == 2007) %&gt;%.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Filter, mutate, and arrange the gapminder dataset
+gapminder %>%
+  filter(year == 2007) %>%
+  mutate(lifeExpMonths = 12 * lifeExp) %>%
+  arrange(desc(lifeExpMonths))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th><th scope="col">lifeExpMonths</th></tr></thead>
+<tbody>
+    <tr><td>Japan           </td><td>Asia            </td><td>2007            </td><td>82.603          </td><td>127467972       </td><td>31656.07        </td><td>991.236         </td></tr>
+    <tr><td>Hong Kong, China</td><td>Asia            </td><td>2007            </td><td>82.208          </td><td>  6980412       </td><td>39724.98        </td><td>986.496         </td></tr>
+    <tr><td>Iceland         </td><td>Europe          </td><td>2007            </td><td>81.757          </td><td>   301931       </td><td>36180.79        </td><td>981.084         </td></tr>
+    <tr><td>Switzerland     </td><td>Europe          </td><td>2007            </td><td>81.701          </td><td>  7554661       </td><td>37506.42        </td><td>980.412         </td></tr>
+    <tr><td>Australia       </td><td>Oceania         </td><td>2007            </td><td>81.235          </td><td> 20434176       </td><td>34435.37        </td><td>974.820         </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Lesotho     </td><td>Africa      </td><td>2007        </td><td>42.592      </td><td> 2012649    </td><td>1569.3314   </td><td>511.104     </td></tr>
+    <tr><td>Sierra Leone</td><td>Africa      </td><td>2007        </td><td>42.568      </td><td> 6144562    </td><td> 862.5408   </td><td>510.816     </td></tr>
+    <tr><td>Zambia      </td><td>Africa      </td><td>2007        </td><td>42.384      </td><td>11746035    </td><td>1271.2116   </td><td>508.608     </td></tr>
+    <tr><td>Mozambique  </td><td>Africa      </td><td>2007        </td><td>42.082      </td><td>19951656    </td><td> 823.6856   </td><td>504.984     </td></tr>
+    <tr><td>Swaziland   </td><td>Africa      </td><td>2007        </td><td>39.613      </td><td> 1133066    </td><td>4513.4806   </td><td>475.356     </td></tr>
+</tbody>
+</table>
+
+
+
+<h2 id="3-Aggregate-data"><a href="#3-Aggregate-data" class="headerlink" title="3. Aggregate data"></a>3. Aggregate data</h2><h3 id="Summarizing-your-data"><a href="#Summarizing-your-data" class="headerlink" title="Summarizing your data"></a>Summarizing your data</h3><p><strong><code>summarize()</code></strong></p>
+<ul>
+<li><code>mean()</code></li>
+<li><code>sum()</code></li>
+<li><code>median()</code> </li>
+<li><code>sum()</code></li>
+<li><code>min()</code></li>
+<li><code>max()</code></li>
+<li><code>n()</code></li>
+</ul>
+<p>Use the <code>median()</code> function within a <code>summarize()</code> to find the median life expectancy. Save it into a column called medianLifeExp.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Summarize to find the median life expectancy
+gapminder %>%
+  summarize(medianLifeExp = median(lifeExp))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">medianLifeExp</th></tr></thead>
+<tbody>
+    <tr><td>60.7125</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Summarizing-the-median-life-expectancy-in-1957"><a href="#Summarizing-the-median-life-expectancy-in-1957" class="headerlink" title="Summarizing the median life expectancy in 1957"></a>Summarizing the median life expectancy in 1957</h3><p>Rather than summarizing the entire dataset, you may want to find the median life expectancy for only one particular year. In this case, you’ll find the median in the year 1957.</p>
+<p>Filter for the year 1957, then use the median() function within a summarize() to calculate the median life expectancy into a column called medianLifeExp.</p>
+<p>HINT This takes two steps: first a filter() step with year == 1957, and then a summarize() step that’s identical to the last exercise.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Filter for 1957 then summarize the median life expectancy
+gapminder %>%
+  filter(year == 1957) %>%
+  summarize(medianLifeExp = median(lifeExp))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">medianLifeExp</th></tr></thead>
+<tbody>
+    <tr><td>48.3605</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Summarizing-multiple-variables-in-1957"><a href="#Summarizing-multiple-variables-in-1957" class="headerlink" title="Summarizing multiple variables in 1957"></a>Summarizing multiple variables in 1957</h3><p>The summarize() verb allows you to summarize multiple variables at once. In this case, you’ll use the median() function to find the median life expectancy and the max() function to find the maximum GDP per capita.</p>
+<p>Find both the median life expectancy (lifeExp) and the maximum GDP per capita (gdpPercap) in the year 1957, calling them medianLifeExp and maxGdpPercap respectively. You can use the max() function to find the maximum.</p>
+<p>HINT This takes two steps: first a filter() step with year == 1957, and then a summarize() step saving both the summaries. The two variable summaries should be separated with a comma.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Filter for 1957 then summarize the median life expectancy and the maximum GDP per capita
+gapminder %>%
+  filter(year == 1957) %>%
+  summarize(medianLifeExp = median(lifeExp),
+            maxGdpPercap = max(gdpPercap))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">medianLifeExp</th><th scope="col">maxGdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>48.3605 </td><td>113523.1</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Summarizing-by-year"><a href="#Summarizing-by-year" class="headerlink" title="Summarizing by year"></a>Summarizing by year</h3><p>In a previous exercise, you found the median life expectancy and the maximum GDP per capita in the year 1957. Now, you’ll perform those two summaries within each year in the dataset, using the group_by verb.</p>
+<p>Find the median life expectancy (lifeExp) and maximum GDP per capita (gdpPercap) within each year, saving them into medianLifeExp and maxGdpPercap, respectively.</p>
+<p>HINT This takes two steps: first pipe the gapminder data into group_by(year), then pipe it into a summarize() similar to the last exercise.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Find median life expectancy and maximum GDP per capita in each year
+gapminder %>%
+  group_by(year) %>%
+  summarize(medianLifeExp = median(lifeExp),
+            maxGdpPercap = max(gdpPercap))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">medianLifeExp</th><th scope="col">maxGdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>1952     </td><td>45.1355  </td><td>108382.35</td></tr>
+    <tr><td>1957     </td><td>48.3605  </td><td>113523.13</td></tr>
+    <tr><td>1962     </td><td>50.8810  </td><td> 95458.11</td></tr>
+    <tr><td>1967     </td><td>53.8250  </td><td> 80894.88</td></tr>
+    <tr><td>1972     </td><td>56.5300  </td><td>109347.87</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>1987    </td><td>65.8340 </td><td>31540.97</td></tr>
+    <tr><td>1992    </td><td>67.7030 </td><td>34932.92</td></tr>
+    <tr><td>1997    </td><td>69.3940 </td><td>41283.16</td></tr>
+    <tr><td>2002    </td><td>70.8255 </td><td>44683.98</td></tr>
+    <tr><td>2007    </td><td>71.9355 </td><td>49357.19</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Summarizing-by-continent"><a href="#Summarizing-by-continent" class="headerlink" title="Summarizing by continent"></a>Summarizing by continent</h3><p>You can group by any variable in your dataset to create a summary. Rather than comparing across time, you might be interested in comparing among continents. You’ll want to do that within one year of the dataset: let’s use 1957.</p>
+<p>Filter the gapminder data for the year 1957. Then find the median life expectancy (lifeExp) and maximum GDP per capita (gdpPercap) within each continent, saving them into medianLifeExp and maxGdpPercap, respectively.</p>
+<p>HINT This will be almost identical to the last exercise, except that you’ll first need a filter(year == 1957), and then you’ll group by continent instead of grouping by year.</p>
+<pre class="line-numbers language-R"><code class="language-R"># Find median life expectancy and maximum GDP per capita in each continent in 1957
+gapminder %>%
+  filter(year == 1957) %>%
+  group_by(continent) %>%
+  summarize(medianLifeExp = median(lifeExp),
+            maxGdpPercap = max(gdpPercap))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">continent</th><th scope="col">medianLifeExp</th><th scope="col">maxGdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Africa    </td><td>40.5925   </td><td>  5487.104</td></tr>
+    <tr><td>Americas  </td><td>56.0740   </td><td> 14847.127</td></tr>
+    <tr><td>Asia      </td><td>48.2840   </td><td>113523.133</td></tr>
+    <tr><td>Europe    </td><td>67.6500   </td><td> 17909.490</td></tr>
+    <tr><td>Oceania   </td><td>70.2950   </td><td> 12247.395</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Summarizing-by-continent-and-year"><a href="#Summarizing-by-continent-and-year" class="headerlink" title="Summarizing by continent and year"></a>Summarizing by continent and year</h3><p>Instead of grouping just by year, or just by continent, you’ll now group by both continent and year to summarize within each.</p>
+<p>Find the median life expectancy (lifeExp) and maximum GDP per capita (gdpPercap) within each combination of continent and year, saving them into medianLifeExp and maxGdpPercap, respectively.</p>
+<p>HINT This is similar to the last two exercises, but the group by will look like group_by(continent, year).</p>
+<pre class="line-numbers language-R"><code class="language-R"># Find median life expectancy and maximum GDP per capita in each year/continent combination
+gapminder %>%
+  group_by(continent, year) %>%
+  summarize(medianLifeExp = median(lifeExp),
+            maxGdpPercap = max(gdpPercap))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">continent</th><th scope="col">year</th><th scope="col">medianLifeExp</th><th scope="col">maxGdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Africa   </td><td>1952     </td><td>38.8330  </td><td> 4725.296</td></tr>
+    <tr><td>Africa   </td><td>1957     </td><td>40.5925  </td><td> 5487.104</td></tr>
+    <tr><td>Africa   </td><td>1962     </td><td>42.6305  </td><td> 6757.031</td></tr>
+    <tr><td>Africa   </td><td>1967     </td><td>44.6985  </td><td>18772.752</td></tr>
+    <tr><td>Africa   </td><td>1972     </td><td>47.0315  </td><td>21011.497</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Oceania </td><td>1987    </td><td>75.3200 </td><td>21888.89</td></tr>
+    <tr><td>Oceania </td><td>1992    </td><td>76.9450 </td><td>23424.77</td></tr>
+    <tr><td>Oceania </td><td>1997    </td><td>78.1900 </td><td>26997.94</td></tr>
+    <tr><td>Oceania </td><td>2002    </td><td>79.7400 </td><td>30687.75</td></tr>
+    <tr><td>Oceania </td><td>2007    </td><td>80.7195 </td><td>34435.37</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="count"><a href="#count" class="headerlink" title="count"></a>count</h3><p>you’ll want to know more about how to aggregate your data to make it more interpretable. You’ll learn a number of functions you can use to take many observations in your data and summarize them, including count, group_by, summarize, ungroup, and top_n.</p>
+<pre class="line-numbers language-R"><code class="language-R"># select data from 2007
+gapminder_2007 <- gapminder %>%
+  filter(year==2007)
+# count number of countries in each continent in 2007
+gapminder_2007 %>%
+  count(continent, sort=TRUE)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">continent</th><th scope="col">n</th></tr></thead>
+<tbody>
+    <tr><td>Africa  </td><td>52      </td></tr>
+    <tr><td>Asia    </td><td>33      </td></tr>
+    <tr><td>Europe  </td><td>30      </td></tr>
+    <tr><td>Americas</td><td>25      </td></tr>
+    <tr><td>Oceania </td><td> 2      </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">gapminder_2007 %>%
+  group_by(continent) %>%
+  summarize(n())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">continent</th><th scope="col">n()</th></tr></thead>
+<tbody>
+    <tr><td>Africa  </td><td>52      </td></tr>
+    <tr><td>Americas</td><td>25      </td></tr>
+    <tr><td>Asia    </td><td>33      </td></tr>
+    <tr><td>Europe  </td><td>30      </td></tr>
+    <tr><td>Oceania </td><td> 2      </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Renaming-a-column-after-count"><a href="#Renaming-a-column-after-count" class="headerlink" title="Renaming a column after count"></a>Renaming a column after count</h3><p>The <code>rename()</code> verb is often useful for changing the name of a column that comes out of another verb, such as <code>count()</code></p>
+<pre class="line-numbers language-R"><code class="language-R"># Rename the n column to num_counties
+counties %>%
+    count(state) %>%
+    rename(num_counties = n)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">num_counties</th></tr></thead>
+<tbody>
+    <tr><td>Alabama   </td><td>67        </td></tr>
+    <tr><td>Alaska    </td><td>28        </td></tr>
+    <tr><td>Arizona   </td><td>15        </td></tr>
+    <tr><td>Arkansas  </td><td>75        </td></tr>
+    <tr><td>California</td><td>58        </td></tr>
+    <tr><td>...</td><td>...</td></tr>
+    <tr><td>Virginia     </td><td>133          </td></tr>
+    <tr><td>Washington   </td><td> 39          </td></tr>
+    <tr><td>West Virginia</td><td> 55          </td></tr>
+    <tr><td>Wisconsin    </td><td> 72          </td></tr>
+    <tr><td>Wyoming      </td><td> 23          </td></tr>
+</tbody>
+</table>
+
+
+
+<p>You can weigh your count by population rather than finding the number of countries. This operation is equal to sum the population for each continent instead of the number of countries in each continent. </p>
+<pre class="line-numbers language-R"><code class="language-R">gapminder_2007 %>%
+  count(continent, wt = pop, sort = TRUE, rm.na=TRUE) # but this can not remove NA, so I use an alternative way below<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">continent</th><th scope="col">rm.na</th><th scope="col">n</th></tr></thead>
+<tbody>
+    <tr><td>Africa   </td><td>TRUE     </td><td>929539692</td></tr>
+    <tr><td>Americas </td><td>TRUE     </td><td>898871184</td></tr>
+    <tr><td>Europe   </td><td>TRUE     </td><td>586098529</td></tr>
+    <tr><td>Oceania  </td><td>TRUE     </td><td> 24549947</td></tr>
+    <tr><td>Asia     </td><td>TRUE     </td><td>       NA</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">gapminder_2007 %>%
+  group_by(continent) %>%
+  summarize(totalpop = sum(pop, rm.na=TRUE)) %>%
+  arrange(desc(totalpop))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">continent</th><th scope="col">totalpop</th></tr></thead>
+<tbody>
+    <tr><td>Asia      </td><td>3811953828</td></tr>
+    <tr><td>Africa    </td><td> 929539693</td></tr>
+    <tr><td>Americas  </td><td> 898871185</td></tr>
+    <tr><td>Europe    </td><td> 586098530</td></tr>
+    <tr><td>Oceania   </td><td>  24549948</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="top-n"><a href="#top-n" class="headerlink" title="top_n()"></a>top_n()</h3><p>find the country with the largest population in each continent</p>
+<pre class="line-numbers language-R"><code class="language-R">gapminder_2007 %>%
+  group_by(continent) %>%
+  top_n(1, pop)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">country</th><th scope="col">continent</th><th scope="col">year</th><th scope="col">lifeExp</th><th scope="col">pop</th><th scope="col">gdpPercap</th></tr></thead>
+<tbody>
+    <tr><td>Australia    </td><td>Oceania      </td><td>2007         </td><td>81.235       </td><td>  20434176   </td><td>34435.367    </td></tr>
+    <tr><td>China        </td><td>Asia         </td><td>2007         </td><td>72.961       </td><td>1318683096   </td><td> 4959.115    </td></tr>
+    <tr><td>Germany      </td><td>Europe       </td><td>2007         </td><td>79.406       </td><td>  82400996   </td><td>32170.374    </td></tr>
+    <tr><td>Nigeria      </td><td>Africa       </td><td>2007         </td><td>46.859       </td><td> 135031164   </td><td> 2013.977    </td></tr>
+    <tr><td>United States</td><td>Americas     </td><td>2007         </td><td>78.242       </td><td> 301139947   </td><td>42951.653    </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="transmute"><a href="#transmute" class="headerlink" title="transmute"></a>transmute</h3><ul>
+<li>combination: select &amp; mutate</li>
+<li>returns a subsect of columns that are transformed and changed</li>
+</ul>
+<pre class="line-numbers language-R"><code class="language-R"># select and calculate: get a new variable without keeping the old ones
+counties %>%
+    transmute(state, county, fraction_men = men / population)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">fraction_men</th></tr></thead>
+<tbody>
+    <tr><td>Alabama  </td><td>Autauga  </td><td>0.4843266</td></tr>
+    <tr><td>Alabama  </td><td>Baldwin  </td><td>0.4884866</td></tr>
+    <tr><td>Alabama  </td><td>Barbour  </td><td>0.5382816</td></tr>
+    <tr><td>Alabama  </td><td>Bibb     </td><td>0.5341090</td></tr>
+    <tr><td>Alabama  </td><td>Blount   </td><td>0.4940565</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>0.5217323 </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>0.5170992 </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>0.5081701 </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>0.4933333 </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>0.5166387 </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">counties %>%
+  # Keep the state, county, and populations columns, and add a density column
+  transmute(state, county, population, density = population / land_area) %>%
+  # Filter for counties with a population greater than one million 
+  filter(population > 1000000) %>%
+  # Sort density in ascending order 
+  arrange(density)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">population</th><th scope="col">density</th></tr></thead>
+<tbody>
+    <tr><td>California    </td><td>San Bernardino</td><td>2094769       </td><td>104.4411      </td></tr>
+    <tr><td>Nevada        </td><td>Clark         </td><td>2035572       </td><td>257.9472      </td></tr>
+    <tr><td>California    </td><td>Riverside     </td><td>2298032       </td><td>318.8841      </td></tr>
+    <tr><td>Arizona       </td><td>Maricopa      </td><td>4018143       </td><td>436.7480      </td></tr>
+    <tr><td>Florida       </td><td>Palm Beach    </td><td>1378806       </td><td>699.9868      </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Pennsylvania</td><td>Philadelphia</td><td>1555072     </td><td>11596.36    </td></tr>
+    <tr><td>New York    </td><td>Queens      </td><td>2301139     </td><td>21202.79    </td></tr>
+    <tr><td>New York    </td><td>Bronx       </td><td>1428357     </td><td>33927.72    </td></tr>
+    <tr><td>New York    </td><td>Kings       </td><td>2595259     </td><td>36645.85    </td></tr>
+    <tr><td>New York    </td><td>New York    </td><td>1629507     </td><td>71375.69    </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Change the name of the unemployment column
+counties %>%
+  rename(unemployment_rate = unemployment)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">census_id</th><th scope="col">state</th><th scope="col">county</th><th scope="col">region</th><th scope="col">metro</th><th scope="col">...</th><th scope="col">public_work</th><th scope="col">self_employed</th><th scope="col">family_work</th><th scope="col">unemployment_rate</th><th scope="col">land_area</th></tr></thead>
+<tbody>
+    <tr><td>1001    </td><td>Alabama </td><td>Autauga </td><td>South   </td><td>Metro   </td><td>...     </td><td>20.9    </td><td>5.5     </td><td>0.0     </td><td> 7.6    </td><td> 594.44 </td></tr>
+    <tr><td>1003    </td><td>Alabama </td><td>Baldwin </td><td>South   </td><td>Metro   </td><td>...     </td><td>12.3    </td><td>5.8     </td><td>0.4     </td><td> 7.5    </td><td>1589.78 </td></tr>
+    <tr><td>1005    </td><td>Alabama </td><td>Barbour </td><td>South   </td><td>Nonmetro</td><td>...     </td><td>20.8    </td><td>7.3     </td><td>0.1     </td><td>17.6    </td><td> 884.88 </td></tr>
+    <tr><td>1007    </td><td>Alabama </td><td>Bibb    </td><td>South   </td><td>Metro   </td><td>...     </td><td>16.1    </td><td>6.7     </td><td>0.4     </td><td> 8.3    </td><td> 622.58 </td></tr>
+    <tr><td>1009    </td><td>Alabama </td><td>Blount  </td><td>South   </td><td>Metro   </td><td>...     </td><td>13.5    </td><td>4.2     </td><td>0.4     </td><td> 7.7    </td><td> 644.78 </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>   </td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>56037     </td><td>Wyoming   </td><td>Sweetwater</td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>17.7      </td><td>3.7       </td><td>0.0       </td><td>5.4       </td><td>10426.65  </td></tr>
+    <tr><td>56039     </td><td>Wyoming   </td><td>Teton     </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>11.2      </td><td>7.5       </td><td>0.0       </td><td>2.6       </td><td> 3995.38  </td></tr>
+    <tr><td>56041     </td><td>Wyoming   </td><td>Uinta     </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>19.0      </td><td>5.6       </td><td>0.0       </td><td>4.4       </td><td> 2081.26  </td></tr>
+    <tr><td>56043     </td><td>Wyoming   </td><td>Washakie  </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>21.5      </td><td>7.6       </td><td>0.5       </td><td>6.8       </td><td> 2238.55  </td></tr>
+    <tr><td>56045     </td><td>Wyoming   </td><td>Weston    </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>20.2      </td><td>8.3       </td><td>1.3       </td><td>5.2       </td><td> 2398.09  </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Keep the state and county columns, and the columns containing poverty
+counties %>%
+  select(state, county, contains("poverty"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">poverty</th><th scope="col">child_poverty</th></tr></thead>
+<tbody>
+    <tr><td>Alabama</td><td>Autauga</td><td>12.9   </td><td>18.6   </td></tr>
+    <tr><td>Alabama</td><td>Baldwin</td><td>13.4   </td><td>19.2   </td></tr>
+    <tr><td>Alabama</td><td>Barbour</td><td>26.7   </td><td>45.3   </td></tr>
+    <tr><td>Alabama</td><td>Bibb   </td><td>16.8   </td><td>27.9   </td></tr>
+    <tr><td>Alabama</td><td>Blount </td><td>16.7   </td><td>27.2   </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>11.5      </td><td>17.0      </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td> 7.4      </td><td> 7.1      </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>13.7      </td><td>18.3      </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>13.8      </td><td>17.9      </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>14.1      </td><td>27.6      </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Calculate the fraction_women column without dropping the other columns
+counties %>%
+  mutate(fraction_women = women / population)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">census_id</th><th scope="col">state</th><th scope="col">county</th><th scope="col">region</th><th scope="col">metro</th><th scope="col">...</th><th scope="col">self_employed</th><th scope="col">family_work</th><th scope="col">unemployment</th><th scope="col">land_area</th><th scope="col">fraction_women</th></tr></thead>
+<tbody>
+    <tr><td>1001     </td><td>Alabama  </td><td>Autauga  </td><td>South    </td><td>Metro    </td><td>...      </td><td>5.5      </td><td>0.0      </td><td> 7.6     </td><td> 594.44  </td><td>0.5156734</td></tr>
+    <tr><td>1003     </td><td>Alabama  </td><td>Baldwin  </td><td>South    </td><td>Metro    </td><td>...      </td><td>5.8      </td><td>0.4      </td><td> 7.5     </td><td>1589.78  </td><td>0.5115134</td></tr>
+    <tr><td>1005     </td><td>Alabama  </td><td>Barbour  </td><td>South    </td><td>Nonmetro </td><td>...      </td><td>7.3      </td><td>0.1      </td><td>17.6     </td><td> 884.88  </td><td>0.4617184</td></tr>
+    <tr><td>1007     </td><td>Alabama  </td><td>Bibb     </td><td>South    </td><td>Metro    </td><td>...      </td><td>6.7      </td><td>0.4      </td><td> 8.3     </td><td> 622.58  </td><td>0.4658910</td></tr>
+    <tr><td>1009     </td><td>Alabama  </td><td>Blount   </td><td>South    </td><td>Metro    </td><td>...      </td><td>4.2      </td><td>0.4      </td><td> 7.7     </td><td> 644.78  </td><td>0.5059435</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>   </td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>56037     </td><td>Wyoming   </td><td>Sweetwater</td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>3.7       </td><td>0.0       </td><td>5.4       </td><td>10426.65  </td><td>0.4782677 </td></tr>
+    <tr><td>56039     </td><td>Wyoming   </td><td>Teton     </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>7.5       </td><td>0.0       </td><td>2.6       </td><td> 3995.38  </td><td>0.4829008 </td></tr>
+    <tr><td>56041     </td><td>Wyoming   </td><td>Uinta     </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>5.6       </td><td>0.0       </td><td>4.4       </td><td> 2081.26  </td><td>0.4918299 </td></tr>
+    <tr><td>56043     </td><td>Wyoming   </td><td>Washakie  </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>7.6       </td><td>0.5       </td><td>6.8       </td><td> 2238.55  </td><td>0.5066667 </td></tr>
+    <tr><td>56045     </td><td>Wyoming   </td><td>Weston    </td><td>West      </td><td>Nonmetro  </td><td>...       </td><td>8.3       </td><td>1.3       </td><td>5.2       </td><td> 2398.09  </td><td>0.4833613 </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Keep only the state, county, and employment_rate columns
+counties %>%
+  transmute(state, county, employment_rate = employed / population)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">state</th><th scope="col">county</th><th scope="col">employment_rate</th></tr></thead>
+<tbody>
+    <tr><td>Alabama  </td><td>Autauga  </td><td>0.4343637</td></tr>
+    <tr><td>Alabama  </td><td>Baldwin  </td><td>0.4405113</td></tr>
+    <tr><td>Alabama  </td><td>Barbour  </td><td>0.3192113</td></tr>
+    <tr><td>Alabama  </td><td>Bibb     </td><td>0.3669262</td></tr>
+    <tr><td>Alabama  </td><td>Blount   </td><td>0.3844914</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>Wyoming   </td><td>Sweetwater</td><td>0.5139373 </td></tr>
+    <tr><td>Wyoming   </td><td>Teton     </td><td>0.6408498 </td></tr>
+    <tr><td>Wyoming   </td><td>Uinta     </td><td>0.4808409 </td></tr>
+    <tr><td>Wyoming   </td><td>Washakie  </td><td>0.4633333 </td></tr>
+    <tr><td>Wyoming   </td><td>Weston    </td><td>0.4674217 </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="baby-names"><a href="#baby-names" class="headerlink" title="baby names"></a>baby names</h3><pre class="line-numbers language-R"><code class="language-R">babynames<-readRDS('/Users/yd/Dropbox/Public/babynames.rds')
+glimpse(babynames)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>Observations: 332,595
+Variables: 3
+$ year   &lt;dbl&gt; 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 18…
+$ name   &lt;chr&gt; &quot;Aaron&quot;, &quot;Ab&quot;, &quot;Abbie&quot;, &quot;Abbott&quot;, &quot;Abby&quot;, &quot;Abe&quot;, &quot;Abel&quot;, &quot;Abig…
+$ number &lt;int&gt; 102, 5, 71, 5, 6, 50, 9, 12, 27, 81, 21, 652, 24, 23, 104, 14,…</code></pre><pre class="line-numbers language-R"><code class="language-R">babynames %>%
+  # Filter for the year 1990
+  filter(year == 1990) %>%
+  # Sort the number column in descending order 
+  arrange(desc(number))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th></tr></thead>
+<tbody>
+    <tr><td>1990       </td><td>Michael    </td><td>65560      </td></tr>
+    <tr><td>1990       </td><td>Christopher</td><td>52520      </td></tr>
+    <tr><td>1990       </td><td>Jessica    </td><td>46615      </td></tr>
+    <tr><td>1990       </td><td>Ashley     </td><td>45797      </td></tr>
+    <tr><td>1990       </td><td>Matthew    </td><td>44925      </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>1990 </td><td>Zissy</td><td>5    </td></tr>
+    <tr><td>1990 </td><td>Ziyad</td><td>5    </td></tr>
+    <tr><td>1990 </td><td>Zlata</td><td>5    </td></tr>
+    <tr><td>1990 </td><td>Zoran</td><td>5    </td></tr>
+    <tr><td>1990 </td><td>Zvi  </td><td>5    </td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># Find the most common name in each year
+babynames %>%
+  group_by(year) %>%
+  top_n(1, number)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th></tr></thead>
+<tbody>
+    <tr><td>1880 </td><td>John </td><td> 9701</td></tr>
+    <tr><td>1885 </td><td>Mary </td><td> 9166</td></tr>
+    <tr><td>1890 </td><td>Mary </td><td>12113</td></tr>
+    <tr><td>1895 </td><td>Mary </td><td>13493</td></tr>
+    <tr><td>1900 </td><td>Mary </td><td>16781</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>1995    </td><td>Michael </td><td>41569   </td></tr>
+    <tr><td>2000    </td><td>Jacob   </td><td>34530   </td></tr>
+    <tr><td>2005    </td><td>Jacob   </td><td>25870   </td></tr>
+    <tr><td>2010    </td><td>Isabella</td><td>22935   </td></tr>
+    <tr><td>2015    </td><td>Emma    </td><td>20445   </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Filter-for-only-the-names-Steven-Thomas-and-Matthew"><a href="#Filter-for-only-the-names-Steven-Thomas-and-Matthew" class="headerlink" title="Filter for only the names Steven, Thomas, and Matthew"></a>Filter for only the names Steven, Thomas, and Matthew</h3><pre class="line-numbers language-R"><code class="language-R">babynames %>%
+    filter(name %in% c("Steven", "Thomas", "Mattew"))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th></tr></thead>
+<tbody>
+    <tr><td>1880  </td><td>Steven</td><td>  17  </td></tr>
+    <tr><td>1880  </td><td>Thomas</td><td>2542  </td></tr>
+    <tr><td>1885  </td><td>Steven</td><td>  21  </td></tr>
+    <tr><td>1885  </td><td>Thomas</td><td>2275  </td></tr>
+    <tr><td>1890  </td><td>Steven</td><td>  20  </td></tr>
+    <tr><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>2010  </td><td>Steven</td><td>3430  </td></tr>
+    <tr><td>2010  </td><td>Thomas</td><td>7134  </td></tr>
+    <tr><td>2015  </td><td>Mattew</td><td>  17  </td></tr>
+    <tr><td>2015  </td><td>Steven</td><td>2700  </td></tr>
+    <tr><td>2015  </td><td>Thomas</td><td>7182  </td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="grouped-mutates"><a href="#grouped-mutates" class="headerlink" title="grouped mutates"></a>grouped mutates</h3><ul>
+<li><code>mutate()</code> is a good pair with <code>summarize()</code></li>
+<li><code>mutate()</code> is a good friend with <code>mutate()</code></li>
+<li>see the difference below</li>
+</ul>
+<pre class="line-numbers language-R"><code class="language-R">babynames %>%
+    group_by(year) %>%
+    summarize(year_total = sum(number))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">year_total</th></tr></thead>
+<tbody>
+    <tr><td>1880  </td><td>201478</td></tr>
+    <tr><td>1885  </td><td>240822</td></tr>
+    <tr><td>1890  </td><td>301352</td></tr>
+    <tr><td>1895  </td><td>350934</td></tr>
+    <tr><td>1900  </td><td>450148</td></tr>
+    <tr><td>...</td><td>...</td></tr>
+    <tr><td>1995   </td><td>3652750</td></tr>
+    <tr><td>2000   </td><td>3767293</td></tr>
+    <tr><td>2005   </td><td>3828460</td></tr>
+    <tr><td>2010   </td><td>3672066</td></tr>
+    <tr><td>2015   </td><td>3648781</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R"># mutate and group_by put new variable along side with the original data
+babynames %>%
+    group_by(year) %>%
+    mutate(year_total = sum(number))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th></tr></thead>
+<tbody>
+    <tr><td>1880  </td><td>Aaron </td><td>102   </td><td>201478</td></tr>
+    <tr><td>1880  </td><td>Ab    </td><td>  5   </td><td>201478</td></tr>
+    <tr><td>1880  </td><td>Abbie </td><td> 71   </td><td>201478</td></tr>
+    <tr><td>1880  </td><td>Abbott</td><td>  5   </td><td>201478</td></tr>
+    <tr><td>1880  </td><td>Abby  </td><td>  6   </td><td>201478</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>2015   </td><td>Zyren  </td><td> 9     </td><td>3648781</td></tr>
+    <tr><td>2015   </td><td>Zyria  </td><td> 6     </td><td>3648781</td></tr>
+    <tr><td>2015   </td><td>Zyriah </td><td>27     </td><td>3648781</td></tr>
+    <tr><td>2015   </td><td>Zyrion </td><td> 7     </td><td>3648781</td></tr>
+    <tr><td>2015   </td><td>Zyron  </td><td>15     </td><td>3648781</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">babynames %>%
+    group_by(year) %>%
+    mutate(year_total = sum(number)) %>%
+    ungroup() %>% # make further calculation faster
+    mutate(fraction = number / year_total) # add the fraction column<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th><th scope="col">fraction</th></tr></thead>
+<tbody>
+    <tr><td>1880        </td><td>Aaron       </td><td>102         </td><td>201478      </td><td>5.062587e-04</td></tr>
+    <tr><td>1880        </td><td>Ab          </td><td>  5         </td><td>201478      </td><td>2.481661e-05</td></tr>
+    <tr><td>1880        </td><td>Abbie       </td><td> 71         </td><td>201478      </td><td>3.523958e-04</td></tr>
+    <tr><td>1880        </td><td>Abbott      </td><td>  5         </td><td>201478      </td><td>2.481661e-05</td></tr>
+    <tr><td>1880        </td><td>Abby        </td><td>  6         </td><td>201478      </td><td>2.977993e-05</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>2015        </td><td>Zyren       </td><td> 9          </td><td>3648781     </td><td>2.466577e-06</td></tr>
+    <tr><td>2015        </td><td>Zyria       </td><td> 6          </td><td>3648781     </td><td>1.644385e-06</td></tr>
+    <tr><td>2015        </td><td>Zyriah      </td><td>27          </td><td>3648781     </td><td>7.399732e-06</td></tr>
+    <tr><td>2015        </td><td>Zyrion      </td><td> 7          </td><td>3648781     </td><td>1.918449e-06</td></tr>
+    <tr><td>2015        </td><td>Zyron       </td><td>15          </td><td>3648781     </td><td>4.110962e-06</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Finding-the-year-each-name-is-most-common"><a href="#Finding-the-year-each-name-is-most-common" class="headerlink" title="Finding the year each name is most common"></a>Finding the year each name is most common</h3><pre class="line-numbers language-R"><code class="language-R"># Find the year each name is most common 
+babynames %>%
+  group_by(year) %>%
+  mutate(year_total = sum(number)) %>%
+  ungroup() %>%
+  mutate(fraction = number / year_total) %>%
+  group_by(name) %>%
+  top_n(1, fraction)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th><th scope="col">fraction</th></tr></thead>
+<tbody>
+    <tr><td>1880        </td><td>Abbott      </td><td> 5          </td><td>201478      </td><td>2.481661e-05</td></tr>
+    <tr><td>1880        </td><td>Abe         </td><td>50          </td><td>201478      </td><td>2.481661e-04</td></tr>
+    <tr><td>1880        </td><td>Abner       </td><td>27          </td><td>201478      </td><td>1.340097e-04</td></tr>
+    <tr><td>1880        </td><td>Adelbert    </td><td>28          </td><td>201478      </td><td>1.389730e-04</td></tr>
+    <tr><td>1880        </td><td>Adella      </td><td>26          </td><td>201478      </td><td>1.290463e-04</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>2015        </td><td>Zyrah       </td><td>14          </td><td>3648781     </td><td>3.836898e-06</td></tr>
+    <tr><td>2015        </td><td>Zyran       </td><td> 6          </td><td>3648781     </td><td>1.644385e-06</td></tr>
+    <tr><td>2015        </td><td>Zyree       </td><td> 8          </td><td>3648781     </td><td>2.192513e-06</td></tr>
+    <tr><td>2015        </td><td>Zyren       </td><td> 9          </td><td>3648781     </td><td>2.466577e-06</td></tr>
+    <tr><td>2015        </td><td>Zyron       </td><td>15          </td><td>3648781     </td><td>4.110962e-06</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="Window-functions"><a href="#Window-functions" class="headerlink" title="Window functions"></a>Window functions</h3><p>find changes in popularity of a name in consecutive years</p>
+<pre class="line-numbers language-R"><code class="language-R">babynames_fraction <- babynames %>%
+    group_by(year) %>%
+    mutate(year_total = sum(number)) %>%
+    ungroup %>%
+    mutate(fraction = number / year_total)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-R"><code class="language-R">babynames_fraction %>%
+    filter(name == "Mattew") %>%
+    arrange(year)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th><th scope="col">fraction</th></tr></thead>
+<tbody>
+    <tr><td>1925        </td><td>Mattew      </td><td> 5          </td><td>2330750     </td><td>2.145232e-06</td></tr>
+    <tr><td>1960        </td><td>Mattew      </td><td> 9          </td><td>4152075     </td><td>2.167591e-06</td></tr>
+    <tr><td>1965        </td><td>Mattew      </td><td> 6          </td><td>3624610     </td><td>1.655351e-06</td></tr>
+    <tr><td>1970        </td><td>Mattew      </td><td>10          </td><td>3604252     </td><td>2.774501e-06</td></tr>
+    <tr><td>1975        </td><td>Mattew      </td><td>21          </td><td>3014943     </td><td>6.965306e-06</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>1995        </td><td>Mattew      </td><td>15          </td><td>3652750     </td><td>4.106495e-06</td></tr>
+    <tr><td>2000        </td><td>Mattew      </td><td>12          </td><td>3767293     </td><td>3.185311e-06</td></tr>
+    <tr><td>2005        </td><td>Mattew      </td><td>14          </td><td>3828460     </td><td>3.656823e-06</td></tr>
+    <tr><td>2010        </td><td>Mattew      </td><td> 6          </td><td>3672066     </td><td>1.633958e-06</td></tr>
+    <tr><td>2015        </td><td>Mattew      </td><td>17          </td><td>3648781     </td><td>4.659090e-06</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">babynames_fraction %>%
+    filter(name == "Mattew") %>%
+    arrange(year) %>%
+    mutate(difference = fraction - lag(fraction))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th><th scope="col">fraction</th><th scope="col">difference</th></tr></thead>
+<tbody>
+    <tr><td>1925         </td><td>Mattew       </td><td> 5           </td><td>2330750      </td><td>2.145232e-06 </td><td>           NA</td></tr>
+    <tr><td>1960         </td><td>Mattew       </td><td> 9           </td><td>4152075      </td><td>2.167591e-06 </td><td> 2.235868e-08</td></tr>
+    <tr><td>1965         </td><td>Mattew       </td><td> 6           </td><td>3624610      </td><td>1.655351e-06 </td><td>-5.122404e-07</td></tr>
+    <tr><td>1970         </td><td>Mattew       </td><td>10           </td><td>3604252      </td><td>2.774501e-06 </td><td> 1.119150e-06</td></tr>
+    <tr><td>1975         </td><td>Mattew       </td><td>21           </td><td>3014943      </td><td>6.965306e-06 </td><td> 4.190805e-06</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>1995         </td><td>Mattew       </td><td>15           </td><td>3652750      </td><td>4.106495e-06 </td><td>-3.504289e-06</td></tr>
+    <tr><td>2000         </td><td>Mattew       </td><td>12           </td><td>3767293      </td><td>3.185311e-06 </td><td>-9.211841e-07</td></tr>
+    <tr><td>2005         </td><td>Mattew       </td><td>14           </td><td>3828460      </td><td>3.656823e-06 </td><td> 4.715118e-07</td></tr>
+    <tr><td>2010         </td><td>Mattew       </td><td> 6           </td><td>3672066      </td><td>1.633958e-06 </td><td>-2.022865e-06</td></tr>
+    <tr><td>2015         </td><td>Mattew       </td><td>17           </td><td>3648781      </td><td>4.659090e-06 </td><td> 3.025133e-06</td></tr>
+</tbody>
+</table>
+
+
+
+
+<pre class="line-numbers language-R"><code class="language-R">babynames_fraction %>%
+    filter(name == "Mattew") %>%
+    arrange(year) %>%
+    mutate(difference = fraction - lag(fraction)) %>%
+    arrange(desc(difference))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th><th scope="col">fraction</th><th scope="col">difference</th></tr></thead>
+<tbody>
+    <tr><td>1985        </td><td>Mattew      </td><td>46          </td><td>3563364     </td><td>1.290915e-05</td><td>5.639842e-06</td></tr>
+    <tr><td>1975        </td><td>Mattew      </td><td>21          </td><td>3014943     </td><td>6.965306e-06</td><td>4.190805e-06</td></tr>
+    <tr><td>2015        </td><td>Mattew      </td><td>17          </td><td>3648781     </td><td>4.659090e-06</td><td>3.025133e-06</td></tr>
+    <tr><td>1970        </td><td>Mattew      </td><td>10          </td><td>3604252     </td><td>2.774501e-06</td><td>1.119150e-06</td></tr>
+    <tr><td>2005        </td><td>Mattew      </td><td>14          </td><td>3828460     </td><td>3.656823e-06</td><td>4.715118e-07</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>2000         </td><td>Mattew       </td><td>12           </td><td>3767293      </td><td>3.185311e-06 </td><td>-9.211841e-07</td></tr>
+    <tr><td>2010         </td><td>Mattew       </td><td> 6           </td><td>3672066      </td><td>1.633958e-06 </td><td>-2.022865e-06</td></tr>
+    <tr><td>1995         </td><td>Mattew       </td><td>15           </td><td>3652750      </td><td>4.106495e-06 </td><td>-3.504289e-06</td></tr>
+    <tr><td>1990         </td><td>Mattew       </td><td>30           </td><td>3941775      </td><td>7.610784e-06 </td><td>-5.298365e-06</td></tr>
+    <tr><td>1925         </td><td>Mattew       </td><td> 5           </td><td>2330750      </td><td>2.145232e-06 </td><td>           NA</td></tr>
+</tbody>
+</table>
+
+
+
+<h3 id="changes-within-every-name"><a href="#changes-within-every-name" class="headerlink" title="changes within every name"></a>changes within every name</h3><pre class="line-numbers language-R"><code class="language-R">babynames_fraction %>%
+    arrange(name, year) %>%
+    mutate(difference = fraction - lag(fraction)) %>%
+    group_by(name) %>%
+    arrange(desc(difference))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead><tr><th scope="col">year</th><th scope="col">name</th><th scope="col">number</th><th scope="col">year_total</th><th scope="col">fraction</th><th scope="col">difference</th></tr></thead>
+<tbody>
+    <tr><td>1880      </td><td>John      </td><td>9701      </td><td>201478    </td><td>0.04814918</td><td>0.04814721</td></tr>
+    <tr><td>1880      </td><td>William   </td><td>9562      </td><td>201478    </td><td>0.04745928</td><td>0.04745479</td></tr>
+    <tr><td>1880      </td><td>Mary      </td><td>7092      </td><td>201478    </td><td>0.03519987</td><td>0.03519549</td></tr>
+    <tr><td>1880      </td><td>James     </td><td>5949      </td><td>201478    </td><td>0.02952680</td><td>0.02952049</td></tr>
+    <tr><td>1880      </td><td>Charles   </td><td>5359      </td><td>201478    </td><td>0.02659844</td><td>0.02655842</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>1955        </td><td>Linda       </td><td>51395       </td><td>4012691     </td><td>1.280811e-02</td><td>-0.01019257 </td></tr>
+    <tr><td>1885        </td><td>John        </td><td> 8801       </td><td> 240822     </td><td>3.654566e-02</td><td>-0.01160351 </td></tr>
+    <tr><td>1940        </td><td>Shirley     </td><td>18092       </td><td>2301630     </td><td>7.860516e-03</td><td>-0.01262800 </td></tr>
+    <tr><td>1885        </td><td>William     </td><td> 8077       </td><td> 240822     </td><td>3.353929e-02</td><td>-0.01391998 </td></tr>
+    <tr><td>2010        </td><td>Aaban       </td><td>    9       </td><td>3672066     </td><td>2.450936e-06</td><td>         NA </td></tr>
+</tbody>
+</table>
+
+
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>Reprint policy</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《Introduction to data manipulation》
+                </span> by
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/10/data-manipulation-intro/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                Yuandong Qi
+            </a> is licensed under a
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                Creative Commons Attribution 4.0 International License
+            </a> 
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3f4488743f6373c542f5',
+        clientSecret: 'b0368078c4c52c2734696a9c8ffe8d05a56932a3',
+        repo: 'yuandongqi.github.io',
+        owner: 'yuandongqi',
+        admin: "yuandongqi",
+        id: '2020/05/10/data-manipulation-intro/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'en',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2020/05/10/data-manipulation-intro/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Introduction to data manipulation">
+                        
+                        <span class="card-title">Introduction to data manipulation</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This is an introduction course to the programming language R, focused on a powerful tool known as the **dplyr**. We'll learn to manipulate data by filtering, sorting, and summarizing a real dataset of historical country data, county data and baby name data in order to answer exploratory questions.
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Courses/" class="post-category" target="_blank">
+                                    Courses
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/data-science/" target="_blank">
+                        <span class="chip bg-color">data science</span>
+                    </a>
+                    
+                    <a href="/tags/concepts/" target="_blank">
+                        <span class="chip bg-color">concepts</span>
+                    </a>
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/data-manipulation/" target="_blank">
+                        <span class="chip bg-color">data manipulation</span>
+                    </a>
+                    
+                    <a href="/tags/dplyr/" target="_blank">
+                        <span class="chip bg-color">dplyr</span>
+                    </a>
+                    
+                    <a href="/tags/tidyverse/" target="_blank">
+                        <span class="chip bg-color">tidyverse</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/06/2-r-intermed-cn/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Intermediate R">
+                        
+                        <span class="card-title">Intermediate R</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This course brings up your R skills to the next level
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Courses/" class="post-category" target="_blank">
+                                    Courses
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/data-science/" target="_blank">
+                        <span class="chip bg-color">data science</span>
+                    </a>
+                    
+                    <a href="/tags/concepts/" target="_blank">
+                        <span class="chip bg-color">concepts</span>
+                    </a>
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/advanced/" target="_blank">
+                        <span class="chip bg-color">advanced</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; Yuandong Qi.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Site word counts:&nbsp;
+            <span class="white-color">16.1k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/yuandongqi" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:qiyuandong@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 04, 26, 00, 00, 00); //est
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "This site has been operating for " + diffYears + " Years " + diffDays + " Days " + diffHours + " Hours " + diffMinutes + " Minutes " + diffSeconds + " Seconds";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>
