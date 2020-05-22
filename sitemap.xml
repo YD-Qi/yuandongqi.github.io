@@ -2,51 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yuandongqi.github.io/2020/05/11/testing/</loc>
+    <loc>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</loc>
     
-    <lastmod>2020-05-11T13:49:08.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/</loc>
-    
-    <lastmod>2020-05-11T00:10:19.401Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/collection/</loc>
-    
-    <lastmod>2020-05-08T20:55:00.122Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</loc>
-    
-    <lastmod>2020-05-06T14:34:30.047Z</lastmod>
+    <lastmod>2020-05-22T02:14:16.214Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</loc>
     
-    <lastmod>2020-04-29T01:03:00.696Z</lastmod>
+    <lastmod>2020-05-22T02:14:16.210Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</loc>
+    <loc>https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/</loc>
     
-    <lastmod>2020-04-28T21:10:00.206Z</lastmod>
+    <lastmod>2020-05-22T02:14:16.205Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://yuandongqi.github.io/2020/04/27/1-py-intro/</loc>
     
-    <lastmod>2020-04-28T17:58:15.493Z</lastmod>
+    <lastmod>2020-05-22T02:14:16.199Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/2020/04/27/collection/</loc>
+    
+    <lastmod>2020-05-22T02:14:16.195Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</loc>
+    
+    <lastmod>2020-05-22T02:14:16.191Z</lastmod>
     
   </url>
   
@@ -103,13 +96,6 @@
     <loc>https://yuandongqi.github.io/tags/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2018/11/19/tidyverse-4/</loc>
-    
-    <lastmod>2018-11-19T22:01:36.000Z</lastmod>
     
   </url>
   
