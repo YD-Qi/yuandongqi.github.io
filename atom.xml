@@ -210,6 +210,36 @@
   </entry>
   
   <entry>
+    <title>How to use Hexo and deploy to GitHub Pages</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-04-27T12:46:28.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
+        
+      
+    
+    </summary>
+    
+      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
+    
+    
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+    
+      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
+    
+      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Clustering Heart Disease Patient Data with R</title>
     <link href="https://yuandongqi.github.io/2020/04/27/pro-heart-disease/"/>
     <id>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</id>
@@ -240,36 +270,6 @@
       <category term="unsupervised learning" scheme="https://yuandongqi.github.io/tags/unsupervised-learning/"/>
     
       <category term="clustering" scheme="https://yuandongqi.github.io/tags/clustering/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to use Hexo and deploy to GitHub Pages</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
-    <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T12:46:28.067Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
-        
-      
-    
-    </summary>
-    
-      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
-    
-    
-      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
-    
-      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
-    
-      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
     
   </entry>
   
