@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yuandongqi.github.io/2020/04/27/1-py-intro/</loc>
+    <lastmod>2020-05-22</lastmod>
+  </url>  <url>
+    <loc>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</loc>
+    <lastmod>2020-05-22</lastmod>
+  </url>  <url>
     <loc>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</loc>
     <lastmod>2020-05-22</lastmod>
   </url>  <url>
@@ -10,13 +16,7 @@
     <loc>https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/</loc>
     <lastmod>2020-05-22</lastmod>
   </url>  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/1-py-intro/</loc>
-    <lastmod>2020-05-22</lastmod>
-  </url>  <url>
     <loc>https://yuandongqi.github.io/2020/04/27/collection/</loc>
-    <lastmod>2020-05-22</lastmod>
-  </url>  <url>
-    <loc>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</loc>
     <lastmod>2020-05-22</lastmod>
   </url>  <url>
     <loc>https://yuandongqi.github.io/2020/04/27/customize-pages/</loc>
