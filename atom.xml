@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Data Science Portfolio</title>
+  <title>Yuandong&#39;s Blog</title>
   
-  <subtitle>Yuandong Qi</subtitle>
+  <subtitle>Data Science Portfolio</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
@@ -17,7 +17,7 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Introduction to data manipulation</title>
+    <title>Introduction to Data Manipulation</title>
     <link href="https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/"/>
     <id>https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/</id>
     <published>2020-05-10T05:00:00.000Z</published>
@@ -85,7 +85,7 @@
   </entry>
   
   <entry>
-    <title>Introduction to R from data science perspective</title>
+    <title>Introduction to R From Data Science Perspective</title>
     <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
     <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
     <published>2020-04-28T05:00:00.000Z</published>
@@ -117,7 +117,7 @@
   </entry>
   
   <entry>
-    <title>Resources for reference</title>
+    <title>Resources for Reference</title>
     <link href="https://yuandongqi.github.io/2020/04/27/collection/"/>
     <id>https://yuandongqi.github.io/2020/04/27/collection/</id>
     <published>2020-04-27T15:05:12.000Z</published>
@@ -148,7 +148,7 @@
   </entry>
   
   <entry>
-    <title>customize-pages</title>
+    <title>Customize-Pages</title>
     <link href="https://yuandongqi.github.io/2020/04/27/customize-pages/"/>
     <id>https://yuandongqi.github.io/2020/04/27/customize-pages/</id>
     <published>2020-04-27T14:22:17.000Z</published>
@@ -178,7 +178,7 @@
   </entry>
   
   <entry>
-    <title>Introduction to Python from data science perspective</title>
+    <title>Introduction to Python From Data Science Perspective</title>
     <link href="https://yuandongqi.github.io/2020/04/27/1-py-intro/"/>
     <id>https://yuandongqi.github.io/2020/04/27/1-py-intro/</id>
     <published>2020-04-27T05:00:00.000Z</published>
@@ -210,7 +210,7 @@
   </entry>
   
   <entry>
-    <title>How to use Hexo and deploy to GitHub Pages</title>
+    <title>How to Use Hexo and Deploy to GitHub Pages</title>
     <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
     <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
     <published>2020-04-27T05:00:00.000Z</published>
@@ -240,7 +240,7 @@
   </entry>
   
   <entry>
-    <title>Clustering Heart Disease Patient Data with R</title>
+    <title>Clustering Heart Disease Patient Data With R</title>
     <link href="https://yuandongqi.github.io/2020/04/27/pro-heart-disease/"/>
     <id>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</id>
     <published>2020-04-27T05:00:00.000Z</published>
