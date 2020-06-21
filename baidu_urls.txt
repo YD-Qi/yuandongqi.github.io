@@ -1,4 +1,3 @@
-https://yuandongqi.github.io/2020/06/21/meng-de-si-jiu-yan-zhong-de-gu-dai-zhong-guo/
 https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/
 https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/
 https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/
