@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="ZH-cn">
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
@@ -217,7 +217,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -529,7 +529,9 @@ Registered S3 methods overwritten by &#39;ggplot2&#39;:
 </li>
 </ul>
 <h2 id="查看路径和设置路径"><a href="#查看路径和设置路径" class="headerlink" title="查看路径和设置路径"></a>查看路径和设置路径</h2><p>路径（工作路径）是我们读取数据和存贮结果的地方。</p>
-<p>在自己的RStuido的 concole 输入：<br><code>getwd()</code> 查看自己的当前路径。<br><code>setwd(yourpath)</code> 设置想要的路径。</p>
+<p>在自己的RStuido的 concole 输入：
+<code>getwd()</code> 查看自己的当前路径。
+<code>setwd(yourpath)</code> 设置想要的路径。</p>
 <p>或者使用RStudio右下方,Files这个tab里的齿轮来查看和更改。</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
 <li><p>数值型 numerics (1, 2.5)</p>
@@ -1077,7 +1079,8 @@ length(mtcars$mpg)<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <li><p><code>plot()</code>是R中为对象作图的一个泛型函数(它的输出将根据所绘制对象类型的不同而变化)。 </p>
 </li>
 </ul>
-<p><code>plot(x, y)</code>,<br>将x置于横轴，将y置于纵轴，绘制点集(x, y)，散点图。使用help(plot)可以查看其他选项。</p>
+<p><code>plot(x, y)</code>,
+将x置于横轴，将y置于纵轴，绘制点集(x, y)，散点图。使用help(plot)可以查看其他选项。</p>
 <p>下面的代码打开一个图形窗口并生成了一幅散点图，横轴表 示车身重量，纵轴为每加仑汽油行驶的英里数。</p>
 <pre class="line-numbers language-R"><code class="language-R">plot(mtcars$wt, mtcars$mpg,
      xlab="Miles Per Gallon",
@@ -1103,7 +1106,8 @@ title("Regression of MPG on Weight")
 }
 )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="1-r-intro-cn_files/1-r-intro-cn_56_0.png" alt="png"></p>
-<p>全局参数设定，多图同列, 例如设置2列2行，<br>四个直方图：</p>
+<p>全局参数设定，多图同列, 例如设置2列2行，
+四个直方图：</p>
 <pre class="line-numbers language-R"><code class="language-R">with(mtcars,{
   par(mfrow=c(2,2))
   hist(wt)
@@ -1142,9 +1146,12 @@ dev.off()<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 </ul>
 <h2 id="读取数据"><a href="#读取数据" class="headerlink" title="读取数据"></a>读取数据</h2><p><img src="https://www.dropbox.com/s/gn5ffuougtqsujb/xl_r.png?dl=1" alt>{width=250px}</p>
 <p>读取数据是数据分析的第一步，应该 so easy!</p>
-<p>然而现实并非如此，因为真实的世界里，数据的格式百花齐放：<br><img src="https://www.dropbox.com/s/mdod5vejgjnkodi/data_format.png?dl=1" alt>{width=500px}</p>
+<p>然而现实并非如此，因为真实的世界里，数据的格式百花齐放：
+<img src="https://www.dropbox.com/s/mdod5vejgjnkodi/data_format.png?dl=1" alt>{width=500px}</p>
 <pre class="line-numbers language-R"><code class="language-R">ad<-read.csv("https://www.dropbox.com/s/m6jh5kspianm215/advertising.csv?dl=1")<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>许多数据以flat files形式出现: simple tabular text files.<br>我们首先学习 how to read CSV and text files in R。<br>需要用到package <code>utils</code>里面的<code>read.csv()</code>函数，是R自带的。</p>
+<p>许多数据以flat files形式出现: simple tabular text files.
+我们首先学习 how to read CSV and text files in R。
+需要用到package <code>utils</code>里面的<code>read.csv()</code>函数，是R自带的。</p>
 <p>我们来使用<code>swimming_pools.csv</code>做练习。it contains data on swimming pools in Brisbane, Australia (Source: data.gov.au).</p>
 <p>可以使用我提供的dropbox链接下载数据到自己的本地硬盘，然后将其路径输入到<code>read.csv()</code>，或者直接使用dropbox链接读取。</p>
 <p><code>read.csv()</code> 默认将<code>string</code> 读成<code>factor</code>，可以通过设定选项<code>stringsAsFactors = FALSE</code>来修改。</p>
@@ -1189,7 +1196,8 @@ summary(hotdogs)<span aria-hidden="true" class="line-numbers-rows"><span></span>
  Poultry:17   Median :144.0   Median :405.0  
               Mean   :144.7   Mean   :423.5  
               3rd Qu.:172.0   3rd Qu.:506.0  
-              Max.   :195.0   Max.   :645.0  </code></pre><p>使用<code>read.table()</code>来通吃各种<code>非正常</code>数据，需要具体设置各种参数。<br>具体的我们来看个例子，依旧用<code>hotdogs</code>数据：</p>
+              Max.   :195.0   Max.   :645.0  </code></pre><p>使用<code>read.table()</code>来通吃各种<code>非正常</code>数据，需要具体设置各种参数。
+具体的我们来看个例子，依旧用<code>hotdogs</code>数据：</p>
 <pre class="line-numbers language-R"><code class="language-R"># Path to the hotdogs.txt file: path
 path <- file.path("https://www.dropbox.com/s/0hbraqcpl4dw8w8/hotdogs.txt?dl=1")
 
@@ -1239,7 +1247,8 @@ Han_Meimei<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 
 
 
-<p>单独设置每一个变量的数据类型。<br>如果我有好几个<code>string</code>类型的变量在我的数据里，我想要有的是<code>string</code>，有的是<code>logical</code>，还有的是<code>factor</code>，怎么破？</p>
+<p>单独设置每一个变量的数据类型。
+如果我有好几个<code>string</code>类型的变量在我的数据里，我想要有的是<code>string</code>，有的是<code>logical</code>，还有的是<code>factor</code>，怎么破？</p>
 <pre class="line-numbers language-R"><code class="language-R">hotdogs <- read.delim("https://www.dropbox.com/s/0hbraqcpl4dw8w8/hotdogs.txt?dl=1", header = FALSE, col.names = c("type", "calories", "sodium"))
 
 # Display structure of hotdogs
@@ -1261,7 +1270,10 @@ str(hotdogs2)<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <li>make your code more readable, avoid coding errors</li>
 <li>automate repetitive tasks</li>
 </ol>
-<p>函数的模版一般长这个样子：<br>my_fun &lt;- function(arg1, arg2) {<br>  # body<br>}</p>
+<p>函数的模版一般长这个样子：
+my_fun &lt;- function(arg1, arg2) {
+  # body
+}</p>
 <ol>
 <li>my_fun is the variable that you want to assign your function to</li>
 <li>arg1 and arg2 are arguments to the function. The template has two arguments, but you can specify any number of arguments, each separated by a comma. </li>
@@ -1278,7 +1290,8 @@ size(5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <p>78.5</p>
 <p>注意：</p>
 <ol>
-<li>match arguments by positions, by names?<br>by name is always perferred, especially when you have more than 2 arguments, or the arguments have default values. </li>
+<li>match arguments by positions, by names?
+by name is always perferred, especially when you have more than 2 arguments, or the arguments have default values. </li>
 <li>when you call a function, you should place a space around = in function calls, and always put a space after a comma, not before (just like in regular English). Using whitespace makes it easier to skim the function for the important components.</li>
 </ol>
 <p>一步一步，我们来搭建另一个函数<code>rescale01</code>可以把一个数据集的每一列数据都变成0-1之间：</p>
@@ -1353,7 +1366,8 @@ rescale01(x)<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <p>sapply()</p>
 <ol>
 <li>apply function over list or vector</li>
-<li>try to simplify list to array<br>Note: Arrays are the R data objects which can store data in more than two dimensions.</li>
+<li>try to simplify list to array 
+Note: Arrays are the R data objects which can store data in more than two dimensions.</li>
 </ol>
 <p>vapply()</p>
 <ol>
@@ -1361,7 +1375,8 @@ rescale01(x)<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <li>explicitly specify output format</li>
 <li><code>vapply()</code> is safer than <code>sapply()</code></li>
 </ol>
-<p>具体怎么操作？<br>我们举个例子，简单直接：</p>
+<p>具体怎么操作？
+我们举个例子，简单直接：</p>
 <ol>
 <li>先写一个<code>select_el()</code>函数，让它提取向量里指定位置的元素</li>
 <li>我们使用这个函数, 结合<code>lapply</code>来分别提取数据里几个数学家的名字和生日</li>
@@ -1611,17 +1626,21 @@ vapply(temp, basics, numeric(3))<span aria-hidden="true" class="line-numbers-row
 
 
 <pre class="line-numbers language-R"><code class="language-R">sapply(temp, basics)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<div>
 <table>
 <tbody>
-    <tr><th scope="row">min</th><td>-1.0</td><td> 5  </td><td>-3.0</td><td>-2.0</td><td>2.0 </td><td>-3.0</td><td>1.0 </td></tr>
-    <tr><th scope="row">mean</th><td> 4.8</td><td> 9  </td><td> 2.2</td><td> 2.4</td><td>5.4 </td><td> 4.6</td><td>4.6 </td></tr>
-    <tr><th scope="row">max</th><td> 9.0</td><td>13  </td><td> 8.0</td><td> 7.0</td><td>9.0 </td><td> 9.0</td><td>9.0 </td></tr>
+	<tr><th scope="row">min</th><td>-1.0</td><td> 5  </td><td>-3.0</td><td>-2.0</td><td>2.0 </td><td>-3.0</td><td>1.0 </td></tr>
+	<tr><th scope="row">mean</th><td> 4.8</td><td> 9  </td><td> 2.2</td><td> 2.4</td><td>5.4 </td><td> 4.6</td><td>4.6 </td></tr>
+	<tr><th scope="row">max</th><td> 9.0</td><td>13  </td><td> 8.0</td><td> 7.0</td><td>9.0 </td><td> 9.0</td><td>9.0 </td></tr>
 </tbody>
 </table>
+</div>
 
 
 
-<p>完结撒花！<br><img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>
+<p>完结撒花！
+<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>
 
             </div>
             <hr />
@@ -1990,7 +2009,7 @@ vapply(temp, basics, numeric(3))<span aria-hidden="true" class="line-numbers-row
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Intermediate R">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Intermediate R">
                         
                         <span class="card-title">Intermediate R</span>
                     </div>
@@ -2051,7 +2070,7 @@ vapply(temp, basics, numeric(3))<span aria-hidden="true" class="line-numbers-row
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Resources for Reference">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Resources for Reference">
                         
                         <span class="card-title">Resources for Reference</span>
                     </div>
@@ -2227,7 +2246,7 @@ vapply(temp, basics, numeric(3))<span aria-hidden="true" class="line-numbers-row
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;Site word counts:&nbsp;
-            <span class="white-color">18.1k</span>
+            <span class="white-color">19.1k</span>
             
 
             <br>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-06-25T12:43:33.602Z</updated>
+  <updated>2020-07-08T19:16:47.751Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://yuandongqi.github.io/2020/07/08/explore-esg/"/>
+    <id>https://yuandongqi.github.io/2020/07/08/explore-esg/</id>
+    <published>2020-07-08T19:15:27.540Z</published>
+    <updated>2020-07-08T19:16:47.751Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter</title>
+    <link href="https://yuandongqi.github.io/2020/07/07/jupyter/"/>
+    <id>https://yuandongqi.github.io/2020/07/07/jupyter/</id>
+    <published>2020-07-08T01:00:12.000Z</published>
+    <updated>2020-07-08T19:21:42.739Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;testing new method!&lt;/p&gt;
+&lt;iframe src=&quot;http://&lt;yuandongqi.github.io&gt;/&lt;explore-ESG.html&gt;&quot; width=&quot;700&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hamilton</title>
@@ -29,7 +83,10 @@
       
         
         
-          &lt;p&gt;AARON BURR:&lt;br&gt;How does a bastard, orphan, son of a whore and a&lt;br&gt;Scotsman, dropped in the middle of a forgotten&lt;br&gt;Spot in the
+          &lt;p&gt;AARON BURR:
+How does a bastard, orphan, son of a whore and a
+Scotsman, dropped in the middle of a forgotten
+Spot in the Caribbean by
         
       
     
@@ -55,7 +112,8 @@
       
         
         
-          &lt;p&gt;在中文世界， “白左”这个词近几年很流行。政治学家张辰辰用英文是这样定义的：Members of the “whithe left”&lt;br&gt;, in the view of the Chinese, are “biased, ignorant of social
+          &lt;p&gt;在中文世界， “白左”这个词近几年很流行。政治学家张辰辰用英文是这样定义的：Members of the “whithe left”
+, in the view of the Chinese, are “biased, ignorant of social reality
         
       
     
@@ -85,7 +143,9 @@
       
         
         
-          &lt;p&gt;作者: 安立志&lt;br&gt;来源: 检察日报 2016年&lt;br&gt;链接: &lt;a href=&quot;http://newspaper.jcrb.com/2016/20161209/20161209_006/20161209_006_5.htm&quot; target=&quot;_blank&quot;
+          &lt;p&gt;作者: 安立志
+来源: 检察日报 2016年
+链接: &lt;a href=&quot;http://newspaper.jcrb.com/2016/20161209/20161209_006/20161209_006_5.htm&quot; target=&quot;_blank&quot;
         
       
     
@@ -179,7 +239,7 @@
     <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
     <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
     <published>2020-04-28T05:00:00.000Z</published>
-    <updated>2020-05-22T02:14:16.214Z</updated>
+    <updated>2020-07-08T19:01:32.055Z</updated>
     
     <summary type="html">
     
