@@ -209,11 +209,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -245,11 +245,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -260,7 +260,7 @@ Spot in the Caribbean by
     <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
     <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
     <published>2020-04-28T05:00:00.000Z</published>
-    <updated>2020-07-09T03:37:08.104Z</updated>
+    <updated>2020-07-09T03:52:05.175Z</updated>
     
     <summary type="html">
     
@@ -268,9 +268,8 @@ Spot in the Caribbean by
       
         
         
-          &lt;iframe src=&quot;http://yuandongqi.github.io/explore-ESG.html&quot; width=&quot;700&quot; height=&quot;800&quot;&gt;&lt;/iframe&gt;
-
-&lt;h1 id=&quot;R-Crash-Course-Introduction&quot;&gt;&lt;a
+          &lt;iframe src=&quot;https://yuandongqi.github.io/explore-ESG.html&quot; width=&quot;700&quot; height=&quot;800&quot;&gt;&lt;/iframe&gt;
+&lt;iframe
         
       
     
@@ -279,13 +278,13 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -372,11 +371,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
     
@@ -434,9 +433,9 @@ Spot in the Caribbean by
       <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
     
     
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
-    
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
