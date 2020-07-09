@@ -18,8 +18,8 @@
   
   <entry>
     <title></title>
-    <link href="https://yuandongqi.github.io/2020/07/08/interview-ml-python/"/>
-    <id>https://yuandongqi.github.io/2020/07/08/interview-ml-python/</id>
+    <link href="https://yuandongqi.github.io/2020/07/08/interview-ml-py/"/>
+    <id>https://yuandongqi.github.io/2020/07/08/interview-ml-py/</id>
     <published>2020-07-08T19:31:30.131Z</published>
     <updated>2020-07-08T19:34:18.932Z</updated>
     
@@ -36,37 +36,6 @@
 &lt;head&gt;&lt;meta name=&quot;generator&quot; content=&quot;Hexo 3.9.0&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
 
 &lt;title&gt;Interview_ML
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://yuandongqi.github.io/2020/07/08/explore-esg/"/>
-    <id>https://yuandongqi.github.io/2020/07/08/explore-esg/</id>
-    <published>2020-07-08T19:15:27.540Z</published>
-    <updated>2020-07-08T19:16:47.751Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          
-&lt;!DOCTYPE html&gt;
-
-&lt;html&gt;
-
-&lt;head&gt;
-
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-&lt;meta http-equiv=&quot;X-UA-Compatible&quot;
         
       
     
@@ -269,7 +238,7 @@ Spot in the Caribbean by
     <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
     <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
     <published>2020-04-28T05:00:00.000Z</published>
-    <updated>2020-07-09T00:05:29.962Z</updated>
+    <updated>2020-07-09T03:37:08.104Z</updated>
     
     <summary type="html">
     
@@ -277,8 +246,7 @@ Spot in the Caribbean by
       
         
         
-          &lt;script src=&quot;http://code.jquery.com/jquery-2.0.0.js&quot;&gt;&lt;/script&gt;
-
+          &lt;iframe src=&quot;http://yuandongqi.github.io/explore-ESG.html&quot; width=&quot;700&quot; height=&quot;800&quot;&gt;&lt;/iframe&gt;
 
 &lt;h1 id=&quot;R-Crash-Course-Introduction&quot;&gt;&lt;a
         
