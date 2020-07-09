@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-07-08T19:16:47.751Z</updated>
+  <updated>2020-07-08T19:34:18.932Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://yuandongqi.github.io/2020/07/08/interview-ml-python/"/>
+    <id>https://yuandongqi.github.io/2020/07/08/interview-ml-python/</id>
+    <published>2020-07-08T19:31:30.131Z</published>
+    <updated>2020-07-08T19:34:18.932Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;meta name=&quot;generator&quot; content=&quot;Hexo 3.9.0&quot;&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
+
+&lt;title&gt;Interview_ML
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -52,7 +80,7 @@
     <link href="https://yuandongqi.github.io/2020/07/07/jupyter/"/>
     <id>https://yuandongqi.github.io/2020/07/07/jupyter/</id>
     <published>2020-07-08T01:00:12.000Z</published>
-    <updated>2020-07-08T19:21:42.739Z</updated>
+    <updated>2020-07-09T01:21:12.398Z</updated>
     
     <summary type="html">
     
@@ -61,7 +89,9 @@
         
         
           &lt;p&gt;testing new method!&lt;/p&gt;
-&lt;iframe src=&quot;http://&lt;yuandongqi.github.io&gt;/&lt;explore-ESG.html&gt;&quot; width=&quot;700&quot;
+&lt;p&gt;Some content before the snippet……&lt;/p&gt;
+&lt;script src=&quot;http://code.jquery.com/jquery-2.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Other
         
       
     
@@ -239,7 +269,7 @@ Spot in the Caribbean by
     <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
     <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
     <published>2020-04-28T05:00:00.000Z</published>
-    <updated>2020-07-08T19:01:32.055Z</updated>
+    <updated>2020-07-09T00:05:29.962Z</updated>
     
     <summary type="html">
     
@@ -247,7 +277,10 @@ Spot in the Caribbean by
       
         
         
-          &lt;h1 id=&quot;R-Crash-Course-Introduction&quot;&gt;&lt;a href=&quot;#R-Crash-Course-Introduction&quot; class=&quot;headerlink&quot; title=&quot;R Crash Course - Introduction&quot;&gt;&lt;/a&gt;R
+          &lt;script src=&quot;http://code.jquery.com/jquery-2.0.0.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;h1 id=&quot;R-Crash-Course-Introduction&quot;&gt;&lt;a
         
       
     
