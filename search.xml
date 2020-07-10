@@ -4,37 +4,6 @@
   
     
     <entry>
-      <title>Machine Learning Concepts for Interview With R</title>
-      <link href="/2020/07/09/interview-machine-learning/"/>
-      <url>/2020/07/09/interview-machine-learning/</url>
-      
-        <content type="html"><![CDATA[<p>After hours of searching, testing, trial and error, I find embedding html converted from jupyter notebookor rmarkdown with the <code>iframe</code> method is the most efficient method to integrate my data science projects or notes with hexo blog posts without worrying about ugly output tables, only three steps:</p><ol><li>Put the desired html into the source folder, <em>SOURCE FOLDER, NOT the _post folder under source</em></li><li>put this simple code at the top of your html content:</li></ol><pre class="line-numbers language-R"><code class="language-R">---layout: false---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol start="3"><li>put the following code in the target markdown (md) file, create a md file for your post first for sure.</li></ol><p><code>&lt;iframe src=&quot;https://&lt;your blog address&gt;/&lt;your html name&gt;.html&quot; width=&quot;8&quot; height=&quot;8&quot;&gt;&lt;/iframe&gt;</code></p><p>All right, below is one of my study notes for quantitative interview preparation that I researched online.Happy reading!</p><iframe src="https://yuandongqi.github.io/Interview_ML_R.html" width="800" height="10000"></iframe>]]></content>
-      
-      
-      <categories>
-          
-          <category> information collection </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> R </tag>
-            
-            <tag> interview </tag>
-            
-            <tag> machine learning </tag>
-            
-            <tag> quantitative </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Machine Learning Concepts for Interview With Python</title>
       <link href="/2020/07/09/interview-ml-py/"/>
       <url>/2020/07/09/interview-ml-py/</url>
@@ -58,6 +27,37 @@
             <tag> quantitative </tag>
             
             <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Machine Learning Concepts for Interview With R</title>
+      <link href="/2020/07/09/interview-machine-learning/"/>
+      <url>/2020/07/09/interview-machine-learning/</url>
+      
+        <content type="html"><![CDATA[<p>After hours of searching, testing, trial and error, I find embedding html converted from jupyter notebookor rmarkdown with the <code>iframe</code> method is the most efficient method to integrate my data science projects or notes with hexo blog posts without worrying about ugly output tables, only three steps:</p><ol><li>Put the desired html into the source folder, <em>SOURCE FOLDER, NOT the _post folder under source</em></li><li>put this simple code at the top of your html content:</li></ol><pre class="line-numbers language-R"><code class="language-R">---layout: false---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ol start="3"><li>put the following code in the target markdown (md) file, create a md file for your post first for sure.</li></ol><p><code>&lt;iframe src=&quot;https://&lt;your blog address&gt;/&lt;your html name&gt;.html&quot; width=&quot;8&quot; height=&quot;8&quot;&gt;&lt;/iframe&gt;</code></p><p>All right, below is one of my study notes for quantitative interview preparation that I researched online.Happy reading!</p><iframe src="https://yuandongqi.github.io/Interview_ML_R.html" width="800" height="10000"></iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> information collection </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+            <tag> interview </tag>
+            
+            <tag> machine learning </tag>
+            
+            <tag> quantitative </tag>
             
         </tags>
       
