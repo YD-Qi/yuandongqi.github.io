@@ -1,10 +1,9 @@
 
-
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8">
 
-<title>Interview_ML (Python)</title>
+<title>Interview_ML_R</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13080,19 +13079,230 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Data-Pre-processing">1. Data Pre-processing<a class="anchor-link" href="#1.-Data-Pre-processing">&#182;</a></h2><p>Handling missing values</p>
-<p>missing data, bias, misleading results, can not be ignored</p>
+<h2 id="Data-normalization-or-feature-scaling">Data normalization or feature scaling<a class="anchor-link" href="#Data-normalization-or-feature-scaling">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># check if a package exists</span>
+<span class="s">&quot;ggplot2&quot;</span> <span class="o">%in%</span> <span class="nf">search</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
 
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+FALSE
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1] 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="n">fifa_normalized</span> <span class="o">&lt;-</span> <span class="n">fifa_sample</span> <span class="o">%&gt;%</span> 
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">SP_MaxMin</span> <span class="o">=</span> <span class="p">(</span><span class="n">SP</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">SP</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">SP</span><span class="p">)</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">SP</span><span class="p">)),</span> 
+  <span class="n">RA_MaxMin</span> <span class="o">=</span> <span class="p">(</span><span class="n">RA</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">RA</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">RA</span><span class="p">)</span> <span class="o">-</span> <span class="nf">min</span><span class="p">(</span><span class="n">RA</span><span class="p">)),</span>
+  <span class="n">SP_ZScore</span> <span class="o">=</span> <span class="p">(</span><span class="n">SP</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">SP</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sd</span><span class="p">(</span><span class="n">SP</span><span class="p">),</span>
+  <span class="n">RA_ZScore</span> <span class="o">=</span> <span class="p">(</span><span class="n">RA</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">RA</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sd</span><span class="p">(</span><span class="n">RA</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Handling-missing-data">Handling missing data<a class="anchor-link" href="#Handling-missing-data">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">naniar</span><span class="p">)</span>
+<span class="c1"># Check for missing values using base R and naniar functions</span>
+<span class="nf">any</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">bands</span><span class="p">))</span>
+<span class="nf">any_na</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+<span class="n">bands</span> <span class="o">&lt;-</span> <span class="nf">replace_with_na_all</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="o">~</span><span class="n">.x</span> <span class="o">==</span> <span class="s">&#39;?&#39;</span><span class="p">)</span>
+<span class="c1"># Compute missingness summaries</span>
+<span class="nf">miss_var_summary</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Warning message:
+“package ‘naniar’ was built under R version 3.5.2”</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Visualize overall missingness</span>
+<span class="nf">vis_miss</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+
+<span class="c1"># Visualize overall missingness, clustered</span>
+<span class="nf">vis_miss</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">cluster</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Visualize missingness in each variable</span>
+<span class="nf">gg_miss_var</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span>
+
+<span class="c1"># Missingness in variables, faceted by Band_type</span>
+<span class="nf">gg_miss_var</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="n">facet</span> <span class="o">=</span> <span class="n">Band_type</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Impute with the mean</span>
+<span class="n">imp_mean</span> <span class="o">&lt;-</span> <span class="n">bands</span> <span class="o">%&gt;%</span>
+  <span class="nf">bind_shadow</span><span class="p">(</span><span class="n">only_miss</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">add_label_shadow</span><span class="p">()</span> <span class="o">%&gt;%</span> 
+  <span class="nf">impute_mean_all</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Impute with lm</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">simputation</span><span class="p">)</span>
+<span class="n">imp_lm</span> <span class="o">&lt;-</span> <span class="n">bands</span> <span class="o">%&gt;%</span>
+  <span class="nf">bind_shadow</span><span class="p">(</span><span class="n">only_miss</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">add_label_shadow</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">impute_lm</span><span class="p">(</span><span class="n">Blade_pressure</span> <span class="o">~</span> <span class="n">Ink_temperature</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">impute_lm</span><span class="p">(</span><span class="n">Roughness</span> <span class="o">~</span> <span class="n">Ink_temperature</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">impute_lm</span><span class="p">(</span><span class="n">Ink_pct</span> <span class="o">~</span> <span class="n">Ink_temperature</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Detect-outliers">Detect outliers<a class="anchor-link" href="#Detect-outliers">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Peek at the cars dataset</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">cars</span><span class="p">)</span>
+
+<span class="c1"># Boxplot of consume variable distribution</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">cars</span><span class="o">$</span><span class="n">consume</span><span class="p">)</span>
+
+<span class="c1"># Calculate quartiles: consume_quartiles</span>
+<span class="p">(</span><span class="n">consume_quartiles</span> <span class="o">&lt;-</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">cars</span><span class="o">$</span><span class="n">consume</span><span class="p">))</span>
+
+<span class="c1"># Calculate upper threshold: upper_th</span>
+<span class="n">upper_th</span> <span class="o">&lt;-</span> <span class="n">consume_quartiles</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">+</span> 
+   <span class="m">1.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">consume_quartiles</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">-</span> <span class="n">consume_quartiles</span><span class="p">[</span><span class="m">2</span><span class="p">])</span>
+
+<span class="c1"># Print the sorted vector of distinct potential outliers</span>
+<span class="nf">sort</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">cars</span><span class="o">$</span><span class="n">consume</span><span class="p">[</span><span class="n">cars</span><span class="o">$</span><span class="n">consume</span> <span class="o">&gt;</span> <span class="n">upper_th</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Supervised-learning">Supervised learning<a class="anchor-link" href="#Supervised-learning">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Handling-categorical-data">Handling categorical data<a class="anchor-link" href="#Handling-categorical-data">&#182;</a></h3><p>Encoding techniques</p>
+<h3 id="Regularization">Regularization<a class="anchor-link" href="#Regularization">&#182;</a></h3><ul>
+<li>A technique to discourage learning complex models,thus helping to avoid overtting.</li>
+<li>Often present in regression models and neural networks.</li>
+<li>Idea:to constrain/shrink the coefcient estimates towards zero.</li>
+</ul>
+<p>Three major types of regularization:</p>
 <ul>
-<li>label encoding</li>
-<li>one-hot encoding</li>
+<li>L1 regularization (lasso regression) : leastabsolute shrinkage and selection operator, penalizes large coefficients more severely.</li>
+<li>L2 regularization (ridge regression),$\lambda$ penalizes complex models. data needs to be standardized</li>
+<li>Elastic net (linearly combines lasso and ridge regression)</li>
 </ul>
 
 </div>
@@ -13103,16 +13313,76 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Ridge regression: mdlRidge</span>
+<span class="n">mdlRidge</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">PlayerValue</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fifa19_scaled</span><span class="p">,</span>
+                  <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;ridge&quot;</span><span class="p">,</span> <span class="n">tuneLength</span> <span class="o">=</span> <span class="m">8</span><span class="p">)</span>
+</pre></div>
 
-<span class="c1"># Create the encoder and print our encoded new_vals</span>
-<span class="n">encoder</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">LabelEncoder</span><span class="p">()</span>
-<span class="n">new_vals</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_vals</span><span class="p">)</span>
+    </div>
+</div>
+</div>
 
-<span class="c1"># One-hot encode Company</span>
-<span class="n">new_vals_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">laptops2</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_vals_</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Ridge regression coefficients</span>
+<span class="n">coefRidge</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlRidge</span><span class="o">$</span><span class="n">finalModel</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#39;coef&#39;</span><span class="p">,</span> 
+                     <span class="n">mode</span><span class="o">=</span><span class="s">&#39;norm&#39;</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span>
+<span class="n">coefs</span><span class="o">$</span><span class="n">RidgeAll</span> <span class="o">&lt;-</span> <span class="n">coefRidge</span><span class="p">[</span><span class="nf">nrow</span><span class="p">(</span><span class="n">coefRidge</span><span class="p">),]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Lasso regression: mdlLasso</span>
+<span class="n">mdlLasso</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">PlayerValue</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+                  <span class="n">data</span> <span class="o">=</span> <span class="n">fifa19_scaled</span><span class="p">,</span>
+                  <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;lasso&quot;</span><span class="p">,</span> <span class="n">tuneLength</span> <span class="o">=</span> <span class="m">8</span><span class="p">)</span>
+
+<span class="c1"># Plot lasso object</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mdlLasso</span><span class="p">)</span>
+
+<span class="c1"># Get coefficients in every step: coefLasso</span>
+<span class="n">coefLasso</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlLasso</span><span class="o">$</span><span class="n">finalModel</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#39;coef&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;norm&#39;</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span>
+
+<span class="c1"># Get coefficients for top 5 and all variables</span>
+<span class="p">(</span><span class="n">coefs</span><span class="o">$</span><span class="n">LassoTop5</span> <span class="o">&lt;-</span> <span class="n">coefLasso</span><span class="p">[</span><span class="m">6</span><span class="p">,])</span>
+<span class="p">(</span><span class="n">coefs</span><span class="o">$</span><span class="n">LassoAll</span> <span class="o">&lt;-</span> <span class="n">coefLasso</span><span class="p">[</span><span class="nf">nrow</span><span class="p">(</span><span class="n">coefLasso</span><span class="p">),])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># ElasticNet regression: mdlElasticNet</span>
+<span class="n">mdlElasticNet</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">PlayerValue</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fifa19_scaled</span><span class="p">,</span>
+                       <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;enet&quot;</span><span class="p">,</span> <span class="n">tuneLength</span> <span class="o">=</span> <span class="m">8</span><span class="p">)</span>
+
+<span class="c1"># Plot elastic net object</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">mdlElasticNet</span><span class="p">)</span>
+
+<span class="c1"># Get elastic net coefficients: coefElasticNet</span>
+<span class="n">coefElasticNet</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlElasticNet</span><span class="o">$</span><span class="n">finalModel</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&#39;coef&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;norm&#39;</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span>
+
+<span class="c1"># Get coefficients for top 5 and all variables</span>
+<span class="p">(</span><span class="n">coefs</span><span class="o">$</span><span class="n">ElasticNetTop5</span> <span class="o">&lt;-</span> <span class="n">coefElasticNet</span><span class="p">[</span><span class="m">6</span><span class="p">,])</span>
+<span class="p">(</span><span class="n">coefs</span><span class="o">$</span><span class="n">ElasticNetAll</span> <span class="o">&lt;-</span> <span class="n">coefElasticNet</span><span class="p">[</span><span class="nf">nrow</span><span class="p">(</span><span class="n">coefElasticNet</span><span class="p">),])</span>
 </pre></div>
 
     </div>
@@ -13123,65 +13393,34 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Handling-null-values">Handling null values<a class="anchor-link" href="#Handling-null-values">&#182;</a></h3><ul>
-<li><p>identify rows/columns with null values</p>
+<h2 id="Bias-and-variance">Bias and variance<a class="anchor-link" href="#Bias-and-variance">&#182;</a></h2><ul>
+<li>Bias:high bias means underfiting from incorrect model assumption</li>
+<li><p>variance:high variance means overfitting</p>
 </li>
-<li><p>techniques to address this problem</p>
+<li><p>how to reduce bias:</p>
 <ul>
-<li>data.dropna(axis=0)</li>
-<li>data.fillna(0)</li>
-<li>impute with mean, median, most frequent or ml</li>
+<li>increase model size</li>
+<li>reduce regularization</li>
+<li>modify input features</li>
 </ul>
 </li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Identify and print the the rows with null values</span>
-<span class="n">nulls</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">nulls</span><span class="p">)</span>
-
-<span class="c1"># Impute constant value 0 and print the head</span>
-<span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-<span class="c1"># Impute median price and print the head</span>
-<span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">laptops</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-
-<span class="n">imp</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
-<span class="n">data_imp</span><span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">])</span>
-
-<span class="c1"># Drop each row with a null value and print the head</span>
-<span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Handling-outliers">Handling outliers<a class="anchor-link" href="#Handling-outliers">&#182;</a></h3><p>identify outliers</p>
+<li><p>how to reduce variance:</p>
 <ul>
-<li>boxplot</li>
-<li>3<em>z-socre, 3</em>IQR</li>
+<li>add more training data</li>
+<li>add regularization</li>
+<li>perform feature selection</li>
+<li>decrease model size</li>
 </ul>
-<p>Ways to deal with outliers</p>
-<ul>
-<li>log transformation</li>
-<li>z-score standardization</li>
+</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Multi-Layer-Perceptron-(MLP)-neural-network">Multi-Layer Perceptron (MLP) neural network<a class="anchor-link" href="#Multi-Layer-Perceptron-(MLP)-neural-network">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13190,23 +13429,55 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calculate the mean and std</span>
-<span class="n">mean</span><span class="p">,</span> <span class="n">std</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Fit MLP using nnet: mdlNNet</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">124</span><span class="p">)</span>
+<span class="n">mdlNNet</span> <span class="o">&lt;-</span> <span class="nf">nnet</span><span class="p">(</span><span class="n">Class</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pulsar_train</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span>
 
-<span class="c1"># Compute and print the upper and lower threshold</span>
-<span class="n">cut_off</span> <span class="o">=</span> <span class="n">std</span> <span class="o">*</span> <span class="mi">3</span>
-<span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="n">mean</span> <span class="o">-</span> <span class="n">cut_off</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">cut_off</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
+<span class="c1"># Calculate train error: train_error</span>
+<span class="n">pred_train</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlNNet</span><span class="p">,</span> <span class="n">pulsar_train</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;class&quot;</span><span class="p">)</span>
+<span class="n">train_cm</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">pred_train</span><span class="p">,</span> <span class="n">pulsar_train</span><span class="o">$</span><span class="n">Class</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_error</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="n">train_cm</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sum</span><span class="p">(</span><span class="n">train_cm</span><span class="p">))</span>
+</pre></div>
 
-<span class="c1"># Identify and print rows with outliers</span>
-<span class="n">outliers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="p">)</span> <span class="o">|</span> 
-                   <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span>
+    </div>
+</div>
+</div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Calculate test error: test_error</span>
+<span class="n">pred_test</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlNNet</span><span class="p">,</span> <span class="n">pulsar_test</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;class&quot;</span><span class="p">)</span>
+<span class="n">test_cm</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">pred_test</span><span class="p">,</span> <span class="n">pulsar_test</span><span class="o">$</span><span class="n">Class</span><span class="p">)</span>
+<span class="p">(</span><span class="n">test_error</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="n">test_cm</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sum</span><span class="p">(</span><span class="n">test_cm</span><span class="p">))</span>
+</pre></div>
 
-<span class="c1"># Drop the rows from the dataset</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper</span><span class="p">)</span> <span class="o">|</span> 
-                  <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;var1&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">lower</span><span class="p">)]</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Fit MLP using nnet: mdlNNet</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">124</span><span class="p">)</span>
+<span class="n">mdlNNet</span> <span class="o">&lt;-</span> <span class="nf">nnet</span><span class="p">(</span><span class="n">Class</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pulsar_train</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+
+<span class="c1"># Calculate train error: train_error</span>
+<span class="n">pred_train</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlNNet</span><span class="p">,</span> <span class="n">pulsar_train</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;class&quot;</span><span class="p">)</span>
+<span class="n">train_cm</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">pred_train</span><span class="p">,</span> <span class="n">pulsar_train</span><span class="o">$</span><span class="n">Class</span><span class="p">)</span>
+<span class="p">(</span><span class="n">train_error</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="n">train_cm</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sum</span><span class="p">(</span><span class="n">train_cm</span><span class="p">))</span>
+
+<span class="c1"># Calculate test error: test_error</span>
+<span class="n">pred_test</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlNNet</span><span class="p">,</span> <span class="n">pulsar_test</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;class&quot;</span><span class="p">)</span>
+<span class="n">test_cm</span> <span class="o">&lt;-</span> <span class="nf">table</span><span class="p">(</span><span class="n">pred_test</span><span class="p">,</span> <span class="n">pulsar_test</span><span class="o">$</span><span class="n">Class</span><span class="p">)</span>
+<span class="p">(</span><span class="n">test_error</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="n">test_cm</span><span class="p">))</span> <span class="o">/</span> <span class="nf">sum</span><span class="p">(</span><span class="n">test_cm</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13217,16 +13488,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="deal-with-unbalanced-data">deal with unbalanced data<a class="anchor-link" href="#deal-with-unbalanced-data">&#182;</a></h3><ul>
-<li><p>Stratify: Stratify the split according to the labels so that they are distributed in the training and test sets as they are in the original dataset.</p>
-</li>
-<li><p>Resampling</p>
-<ul>
-<li>create more observations from the minority class (oversampling)</li>
-<li>only include a subset sample from the majority class (undersampling)</li>
-<li>always split into train and test BEFORE oversampling. If you oversample before split, you allow the same observations to be present in both the train and test sets, not good.</li>
-</ul>
-</li>
+<h2 id="Building-ensemble-models">Building ensemble models<a class="anchor-link" href="#Building-ensemble-models">&#182;</a></h2><ul>
+<li>bagging</li>
+<li>bootstraping</li>
+<li>stacking</li>
 </ul>
 
 </div>
@@ -13237,8 +13502,103 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Split into training and test set</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Create the 5-fold cross validation training control object</span>
+<span class="n">control</span> <span class="o">&lt;-</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;cv&quot;</span><span class="p">,</span> 
+                        <span class="n">number</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> 
+                        <span class="n">savePredictions</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
+                        <span class="n">classProbs</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Create the vector of base learners: baseLearners</span>
+<span class="n">baseLearners</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;rpart&#39;</span><span class="p">,</span> <span class="s">&#39;glm&#39;</span><span class="p">,</span> <span class="s">&#39;knn&#39;</span><span class="p">,</span> <span class="s">&#39;svmRadial&#39;</span><span class="p">)</span>
+
+<span class="c1"># Create and summarize the list of base learners: models</span>
+<span class="n">models</span> <span class="o">&lt;-</span> <span class="nf">caretList</span><span class="p">(</span><span class="n">Class</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+                    <span class="n">data</span> <span class="o">=</span> <span class="n">training</span><span class="p">,</span> 
+                    <span class="n">trControl</span> <span class="o">=</span> <span class="n">control</span><span class="p">,</span> 
+                    <span class="n">methodList</span> <span class="o">=</span> <span class="n">baseLearners</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Classification results in each resample: results</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">resamples</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
+
+<span class="c1"># Summarize and print the results in one line</span>
+<span class="p">(</span><span class="n">results_summary</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
+
+<span class="c1"># Show the correlation among the base learners&#39; results</span>
+<span class="nf">modelCor</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Load caretEnsemble</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">caretEnsemble</span><span class="p">)</span>
+
+<span class="c1"># Set the seed</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+
+<span class="c1"># Stack the base learners</span>
+<span class="n">stack.glm</span> <span class="o">&lt;-</span> <span class="nf">caretStack</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;glm&quot;</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s">&quot;Accuracy&quot;</span><span class="p">,</span> <span class="n">trControl</span><span class="o">=</span><span class="n">control</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Print the stacked model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">stack.glm</span><span class="p">)</span>
+<span class="c1"># Summarize the performance results for each base learner</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Evaluate the performance of each individual base learner</span>
+<span class="n">baseLearnerStats</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">stack.glm</span><span class="o">$</span><span class="n">models</span><span class="p">,</span> <span class="n">FUN</span><span class="o">=</span><span class="n">evaluateModel</span><span class="p">,</span> <span class="n">testing</span><span class="p">)</span>
+<span class="n">baseLearnerDF</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">baseLearnerStats</span><span class="p">,</span> <span class="n">row.names</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;acc&#39;</span><span class="p">,</span> <span class="s">&#39;auc&#39;</span><span class="p">))</span>
+
+<span class="c1"># Compute stacked ensemble&#39;s accuracy on test data</span>
+<span class="n">stack_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">stack.glm</span><span class="p">,</span> <span class="n">testing</span><span class="p">)</span>
+<span class="n">stack_acc</span> <span class="o">&lt;-</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Class</span><span class="p">,</span> <span class="n">stack_preds</span><span class="p">)</span>
+
+<span class="c1"># Compute stacked ensemble&#39;s AUC on test data</span>
+<span class="n">stack_preds_probs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">stack.glm</span><span class="p">,</span> <span class="n">testing</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;prob&quot;</span><span class="p">)</span>
+<span class="n">stack_auc</span> <span class="o">&lt;-</span> <span class="nf">auc</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Class</span> <span class="o">==</span> <span class="s">&#39;yes&#39;</span><span class="p">,</span> <span class="n">stack_preds_probs</span><span class="p">)</span>
+
+<span class="c1"># Combine the stacked ensemble results</span>
+<span class="p">(</span><span class="n">allLearnersDF</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">baseLearnerDF</span><span class="p">,</span> <span class="nf">list</span><span class="p">(</span><span class="n">stack</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">stack_acc</span><span class="p">,</span> <span class="n">stack_auc</span><span class="p">))))</span>
 </pre></div>
 
     </div>
@@ -13249,25 +13609,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="deal-with-multicolinearity">deal with multicolinearity<a class="anchor-link" href="#deal-with-multicolinearity">&#182;</a></h3><ul>
-<li>variance inflation factor (VIF). (VIF&lt;=1, no multicolinearity; 1&lt;=VIF&lt;=5, multicolinearity exists, but ok; VIF&gt;5, multicolinearity presents and need to address)</li>
-<li>PCA (principle component analysis)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Why-scale-your-data?">Why scale your data?<a class="anchor-link" href="#Why-scale-your-data?">&#182;</a></h3><ul>
-<li>Many models use some form of distance to inform them</li>
-<li>Features on larger scales can unduly influence the model</li>
-<li>Example: k-NN uses distance explicitly when making predictions</li>
-<li>We want features to be on a similar scale</li>
-<li>Normalizing (or scaling and centering)</li>
-</ul>
-
+<h2 id="unsupervised-learning">unsupervised learning<a class="anchor-link" href="#unsupervised-learning">&#182;</a></h2><h3 id="KMeans">KMeans<a class="anchor-link" href="#KMeans">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13276,14 +13618,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print out the variance of the Proline column</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">wine</span><span class="p">[</span><span class="s2">&quot;Proline&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Glimpse over the mall data</span>
+<span class="nf">glimpse</span><span class="p">(</span><span class="n">mall</span><span class="p">)</span>
 
-<span class="c1"># Apply the log normalization function to the Proline column</span>
-<span class="n">wine</span><span class="p">[</span><span class="s2">&quot;Proline_log&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">wine</span><span class="p">[</span><span class="s2">&quot;Proline&quot;</span><span class="p">])</span>
+<span class="c1"># Display the range of every variable</span>
+<span class="nf">sapply</span><span class="p">(</span><span class="n">mall</span><span class="p">,</span> <span class="n">range</span><span class="p">)</span>
 
-<span class="c1"># Check the variance of the Proline column again</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">wine</span><span class="p">[</span><span class="s2">&quot;Proline_log&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>
+<span class="c1"># Age histogram </span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">mall</span><span class="o">$</span><span class="n">Age</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
+
+<span class="c1"># Spending score histogram </span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">mall</span><span class="o">$</span><span class="n">SpendingScore</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
+
+<span class="c1"># Annual income histogram </span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">mall</span><span class="o">$</span><span class="n">AnnualIncome</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13296,13 +13644,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import scale</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">scale</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Initialize vector: ratios</span>
+<span class="n">ratios</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
 
-<span class="c1"># Scale the features: X_scaled</span>
-<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scale</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="c1"># Try different values of K</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">k</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1"># Cluster mall: mall_c</span>
+  <span class="n">mall_c</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">mall_scaled</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">nstart</span><span class="o">=</span><span class="m">20</span><span class="p">)</span>
+  
+  <span class="c1"># Save the ratio WSS/TSS in the kth position of ratios</span>
+  <span class="n">ratios</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">mall_c</span><span class="o">$</span><span class="n">tot.withinss</span> <span class="o">/</span> <span class="n">mall_c</span><span class="o">$</span><span class="n">totss</span>
+<span class="p">}</span>
+
+<span class="c1"># Line plot with ratios as a function of k</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">ratios</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;number of clusters&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13315,20 +13670,15 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Cluster mall_scaled data using k = 6: mall_6</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">mall_6</span> <span class="o">&lt;-</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">mall_scaled</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="n">nstart</span><span class="o">=</span><span class="m">20</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<span class="c1"># Average each variable per cluster</span>
+<span class="n">mall</span> <span class="o">%&gt;%</span>
+  <span class="nf">mutate</span><span class="p">(</span><span class="n">cluster</span> <span class="o">=</span> <span class="n">mall_6</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarize_all</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13339,86 +13689,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Bias-variance-tradeoff">2. Bias-variance tradeoff<a class="anchor-link" href="#2.-Bias-variance-tradeoff">&#182;</a></h2><ul>
-<li><p>bias: inability for a ML method to capture the true relationship, simple models, underfitting.</p>
-</li>
-<li><p>variance: high complex (flexible) models tend to model random noise in the data, overfiting, not generalizable to unseen data.</p>
-</li>
-</ul>
-<p><img src="http://www.machinelearningtutorial.net/wp-content/uploads/2017/01/bias-variance-tradeoff.svg" alt></p>
-<p><img src="https://miro.medium.com/max/1660/1*9hPX9pAO3jqLrzt0IE3JzA.png" alt></p>
-<p><img src="http://scott.fortmann-roe.com/docs/docs/BiasVariance/biasvariance.png" alt></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Feature-selection">3. Feature selection<a class="anchor-link" href="#3.-Feature-selection">&#182;</a></h2><h3 id="Why-we-do-feature-selection:">Why we do feature selection:<a class="anchor-link" href="#Why-we-do-feature-selection:">&#182;</a></h3><ul>
-<li>reduce overfit</li>
-<li>improve accuracy</li>
-<li>increase interpretation</li>
-<li>increase speed</li>
-</ul>
-<h3 id="ways-to-do-feature-selection:">ways to do feature selection:<a class="anchor-link" href="#ways-to-do-feature-selection:">&#182;</a></h3><ul>
-<li><p><strong>filter</strong>: rank features based on correlation</p>
-</li>
-<li><p><strong>wrapper</strong>: use machine learning model to evaluate performance</p>
-<ul>
-<li>add features one at a time</li>
-<li>drop features one at a time</li>
-<li>bidirectional elimination</li>
-<li>Recursive feature elimination (RFECV)</li>
-</ul>
-</li>
-<li><p><strong>embeded</strong> (regularization, select features, prevent overfitting)</p>
-<ul>
-<li><p><strong>Lasso</strong> L1: In lasso regression, the cost function is altered by adding a penalty equivalent to sum of the absolute values of the magnitude of the coefficients. This type of regularization (L1) can lead to zero coefficients i.e. some of the features are completely neglected for the evaluation of output. So Lasso regression not only helps in reducing over-fitting but it can help us in feature selection.</p>
-</li>
-<li><p><strong>Ridge</strong> L2: In ridge regression, the cost function is altered by adding a penalty equivalent to square of the magnitude of the coefficients.</p>
-</li>
-<li><p><strong>Elastic Net</strong> is the combination of lasso and ridge.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>tree-based feature importance</strong></p>
-<ul>
-<li>Random Forest</li>
-<li>Extra Tree</li>
-<li>After model fit, tree_mod.feature<em>importance</em></li>
-</ul>
-</li>
-</ul>
-<h2 id="4.-Feature-engineering">4. Feature engineering<a class="anchor-link" href="#4.-Feature-engineering">&#182;</a></h2><ul>
-<li>indicator variables</li>
-<li>Interaction features</li>
-<li>Feature representation</li>
-</ul>
-<h2 id="5.-Model-selection">5. Model selection<a class="anchor-link" href="#5.-Model-selection">&#182;</a></h2><ul>
-<li><p>F test.</p>
-<ul>
-<li>$F = \frac{(SS1-SS2)/SS2}{(DF1-DF2)/DF2}$ where SS1 is the sum-of-squared residuals for the simpler model (which will be higher) and SS2 is the sum-of-squared residuals of the more complicated model. DF stands for degree of freedom: number of data points minus number of parameters. </li>
-<li>The F ratio quantifies the relationship between the relative increase in sum-of-squares and the relative increase in degrees of freedom. </li>
-<li>If the simpler model is correct you expect to get an F ratio near 1.0. If the ratio is much greater than 1.0, there are two possibilities: First, the more complicated model is correct.Second, the simpler model is correct, but random scatter led the more complicated model to fit better. </li>
-<li><p>The P value tells you how rare this coincidence would be. The P value answers this question: If model 1 is really correct, what is the chance that you would randomly obtain data that fits model 2 so much better? If the P value is low, conclude that model 2 is statistically significantly better than model 1. Otherwise, conclude that there is no compelling evidence supporting model 2, so accept the simpler model (model 1).</p>
-</li>
-<li><p>Backward elimination, forward additions.</p>
-</li>
-</ul>
-</li>
-<li><p>Use random forest model to rank the importance of independent variables to the model, select some of these variables.</p>
-</li>
-<li><p>calculate correlation between dependent variable and other independent variables, select these with high correlation.</p>
-</li>
-<li><p>More model selection, refer to the feature selection section.</p>
-</li>
-</ul>
-<h2 id="Model-evaluation">Model evaluation<a class="anchor-link" href="#Model-evaluation">&#182;</a></h2><ul>
-<li>boostraping averages output so it reduces variance</li>
-<li><strong>cross validation (CV)</strong> prevents overfitting. Cross-validation is a vital step in evaluating a model. It maximizes the amount of data that is used to train the model, as during the course of training, the model is not only trained, but also tested on all of the available data.</li>
-</ul>
-
+<h3 id="Evaluate-clustering">Evaluate clustering<a class="anchor-link" href="#Evaluate-clustering">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13427,8 +13698,18 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">CV</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">best_params_</span>
-<span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">CV</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">best_score_</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Create the list of clustering methods: methods</span>
+<span class="n">methods</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;hierarchical&quot;</span><span class="p">,</span> <span class="s">&quot;kmeans&quot;</span><span class="p">,</span> <span class="s">&quot;pam&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compare clustering methods: results</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">clValid</span><span class="p">(</span><span class="n">mall_scaled</span><span class="p">,</span> 
+                  <span class="m">2</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> 
+                  <span class="n">clMethods</span> <span class="o">=</span> <span class="n">methods</span><span class="p">,</span>
+                  <span class="n">validation</span> <span class="o">=</span> <span class="s">&quot;internal&quot;</span>
+                  <span class="p">)</span>
+
+<span class="c1"># Summarize the results</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13441,20 +13722,45 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Create the list of clustering methods: methods</span>
+<span class="n">methods</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;hierarchical&quot;</span><span class="p">,</span> <span class="s">&quot;kmeans&quot;</span><span class="p">,</span> <span class="s">&quot;pam&quot;</span><span class="p">)</span>
 
-<span class="c1"># Create a linear regression object: reg</span>
-<span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="c1"># Compare clustering methods: results</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">clValid</span><span class="p">(</span><span class="n">mall_scaled</span><span class="p">,</span> 
+                  <span class="m">2</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> 
+                  <span class="n">clMethods</span> <span class="o">=</span> <span class="n">methods</span><span class="p">,</span>
+                  <span class="n">validation</span> <span class="o">=</span> <span class="s">&quot;stability&quot;</span>
+                  <span class="p">)</span>
 
-<span class="c1"># Perform 3-fold CV</span>
-<span class="n">cvscores_3</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cvscores_3</span><span class="p">))</span>
+<span class="c1"># Summarize the results</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
 
-<span class="c1"># Perform 10-fold CV</span>
-<span class="n">cvscores_10</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cvscores_10</span><span class="p">))</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Plot 3D mall_scaled data</span>
+<span class="nf">points3D</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mall_scaled</span><span class="p">[,</span> <span class="m">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">mall_scaled</span><span class="p">[,</span> <span class="m">2</span><span class="p">],</span> 
+         <span class="n">z</span> <span class="o">=</span> <span class="n">mall_scaled</span><span class="p">[,</span> <span class="m">3</span><span class="p">],</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get K-means centroids for K = 7 and add them to the plot</span>
+<span class="n">km_centers</span> <span class="o">&lt;-</span> <span class="n">results</span><span class="o">@</span><span class="n">clusterObjs</span><span class="o">$</span><span class="n">kmeans</span><span class="o">$</span><span class="n">`7`</span><span class="o">$</span><span class="n">centers</span>
+<span class="nf">points3D</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">km_centers</span><span class="p">[,</span> <span class="m">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">km_centers</span><span class="p">[,</span> <span class="m">2</span><span class="p">],</span> 
+         <span class="n">z</span> <span class="o">=</span> <span class="n">km_centers</span><span class="p">[,</span> <span class="m">3</span><span class="p">],</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> 
+         <span class="n">pch</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">)</span>
+
+<span class="c1"># Get PAM&#39;s medoids for K = 7 and add them to the plot</span>
+<span class="n">pam_idxs</span> <span class="o">&lt;-</span> <span class="n">results</span><span class="o">@</span><span class="n">clusterObjs</span><span class="o">$</span><span class="n">pam</span><span class="o">$</span><span class="n">`7`</span><span class="o">$</span><span class="n">medoids</span>
+<span class="n">pam_med</span> <span class="o">&lt;-</span> <span class="n">mall_scaled</span><span class="p">[</span><span class="n">pam_idxs</span><span class="p">,</span> <span class="p">]</span>
+<span class="nf">points3D</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pam_med</span><span class="p">[,</span> <span class="m">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pam_med</span><span class="p">[,</span> <span class="m">2</span><span class="p">],</span> <span class="n">z</span> <span class="o">=</span> <span class="n">pam_med</span><span class="p">[,</span> <span class="m">3</span><span class="p">],</span> 
+         <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2.5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13465,12 +13771,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="evaluate-linear-regression">evaluate linear regression<a class="anchor-link" href="#evaluate-linear-regression">&#182;</a></h3><ul>
-<li>R-squared</li>
-<li>mean squared error</li>
-<li>mean absolute error values for the model.</li>
-</ul>
-
+<h2 id="Feature-selection">Feature selection<a class="anchor-link" href="#Feature-selection">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13479,27 +13780,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Glimpse at the data</span>
+<span class="nf">glimpse</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span>
 
-<span class="c1"># Create training and test sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Create the regressor: reg_all</span>
-<span class="n">reg_all</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-
-<span class="c1"># Fit the regressor to the training data</span>
-<span class="n">reg_all</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Predict on the test data: y_pred</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">reg_all</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Compute and print R^2 and RMSE</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R^2: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">reg_all</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)))</span>
-<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Root Mean Squared Error: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rmse</span><span class="p">))</span>
+<span class="c1"># Identify near-zero-variance predictors: nzv</span>
+<span class="n">nzv</span> <span class="o">&lt;-</span> <span class="nf">nearZeroVar</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">nzv</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13512,78 +13798,21 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># R-squared score</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Glimpse at the data</span>
+<span class="nf">glimpse</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span>
 
-<span class="c1"># Mean squared error</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-<span class="n">preds</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
+<span class="c1"># Identify near-zero-variance predictors: nzv</span>
+<span class="n">nzv</span> <span class="o">&lt;-</span> <span class="nf">nearZeroVar</span><span class="p">(</span><span class="n">apps</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">nzv</span><span class="p">)</span>
 
-<span class="c1"># Mean absolute error</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
-<span class="n">preds</span> <span class="o">=</span> <span class="n">lm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mae</span><span class="p">)</span>
-</pre></div>
+<span class="c1"># Frequency of the HasPositiveReviews attribute</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">apps</span><span class="o">$</span><span class="n">HasPositiveReviews</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
+<span class="c1"># Frequency of the Price attribute</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">apps</span><span class="o">$</span><span class="n">Price</span><span class="p">)</span>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that our R-squared value tells us the percentage of the variance of y that X is responsible for. Which error metric would you recommend for this dataset? If you remember from when you plotted your model fit, there aren't too many outliers, so mean squared error would be a good choice to go with! When interviewing, make sure you have sound reasoning to back up your choice on questions like this.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="evaluate-classification">evaluate classification<a class="anchor-link" href="#evaluate-classification">&#182;</a></h3><p>Confussion matrix:</p>
-<p><img src="https://miro.medium.com/max/712/1*Z54JgbS4DUwWSknhDCvNTQ.png" width="500"></p>
-<p>Metric: (True positive rate is also known as recall)</p>
-<p><img src="https://miro.medium.com/max/1678/0*T5Klv1yPgZFHkJfe" width="500"></p>
-<ul>
-<li><strong>recall / sensitivity</strong> measures how often a positive is predicted when an observation is positive, low recall = high false negative, this is useful when data is <strong>imbalanced</strong>.</li>
-</ul>
-<p>ROC curve: A receiver operating characteristic curve.</p>
-<p><img src="https://glassboxmedicine.files.wordpress.com/2019/02/roc-curve-v2.png" width="500"></p>
-<p><strong>AUC</strong>: Area under the ROC curve. larger AUC, better model</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Implement logistic regression, observe coefficients</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="c1"># Create and fit your model</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
-
-<span class="c1"># Compute and print the accuracy</span>
-<span class="n">acc</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-
-<span class="c1"># Create and fit your model</span>
-<span class="n">clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
-
-<span class="c1"># Assign and print the coefficents</span>
-<span class="n">coefs</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">coef_</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">coefs</span><span class="p">)</span>
+<span class="c1"># Remove these features: apps_clean</span>
+<span class="n">apps_clean</span> <span class="o">&lt;-</span> <span class="n">apps</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="n">nzv</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13596,26 +13825,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># I</span>
-<span class="n">mport</span> <span class="n">the</span> <span class="n">necessary</span> <span class="n">modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Glimpse at the fifa data</span>
+<span class="nf">glimpse</span><span class="p">(</span><span class="n">fifa</span><span class="p">)</span>
 
-<span class="c1"># Create training and test sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># Are there zero or near-zero variance features?</span>
+<span class="nf">nearZeroVar</span><span class="p">(</span><span class="n">fifa</span><span class="p">)</span>
 
-<span class="c1"># Create the classifier: logreg</span>
-<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="c1"># Highly correlated predictors: cor_90plus</span>
+<span class="p">(</span><span class="n">cor_90plus</span> <span class="o">&lt;-</span> <span class="nf">findCorrelation</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">fifa</span><span class="p">),</span> <span class="n">names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
 
-<span class="c1"># Fit the classifier to the training data</span>
-<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="c1"># Highly correlated predictors (&gt;= 98%): cor_98plus</span>
+<span class="p">(</span><span class="n">cor_98plus</span> <span class="o">&lt;-</span> <span class="nf">findCorrelation</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">fifa</span><span class="p">),</span> <span class="n">names</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">cutoff</span> <span class="o">=</span> <span class="m">0.98</span><span class="p">))</span>
 
-<span class="c1"># Predict the labels of the test set: y_pred</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Compute and print the confusion matrix and classification report</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="c1"># Remove cor_90plus features: fifa_clean</span>
+<span class="n">fifa_clean</span> <span class="o">&lt;-</span> <span class="n">fifa</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="n">cor_90plus</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13628,22 +13851,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Train model on original scaled data: mdl_orig</span>
+<span class="n">mdl_orig</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">Club</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">team_train</span><span class="p">,</span>
+                 <span class="n">method</span><span class="o">=</span><span class="s">&quot;svmLinear2&quot;</span><span class="p">,</span> <span class="n">trControl</span> <span class="o">=</span> <span class="n">trainCtrl</span><span class="p">)</span>
 
-<span class="c1"># Compute predicted probabilities: y_pred_prob</span>
-<span class="n">y_pred_prob</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Predict on original test data: orig_preds, orig_probs</span>
+<span class="n">orig_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdl_orig</span><span class="p">,</span> <span class="n">team_test</span><span class="p">)</span>
+<span class="n">orig_probs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdl_orig</span><span class="p">,</span> <span class="n">team_test</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;prob&quot;</span><span class="p">)</span>
 
-<span class="c1"># Generate ROC curve values: fpr, tpr, thresholds</span>
-<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_prob</span><span class="p">)</span>
+<span class="c1"># Compute and print the confusion matrix: cm_orig</span>
+<span class="p">(</span><span class="n">cm_orig</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">orig_preds</span><span class="p">,</span> <span class="n">team_test</span><span class="o">$</span><span class="n">Club</span><span class="p">))</span>
 
-<span class="c1"># Plot ROC curve</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;ROC Curve&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Compute and print AUC: auc_orig</span>
+<span class="p">(</span><span class="n">auc_orig</span> <span class="o">&lt;-</span> <span class="nf">auc</span><span class="p">(</span><span class="n">team_test</span><span class="o">$</span><span class="n">Club</span> <span class="o">==</span> <span class="s">&#39;Real.Madrid&#39;</span><span class="p">,</span> 
+                 <span class="n">orig_probs</span><span class="o">$</span><span class="n">Real.Madrid</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13656,21 +13877,23 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Transform training and test data: train_pca, test_pca</span>
+<span class="n">pca</span> <span class="o">&lt;-</span> <span class="nf">preProcess</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">team_train</span><span class="p">[,</span> <span class="m">-1</span><span class="p">],</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#39;pca&#39;</span><span class="p">)</span>
+<span class="n">train_pca</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">pca</span><span class="p">,</span> <span class="n">team_train</span><span class="p">)</span>
+<span class="n">test_pca</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">pca</span><span class="p">,</span> <span class="n">team_test</span><span class="p">)</span>
 
-<span class="c1"># Compute predicted probabilities: y_pred_prob</span>
-<span class="n">y_pred_prob</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Train model on PCA data: mdl_pca</span>
+<span class="n">mdl_pca</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">Club</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">train_pca</span><span class="p">,</span>
+                 <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;svmLinear2&quot;</span><span class="p">,</span> <span class="n">trControl</span> <span class="o">=</span> <span class="n">trainCtrl</span><span class="p">)</span>
 
-<span class="c1"># Compute and print AUC score</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AUC: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_prob</span><span class="p">)))</span>
+<span class="c1"># Predict on PCA data: pca_preds, pca_probs</span>
+<span class="n">pca_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdl_pca</span><span class="p">,</span> <span class="n">test_pca</span><span class="p">)</span>
+<span class="n">pca_probs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdl_pca</span><span class="p">,</span> <span class="n">test_pca</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;prob&quot;</span><span class="p">)</span>
 
-<span class="c1"># Compute cross-validated AUC scores: cv_auc</span>
-<span class="n">cv_auc</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">)</span>
-
-<span class="c1"># Print list of AUC scores</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AUC scores computed using 5-fold cross-validation: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cv_auc</span><span class="p">))</span>
+<span class="c1"># Compute and print confusion matrix &amp; AUC: cm_pca, auc_pca</span>
+<span class="p">(</span><span class="n">cm_pca</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">pca_preds</span><span class="p">,</span> <span class="n">test_pca</span><span class="o">$</span><span class="n">Club</span><span class="p">))</span>
+<span class="p">(</span><span class="n">auc_pca</span> <span class="o">&lt;-</span> <span class="nf">auc</span><span class="p">(</span><span class="n">test_pca</span><span class="o">$</span><span class="n">Club</span> <span class="o">==</span> <span class="s">&#39;Real.Madrid&#39;</span><span class="p">,</span> 
+                <span class="n">pca_probs</span><span class="o">$</span><span class="n">Real.Madrid</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13683,7 +13906,22 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Transform training and test data: train_lda, test_lda</span>
+<span class="n">my_lda</span> <span class="o">&lt;-</span> <span class="nf">lda</span><span class="p">(</span><span class="n">Club</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">team_train</span><span class="p">)</span>
+<span class="n">train_lda</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">my_lda</span><span class="p">,</span> <span class="n">team_train</span><span class="p">))</span>
+<span class="n">test_lda</span> <span class="o">&lt;-</span> <span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">predict</span><span class="p">(</span><span class="n">my_lda</span><span class="p">,</span> <span class="n">team_test</span><span class="p">))</span>
+
+<span class="c1"># Train model on LDA-preprocessed data: mdl_lda</span>
+<span class="n">mdl_lda</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">class</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">train_lda</span><span class="p">,</span>
+                <span class="n">method</span><span class="o">=</span><span class="s">&quot;svmLinear2&quot;</span><span class="p">,</span> <span class="n">trControl</span> <span class="o">=</span> <span class="n">trainCtrl</span><span class="p">)</span>
+
+<span class="c1"># Predict on LDA-ed test data: lda_preds, lda_probs</span>
+<span class="n">lda_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdl_lda</span><span class="p">,</span> <span class="n">test_lda</span><span class="p">)</span>
+<span class="n">lda_probs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdl_lda</span><span class="p">,</span> <span class="n">test_lda</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;prob&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compute and print confusion matrix &amp; AUC: cm_lda, auc_lda</span>
+<span class="p">(</span><span class="n">cm_lda</span> <span class="o">&lt;-</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">lda_preds</span><span class="p">,</span> <span class="n">test_lda</span><span class="o">$</span><span class="n">class</span><span class="p">))</span>
+<span class="p">(</span><span class="n">auc_lda</span> <span class="o">&lt;-</span> <span class="nf">auc</span><span class="p">(</span><span class="n">test_lda</span><span class="o">$</span><span class="n">class</span> <span class="o">==</span> <span class="s">&#39;Real.Madrid&#39;</span><span class="p">,</span> <span class="n">lda_probs</span><span class="o">$</span><span class="n">Real.Madrid</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13694,59 +13932,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.-Ensemble-methods">5. Ensemble methods<a class="anchor-link" href="#5.-Ensemble-methods">&#182;</a></h2><h3 id="bootstrap-aggregation-(bagging)">bootstrap aggregation (bagging)<a class="anchor-link" href="#bootstrap-aggregation-(bagging)">&#182;</a></h3><p>e.g.: random forest</p>
-<ul>
-<li>select subset of the data with replacement </li>
-<li>build model for each sample subset</li>
-<li>average the output</li>
-<li>bagging helps <strong>reduce variabce</strong></li>
-</ul>
-<h3 id="boosting">boosting<a class="anchor-link" href="#boosting">&#182;</a></h3><ul>
-<li>build multiple models sequentially</li>
-<li>incorrect predictions are weighted: lean to reduce predictive error from previous model by modifying the original dataset with weights for incorrectly predicted instances</li>
-<li>boosting helps <strong>reduce bias</strong></li>
-</ul>
-<h3 id="model-stacking">model stacking<a class="anchor-link" href="#model-stacking">&#182;</a></h3><ul>
-<li>stock predictions of different models</li>
-<li>form a meta model</li>
-<li>use predictions of base classifiers as input for training to a 2nd level model.</li>
-</ul>
-<p><strong>XGBoost</strong> is an opimized distributed gradient package "take over the world!"</p>
-<ul>
-<li>learning rate = 0.1 specifies the size of the step to take in each iteration while searching for the global min</li>
-<li>max_depth controls the size of the decision tree</li>
-<li>n_estimates: number of boosted trees to fit</li>
-</ul>
-<p><strong>note:</strong> decision tree is a greddy algorithm, no guarantee for optimal tree, better off to combine C.V. with a boostrap method.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Pros-and-cons-of--Neural-networks">Pros and cons of  Neural networks<a class="anchor-link" href="#Pros-and-cons-of--Neural-networks">&#182;</a></h3><p>Pros:</p>
-<ul>
-<li>They are flexible and can be used for both regression and classification problems.</li>
-<li>Neural networks are good to model with nonlinear data with large number of inputs; for example, images. </li>
-<li>Once trained, the predictions are pretty fast.</li>
-<li>Neural networks can be trained with any number of inputs and layers.</li>
-<li>Neural networks work best with more data points.</li>
-</ul>
-<p>Cons:</p>
-<ul>
-<li>Neural networks are black boxes, meaning we cannot know how much each independent variable is influencing the dependent variables.</li>
-<li>It is computationally very expensive and time consuming to train with traditional CPUs.</li>
-<li>Neural networks depend a lot on training data. This leads to the problem of over-fitting and generalization. The mode relies more on the training data and may be tuned to the data.</li>
-</ul>
-
+<h2 id="Model-evaluation">Model evaluation<a class="anchor-link" href="#Model-evaluation">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13755,7 +13941,21 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Create KNN model: mdlKNN</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">mdlKNN</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">Category</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">training</span><span class="p">,</span>
+            <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;knn&quot;</span><span class="p">,</span> <span class="n">trControl</span> <span class="o">=</span> <span class="n">cv10</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s">&quot;ROC&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print KNN model and its confusion matrix on training data</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mdlKNN</span><span class="p">);</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">mdlKNN</span><span class="p">)</span>
+
+<span class="c1"># Predict class labels and probs: knn_preds, knn_probs</span>
+<span class="n">knn_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlKNN</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testing</span><span class="p">)</span>
+<span class="n">knn_probs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlKNN</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testing</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;prob&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print accuracy and AUC values</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">accuracy</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Category</span><span class="p">,</span> <span class="n">knn_preds</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">auc</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Category</span> <span class="o">==</span> <span class="s">&#39;ENTERTAINMENT&#39;</span><span class="p">,</span> <span class="n">knn_probs</span><span class="p">[,</span> <span class="m">2</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13768,7 +13968,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Train SVM: mdlSVM</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">mdlSVM</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">Overall</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">training</span><span class="p">,</span>
+            <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;svmRadial&quot;</span><span class="p">,</span> <span class="n">trControl</span> <span class="o">=</span> <span class="n">cv10</span><span class="p">)</span>
+
+<span class="c1"># Print the SVM model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mdlSVM</span><span class="p">)</span>
+
+<span class="c1"># Predict overall score on testing data: svm_preds</span>
+<span class="n">svm_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlSVM</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testing</span><span class="p">)</span>
+
+<span class="c1"># Print RMSE and MAE values</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">rmse</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Overall</span><span class="p">,</span> <span class="n">svm_preds</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">mae</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Overall</span><span class="p">,</span> <span class="n">svm_preds</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13776,19 +13989,26 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Glimpse at the data</span>
+<span class="nf">glimpse</span><span class="p">(</span><span class="n">mall_scaled</span><span class="p">)</span>
+
+<span class="c1"># Run DIANA: results</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">clValid</span><span class="p">(</span><span class="n">mall_scaled</span><span class="p">,</span> 
+                   <span class="m">2</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> 
+                   <span class="n">clMethods</span> <span class="o">=</span> <span class="s">&quot;diana&quot;</span><span class="p">,</span>
+                   <span class="n">validation</span> <span class="o">=</span> <span class="s">&quot;internal&quot;</span><span class="p">)</span>
+
+<span class="c1"># Print and summarize results</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># Plot results</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13799,35 +14019,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Regularization">Regularization<a class="anchor-link" href="#Regularization">&#182;</a></h2><p>Why regularize?</p>
-<ul>
-<li>Recall: Linear regression minimizes a loss function</li>
-<li>It chooses a coefficient for each feature variable</li>
-<li>Large coefficients can lead to overfiting</li>
-<li>Penalizing large coefficients: Regularization</li>
-</ul>
-<h3 id="ridge-(L2)">ridge (L2)<a class="anchor-link" href="#ridge-(L2)">&#182;</a></h3><p>performs regularization by adding to the loss function a penalty term of the squared value of each coefficient multiplied by some alpha.</p>
-<p>$ Loss function = OLS loss function + \alpha* \Sigma_{i=1}^{n} a_{i}^2$</p>
-<ul>
-<li>Alpha: Parameter we need to choose</li>
-<li>Picking alpha here is similar to picking k in k-NN</li>
-<li>Alpha controls model complexity<ul>
-<li>Alpha = 0: We get back OLS (Can lead to overfiting)</li>
-<li>Very high alpha: Can lead to underfiting</li>
-</ul>
-</li>
-</ul>
-<h3 id="lasso-(L1)">lasso (L1)<a class="anchor-link" href="#lasso-(L1)">&#182;</a></h3><p>performs regularization by adding to the loss function a penalty term of the absolute value of each coefficient multiplied by some alpha.</p>
-<p>$ Loss function = OLS loss function + \alpha* \Sigma_{i=1}^{n} |a_{i}|$</p>
-<ul>
-<li>Can be used to select important features of a dataset</li>
-<li>Shrinks the coefficients of less important features to exactly 0</li>
-</ul>
-<h3 id="elastic-net:">elastic net:<a class="anchor-link" href="#elastic-net:">&#182;</a></h3><ul>
-<li>In elastic net regularization, the penalty term is a linear combination of the L1 and L2 penalties:</li>
-<li>In scikit-learn, this term is represented by the 'l1_ratio' parameter: An 'l1_ratio' of 1 corresponds to an L1 penalty, and anything lower is a combination of L1 and L2.</li>
-</ul>
-
+<h2 id="Imbalance-data">Imbalance data<a class="anchor-link" href="#Imbalance-data">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13836,24 +14028,16 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import Lasso</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
+<div class=" highlight hl-r"><pre><span></span><span class="n">trainDTree</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">samplingMode</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+  <span class="n">ctrl</span> <span class="o">&lt;-</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;cv&quot;</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span>
+                       <span class="n">classProbs</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+                       <span class="n">summaryFunction</span> <span class="o">=</span> <span class="n">twoClassSummary</span><span class="p">,</span>
+                       <span class="n">sampling</span> <span class="o">=</span> <span class="n">samplingMode</span><span class="p">)</span>
 
-<span class="c1"># Instantiate a lasso regressor: lasso</span>
-<span class="n">lasso</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Fit the regressor to the data</span>
-<span class="n">lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Compute and print the coefficients</span>
-<span class="n">lasso_coef</span> <span class="o">=</span> <span class="n">lasso</span><span class="o">.</span><span class="n">coef_</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lasso_coef</span><span class="p">)</span>
-
-<span class="c1"># Plot the coefficients</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_columns</span><span class="p">)),</span> <span class="n">lasso_coef</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_columns</span><span class="p">)),</span> <span class="n">df_columns</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">margins</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+  <span class="nf">train</span><span class="p">(</span><span class="n">target_class</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">,</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;rpart&quot;</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="s">&quot;ROC&quot;</span><span class="p">,</span> <span class="n">trControl</span> <span class="o">=</span> <span class="n">ctrl</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -13866,35 +14050,42 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Train and print model with no subsampling: mdl_orig</span>
+<span class="p">(</span><span class="n">mdl_orig</span> <span class="o">&lt;-</span> <span class="nf">trainDTree</span><span class="p">(</span><span class="n">training</span><span class="p">))</span>
 
-<span class="c1"># Setup the array of alphas and lists to store scores</span>
-<span class="n">alpha_space</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">ridge_scores</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">ridge_scores_std</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Train model with downsampling: mdl_down</span>
+<span class="p">(</span><span class="n">mdl_down</span> <span class="o">&lt;-</span> <span class="nf">trainDTree</span><span class="p">(</span><span class="n">training</span><span class="p">,</span> <span class="n">samplingMode</span> <span class="o">=</span> <span class="s">&quot;down&quot;</span><span class="p">))</span>
 
-<span class="c1"># Create a ridge regressor: ridge</span>
-<span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Train model with upsampling: mdl_up</span>
+<span class="p">(</span><span class="n">mdl_up</span> <span class="o">&lt;-</span> <span class="nf">trainDTree</span><span class="p">(</span><span class="n">training</span><span class="p">,</span> <span class="n">samplingMode</span> <span class="o">=</span> <span class="s">&quot;up&quot;</span><span class="p">))</span>
 
-<span class="c1"># Compute scores over range of alphas</span>
-<span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alpha_space</span><span class="p">:</span>
+<span class="c1"># Train model with SMOTE: mdl_smote</span>
+<span class="p">(</span><span class="n">mdl_smote</span> <span class="o">&lt;-</span> <span class="nf">trainDTree</span><span class="p">(</span><span class="n">training</span><span class="p">,</span> <span class="n">samplingMode</span> <span class="o">=</span> <span class="s">&quot;smote&quot;</span><span class="p">))</span>
+</pre></div>
 
-    <span class="c1"># Specify the alpha value to use: ridge.alpha</span>
-    <span class="n">ridge</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span>
-    
-    <span class="c1"># Perform 10-fold CV: ridge_cv_scores</span>
-    <span class="n">ridge_cv_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">ridge</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    
-    <span class="c1"># Append the mean of ridge_cv_scores to ridge_scores</span>
-    <span class="n">ridge_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ridge_cv_scores</span><span class="p">))</span>
-    
-    <span class="c1"># Append the std of ridge_cv_scores to ridge_scores_std</span>
-    <span class="n">ridge_scores_std</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ridge_cv_scores</span><span class="p">))</span>
+    </div>
+</div>
+</div>
 
-<span class="c1"># Display the plot</span>
-<span class="n">display_plot</span><span class="p">(</span><span class="n">ridge_scores</span><span class="p">,</span> <span class="n">ridge_scores_std</span><span class="p">)</span>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Create model list: mdl_list</span>
+<span class="n">mdl_list</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">(</span><span class="n">orig</span> <span class="o">=</span> <span class="n">mdl_orig</span><span class="p">,</span>
+                 <span class="n">down</span> <span class="o">=</span> <span class="n">mdl_down</span><span class="p">,</span>
+                 <span class="n">up</span> <span class="o">=</span> <span class="n">mdl_up</span><span class="p">,</span>
+                 <span class="n">smote</span> <span class="o">=</span> <span class="n">mdl_smote</span><span class="p">)</span>
+
+<span class="c1"># Compute AUC on training subsamples: resampling</span>
+<span class="n">resampling</span> <span class="o">&lt;-</span> <span class="nf">resamples</span><span class="p">(</span><span class="n">mdl_list</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">resampling</span><span class="p">,</span> <span class="n">metric</span> <span class="o">=</span> <span class="s">&quot;ROC&quot;</span><span class="p">)</span>
+
+<span class="c1"># Compute AUC on test data: auc_values</span>
+<span class="n">auc_values</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">mdl_list</span><span class="p">,</span> <span class="n">get_auc</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">testing</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">auc_values</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13905,11 +14096,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hyperparameter-tuning">Hyperparameter tuning<a class="anchor-link" href="#Hyperparameter-tuning">&#182;</a></h2><ul>
-<li>GridSearchCV</li>
-<li>RandomSearchCV</li>
-</ul>
-
+<h2 id="Hyperparameter-tuning">Hyperparameter tuning<a class="anchor-link" href="#Hyperparameter-tuning">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13918,26 +14105,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Set up train control: trc</span>
+<span class="n">trc</span> <span class="o">&lt;-</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;repeatedcv&quot;</span><span class="p">,</span> 
+                    <span class="n">number</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> 
+                    <span class="n">repeats</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
 
-<span class="c1"># Setup the hyperparameter grid</span>
-<span class="n">c_space</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="n">c_space</span><span class="p">}</span>
+<span class="c1"># Train model: svmr</span>
+<span class="n">svmr</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">consume</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+                   <span class="n">data</span> <span class="o">=</span> <span class="n">car_train</span><span class="p">,</span>
+                   <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;svmRadial&quot;</span><span class="p">,</span> 
+                   <span class="n">trControl</span> <span class="o">=</span> <span class="n">trc</span><span class="p">)</span>
 
-<span class="c1"># Instantiate a logistic regression classifier: logreg</span>
-<span class="n">logreg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-
-<span class="c1"># Instantiate the GridSearchCV object: logreg_cv</span>
-<span class="n">logreg_cv</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="c1"># Fit it to the data</span>
-<span class="n">logreg_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Print the tuned parameters and score</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned Logistic Regression Parameters: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg_cv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">))</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">logreg_cv</span><span class="o">.</span><span class="n">best_score_</span><span class="p">))</span>
+<span class="c1"># Print and plot SVM model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">svmr</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">svmr</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13950,35 +14131,21 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">ElasticNet</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Set up train control: trc</span>
+<span class="n">trc</span> <span class="o">&lt;-</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;cv&quot;</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
 
-<span class="c1"># Create train and test sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="c1"># Create custom hyperparameter grid: hp_grid</span>
+<span class="n">hp_grid</span> <span class="o">&lt;-</span> <span class="nf">expand.grid</span><span class="p">(</span><span class="n">C</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="m">0.2</span><span class="p">),</span>
+                       <span class="n">sigma</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">0.75</span><span class="p">))</span>
 
-<span class="c1"># Create the hyperparameter grid</span>
-<span class="n">l1_space</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;l1_ratio&#39;</span><span class="p">:</span> <span class="n">l1_space</span><span class="p">}</span>
+<span class="c1"># Train model: svmr</span>
+<span class="n">svmr</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">consume</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+              <span class="n">data</span> <span class="o">=</span> <span class="n">car_train</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;svmRadial&quot;</span><span class="p">,</span> 
+              <span class="n">trControl</span> <span class="o">=</span> <span class="n">trc</span><span class="p">,</span> <span class="n">tuneGrid</span> <span class="o">=</span> <span class="n">hp_grid</span><span class="p">)</span>
 
-<span class="c1"># Instantiate the ElasticNet regressor: elastic_net</span>
-<span class="n">elastic_net</span> <span class="o">=</span> <span class="n">ElasticNet</span><span class="p">()</span>
-
-<span class="c1"># Setup the GridSearchCV object: gm_cv</span>
-<span class="n">gm_cv</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">elastic_net</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="c1"># Fit it to the training data</span>
-<span class="n">gm_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Predict on the test set and compute metrics</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">gm_cv</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">gm_cv</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned ElasticNet l1 ratio: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gm_cv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned ElasticNet R squared: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned ElasticNet MSE: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mse</span><span class="p">))</span>
+<span class="c1"># Print and plot SVM model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">svmr</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">svmr</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13991,29 +14158,21 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Set random seed</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span>
 
-<span class="c1"># Setup the parameters and distributions to sample from: param_dist</span>
-<span class="n">param_dist</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
-              <span class="s2">&quot;max_features&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
-              <span class="s2">&quot;min_samples_leaf&quot;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
-              <span class="s2">&quot;criterion&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;gini&quot;</span><span class="p">,</span> <span class="s2">&quot;entropy&quot;</span><span class="p">]}</span>
+<span class="c1"># Set up train control: trc</span>
+<span class="n">trc</span> <span class="o">&lt;-</span> <span class="nf">trainControl</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="s">&quot;cv&quot;</span><span class="p">,</span> 
+                    <span class="n">number</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="s">&quot;random&quot;</span><span class="p">)</span>
 
-<span class="c1"># Instantiate a Decision Tree classifier: tree</span>
-<span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="c1"># Train model: svmr</span>
+<span class="n">svmr</span> <span class="o">&lt;-</span> <span class="nf">train</span><span class="p">(</span><span class="n">consume</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span> 
+              <span class="n">data</span> <span class="o">=</span> <span class="n">car_train</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;svmRadial&quot;</span><span class="p">,</span> 
+              <span class="n">trControl</span> <span class="o">=</span> <span class="n">trc</span><span class="p">,</span> <span class="n">tuneLength</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
 
-<span class="c1"># Instantiate the RandomizedSearchCV object: tree_cv</span>
-<span class="n">tree_cv</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">param_dist</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="c1"># Fit it to the data</span>
-<span class="n">tree_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="c1"># Print the tuned parameters and score</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned Decision Tree Parameters: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tree_cv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best score is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tree_cv</span><span class="o">.</span><span class="n">best_score_</span><span class="p">))</span>
+<span class="c1"># Print and plot SVM model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">svmr</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">svmr</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14024,7 +14183,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<h2 id="Random-Forests-or-Gradient-Boosted-Trees?">Random Forests or Gradient Boosted Trees?<a class="anchor-link" href="#Random-Forests-or-Gradient-Boosted-Trees?">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14033,7 +14192,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Load randomForest package</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">randomForest</span><span class="p">)</span>
+
+<span class="c1"># Train the RF model: mdlRF</span>
+<span class="n">mdlRF</span> <span class="o">&lt;-</span> <span class="nf">randomForest</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">Rating</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span>
+                      <span class="n">data</span> <span class="o">=</span> <span class="n">training</span><span class="p">,</span>
+                      <span class="n">ntree</span> <span class="o">=</span> <span class="m">500</span><span class="p">)</span>
+
+<span class="c1"># Print the RF model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mdlRF</span><span class="p">)</span>
+
+<span class="c1"># RF variable importance</span>
+<span class="nf">varImpPlot</span><span class="p">(</span><span class="n">mdlRF</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mdlRF</span><span class="o">$</span><span class="n">importance</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14046,104 +14218,19 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Load gbm package</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">gbm</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
+<span class="c1"># Train a GBM model with 500 trees: mdlGBM</span>
+<span class="n">mdlGBM</span> <span class="o">&lt;-</span> <span class="nf">gbm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">Rating</span> <span class="o">~</span> <span class="n">.</span><span class="p">,</span>
+              <span class="n">data</span> <span class="o">=</span> <span class="n">training</span><span class="p">,</span>
+              <span class="n">n.trees</span> <span class="o">=</span> <span class="m">500</span><span class="p">)</span>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="overall-process">overall process<a class="anchor-link" href="#overall-process">&#182;</a></h2><ul>
-<li>impute missing data</li>
-<li>scale the data</li>
-<li>pipeline</li>
-<li>GridSearch</li>
-<li>cross validation</li>
-<li>show best parameters</li>
-</ul>
+<span class="c1"># Print GBM model</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">mdlGBM</span><span class="p">)</span>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import necessary modules</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
-
-<span class="c1"># Setup the pipeline steps: steps</span>
-<span class="n">steps</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;imputation1&#39;</span><span class="p">,</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="s1">&#39;NaN&#39;</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;most_frequent&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
-         <span class="p">(</span><span class="s1">&#39;imputation2&#39;</span><span class="p">,</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="s1">&#39;NaN&#39;</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
-         <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">()),</span>
-         <span class="p">(</span><span class="s1">&#39;elasticnet&#39;</span><span class="p">,</span> <span class="n">ElasticNet</span><span class="p">())]</span>
-
-<span class="c1"># Create the pipeline: pipeline </span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
-
-<span class="c1"># Specify the hyperparameter space</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;elasticnet__l1_ratio&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">)}</span>
-
-<span class="c1"># Create train and test sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Create the GridSearchCV object: gm_cv</span>
-<span class="n">gm_cv</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span><span class="n">parameters</span><span class="p">)</span>
-
-<span class="c1"># Fit to the training set</span>
-<span class="n">gm_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Compute and print the metrics</span>
-<span class="n">r2</span> <span class="o">=</span> <span class="n">gm_cv</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned ElasticNet Alpha: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gm_cv</span><span class="o">.</span><span class="n">best_params_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tuned ElasticNet R squared: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r2</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<span class="c1"># Summarize GBM&#39;s variable importance</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">mdlGBM</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14156,46 +14243,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class=" highlight hl-r"><pre><span></span><span class="c1"># Load the Metrics package</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">Metrics</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
+<span class="c1"># Predict on the testing data: gbm_preds, rf_preds</span>
+<span class="n">gbm_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlGBM</span><span class="p">,</span> <span class="n">n.trees</span> <span class="o">=</span> <span class="m">500</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testing</span><span class="p">)</span>
+<span class="n">rf_preds</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">mdlRF</span><span class="p">,</span> <span class="n">newdata</span> <span class="o">=</span> <span class="n">testing</span><span class="p">)</span>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<span class="c1"># RMSE metric for both models: gbm_rmse, rf_rmse</span>
+<span class="p">(</span><span class="n">gbm_rmse</span> <span class="o">&lt;-</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Rating</span><span class="p">,</span> <span class="n">gbm_preds</span><span class="p">))</span>
+<span class="p">(</span><span class="n">rf_rmse</span> <span class="o">&lt;-</span> <span class="nf">rmse</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Rating</span><span class="p">,</span> <span class="n">rf_preds</span><span class="p">))</span>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<span class="c1"># RRSE metric for both models: gbm_rrse, rf_rrse</span>
+<span class="p">(</span><span class="n">gbm_rrse</span> <span class="o">&lt;-</span> <span class="nf">rrse</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Rating</span><span class="p">,</span> <span class="n">gbm_preds</span><span class="p">))</span>
+<span class="p">(</span><span class="n">rf_rrse</span> <span class="o">&lt;-</span> <span class="nf">rrse</span><span class="p">(</span><span class="n">testing</span><span class="o">$</span><span class="n">Rating</span><span class="p">,</span> <span class="n">rf_preds</span><span class="p">))</span>
 </pre></div>
 
     </div>

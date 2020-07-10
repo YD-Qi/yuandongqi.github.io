@@ -1,6 +1,5 @@
-https://yuandongqi.github.io/2020/07/09/quantitative-interview-with-python/
+https://yuandongqi.github.io/2020/07/09/interview-machine-learning/
 https://yuandongqi.github.io/2020/07/08/hello-world/
-https://yuandongqi.github.io/2020/07/08/interview-ml-py/
 https://yuandongqi.github.io/2020/07/07/jupyter/
 https://yuandongqi.github.io/2020/06/25/hamilton/
 https://yuandongqi.github.io/2020/06/21/white-left/
