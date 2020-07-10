@@ -54,7 +54,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
     <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
     <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-10T02:54:13.491Z</updated>
+    <updated>2020-07-10T04:03:18.853Z</updated>
     
     <summary type="html">
     
@@ -62,8 +62,7 @@ or rmarkdown with the
       
         
         
-          &lt;p&gt;After hours of searching, testing, trial and error, I find embedding html converted from jupyter notebook
-or rmarkdown with the
+          &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/o-ogYKNDzBo&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;  # for
         
       
     
@@ -200,11 +199,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -236,11 +235,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -268,13 +267,13 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -361,13 +360,13 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
@@ -423,9 +422,9 @@ Spot in the Caribbean by
       <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
