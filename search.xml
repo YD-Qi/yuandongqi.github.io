@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Quantitative Interview With Python</title>
+      <link href="/2020/07/09/quantitative-interview-with-python/"/>
+      <url>/2020/07/09/quantitative-interview-with-python/</url>
+      
+        <content type="html"><![CDATA[<p>After hours of searching, testing, try and errors, I find embedding html converted from jupyter notebookor rmarkdown with the <code>iframe</code> method is the most efficient method to integrate my data science projects or notes with hexo blog posts without worrying about ugly output tables, only three steps:</p><ol><li>Put the desired html into the source folder, <em>SOURCE FOLDER, NOT the _post folder under source</em></li><li>put this simple code at the top of your html content:<pre><code></code></pre></li></ol><hr><h2 id="layout-false"><a href="#layout-false" class="headerlink" title="layout: false"></a>layout: false</h2><pre><code>3. put the following code in the target markdown (md) file, create a md file for your post first for sure.</code></pre><iframe src="https://<your blog address>/<your html name>.html" width="700" height="800"></iframe>```<p>All right, below is one of my notes for quantitative interview preparation that I researched online.Happy reading!</p><iframe src="https://yuandongqi.github.io/Interview_ML_py.html" width="700" height="800"></iframe>]]></content>
+      
+      
+      <categories>
+          
+          <category> information collection </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> interview </tag>
+            
+            <tag> machine learning </tag>
+            
+            <tag> quantitative </tag>
+            
+            <tag> statistics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2020/07/08/hello-world/"/>
       <url>/2020/07/08/hello-world/</url>

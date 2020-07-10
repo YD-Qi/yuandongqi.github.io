@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/2020/07/09/quantitative-interview-with-python/</loc>
+    
+    <lastmod>2020-07-10T01:20:30.714Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</loc>
     
     <lastmod>2020-07-10T01:17:06.417Z</lastmod>
@@ -135,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/tags/index.html</loc>
-    
-    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yuandongqi.github.io/categories/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
@@ -150,6 +150,13 @@
   
   <url>
     <loc>https://yuandongqi.github.io/archives/index.html</loc>
+    
+    <lastmod>2020-04-05T02:43:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/tags/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
