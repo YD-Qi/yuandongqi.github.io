@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-07-10T02:54:13.491Z</updated>
+  <updated>2020-07-10T03:00:36.409Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,39 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Machine Learning Concepts for Interview With R</title>
-    <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
-    <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
-    <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-10T02:54:13.491Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;After hours of searching, testing, trial and error, I find embedding html converted from jupyter notebook
-or rmarkdown with the
-        
-      
-    
-    </summary>
-    
-      <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
-    
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
-      <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
-    
-      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-      <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
-    
-  </entry>
   
   <entry>
     <title>Machine Learning Concepts for Interview With Python</title>
@@ -83,6 +50,39 @@ or rmarkdown with the
   </entry>
   
   <entry>
+    <title>Machine Learning Concepts for Interview With R</title>
+    <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
+    <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
+    <published>2020-07-10T01:55:41.000Z</published>
+    <updated>2020-07-10T02:54:13.491Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;After hours of searching, testing, trial and error, I find embedding html converted from jupyter notebook
+or rmarkdown with the
+        
+      
+    
+    </summary>
+    
+      <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
+    
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
+    
+      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
+    
+      <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://yuandongqi.github.io/2020/07/08/hello-world/"/>
     <id>https://yuandongqi.github.io/2020/07/08/hello-world/</id>
@@ -109,7 +109,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/07/07/jupyter/"/>
     <id>https://yuandongqi.github.io/2020/07/07/jupyter/</id>
     <published>2020-07-08T01:00:12.000Z</published>
-    <updated>2020-07-09T01:21:12.398Z</updated>
+    <updated>2020-07-10T03:05:40.743Z</updated>
     
     <summary type="html">
     
@@ -118,9 +118,7 @@ or rmarkdown with the
         
         
           &lt;p&gt;testing new method!&lt;/p&gt;
-&lt;p&gt;Some content before the snippet……&lt;/p&gt;
-&lt;script src=&quot;http://code.jquery.com/jquery-2.0.0.js&quot;&gt;&lt;/script&gt;
-&lt;p&gt;Other
+&lt;iframe src=&quot;https://yuandongqi.github.io/Interview_ML_python.html&quot; width=&quot;800&quot;
         
       
     
