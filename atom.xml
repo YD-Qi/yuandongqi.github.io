@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-07-10T03:00:36.409Z</updated>
+  <updated>2020-07-10T03:08:17.845Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuandongqi.github.io/2020/07/09/interview-ml-py/"/>
     <id>https://yuandongqi.github.io/2020/07/09/interview-ml-py/</id>
     <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-10T03:00:36.409Z</updated>
+    <updated>2020-07-10T03:08:17.845Z</updated>
     
     <summary type="html">
     
@@ -79,51 +79,6 @@ or rmarkdown with the
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
       <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://yuandongqi.github.io/2020/07/08/hello-world/"/>
-    <id>https://yuandongqi.github.io/2020/07/08/hello-world/</id>
-    <published>2020-07-09T01:41:20.919Z</published>
-    <updated>2020-07-09T03:24:53.491Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Jupyter</title>
-    <link href="https://yuandongqi.github.io/2020/07/07/jupyter/"/>
-    <id>https://yuandongqi.github.io/2020/07/07/jupyter/</id>
-    <published>2020-07-08T01:00:12.000Z</published>
-    <updated>2020-07-10T03:05:40.743Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;testing new method!&lt;/p&gt;
-&lt;iframe src=&quot;https://yuandongqi.github.io/Interview_ML_python.html&quot; width=&quot;800&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
