@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/Interview_ML_python.html</loc>
+    
+    <lastmod>2020-07-10T03:32:18.501Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/2020/07/09/interview-ml-py/</loc>
     
     <lastmod>2020-07-10T03:08:17.845Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://yuandongqi.github.io/Interview_ML_R.html</loc>
     
     <lastmod>2020-07-10T02:37:14.736Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/Interview_ML_python.html</loc>
-    
-    <lastmod>2020-07-10T02:04:29.622Z</lastmod>
     
   </url>
   
