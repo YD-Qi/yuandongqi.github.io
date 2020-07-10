@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-07-10T03:08:17.845Z</updated>
+  <updated>2020-07-10T04:08:56.259Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machine Learning Concepts for Interview With R</title>
+    <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
+    <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
+    <published>2020-07-10T01:55:41.000Z</published>
+    <updated>2020-07-10T04:08:56.259Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/o-ogYKNDzBo&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;  # for
+        
+      
+    
+    </summary>
+    
+      <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
+    
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
+    
+      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
+    
+      <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
+    
+  </entry>
   
   <entry>
     <title>Machine Learning Concepts for Interview With Python</title>
@@ -46,38 +78,6 @@ or rmarkdown with the
       <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
     
       <category term="Python" scheme="https://yuandongqi.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Machine Learning Concepts for Interview With R</title>
-    <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
-    <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
-    <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-10T04:03:18.853Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/o-ogYKNDzBo&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;  # for
-        
-      
-    
-    </summary>
-    
-      <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
-    
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
-      <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
-    
-      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-      <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
     
   </entry>
   
