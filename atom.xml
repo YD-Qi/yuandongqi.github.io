@@ -73,13 +73,13 @@ or rmarkdown with the
       <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
       <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -135,11 +135,11 @@ Spot in the Caribbean by
       <category term="思想" scheme="https://yuandongqi.github.io/categories/%E6%80%9D%E6%83%B3/"/>
     
     
+      <category term="观察" scheme="https://yuandongqi.github.io/tags/%E8%A7%82%E5%AF%9F/"/>
+    
       <category term="启蒙" scheme="https://yuandongqi.github.io/tags/%E5%90%AF%E8%92%99/"/>
     
       <category term="思想" scheme="https://yuandongqi.github.io/tags/%E6%80%9D%E6%83%B3/"/>
-    
-      <category term="观察" scheme="https://yuandongqi.github.io/tags/%E8%A7%82%E5%AF%9F/"/>
     
   </entry>
   
@@ -167,11 +167,11 @@ Spot in the Caribbean by
       <category term="思想" scheme="https://yuandongqi.github.io/categories/%E6%80%9D%E6%83%B3/"/>
     
     
-      <category term="文摘" scheme="https://yuandongqi.github.io/tags/%E6%96%87%E6%91%98/"/>
-    
       <category term="启蒙" scheme="https://yuandongqi.github.io/tags/%E5%90%AF%E8%92%99/"/>
     
       <category term="思想" scheme="https://yuandongqi.github.io/tags/%E6%80%9D%E6%83%B3/"/>
+    
+      <category term="文摘" scheme="https://yuandongqi.github.io/tags/%E6%96%87%E6%91%98/"/>
     
       <category term="法国" scheme="https://yuandongqi.github.io/tags/%E6%B3%95%E5%9B%BD/"/>
     
@@ -426,9 +426,9 @@ Spot in the Caribbean by
     
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="unsupervised learning" scheme="https://yuandongqi.github.io/tags/unsupervised-learning/"/>
     
