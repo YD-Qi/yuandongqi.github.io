@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-07-10T03:08:17.845Z</updated>
+  <updated>2020-07-11T20:25:45.323Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuandongqi.github.io/2020/07/09/interview-ml-py/"/>
     <id>https://yuandongqi.github.io/2020/07/09/interview-ml-py/</id>
     <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-10T03:08:17.845Z</updated>
+    <updated>2020-07-11T20:25:45.323Z</updated>
     
     <summary type="html">
     
@@ -54,7 +54,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
     <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
     <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-10T04:09:29.654Z</updated>
+    <updated>2020-07-11T20:45:17.831Z</updated>
     
     <summary type="html">
     
@@ -73,13 +73,13 @@ or rmarkdown with the
       <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
       <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -201,11 +201,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -237,11 +237,11 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -269,13 +269,13 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -362,13 +362,13 @@ Spot in the Caribbean by
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
@@ -424,11 +424,11 @@ Spot in the Caribbean by
       <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="unsupervised learning" scheme="https://yuandongqi.github.io/tags/unsupervised-learning/"/>
     
