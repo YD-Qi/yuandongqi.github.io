@@ -107,11 +107,11 @@
       
         <tags>
             
-            <tag> 观察 </tag>
-            
             <tag> 启蒙 </tag>
             
             <tag> 思想 </tag>
+            
+            <tag> 观察 </tag>
             
         </tags>
       
@@ -136,11 +136,11 @@
       
         <tags>
             
+            <tag> 文摘 </tag>
+            
             <tag> 启蒙 </tag>
             
             <tag> 思想 </tag>
-            
-            <tag> 文摘 </tag>
             
             <tag> 法国 </tag>
             
@@ -169,11 +169,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> data manipulation </tag>
             
@@ -204,11 +204,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> advanced </tag>
             
@@ -235,13 +235,13 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
+            
+            <tag> R </tag>
             
         </tags>
       
@@ -324,13 +324,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
-            
-            <tag> python </tag>
             
         </tags>
       
@@ -384,9 +384,9 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
+            
+            <tag> R </tag>
             
             <tag> machine learning </tag>
             
