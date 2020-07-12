@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Yuandong&#39;s Blog</title>
   
-  <subtitle>Data Science and More</subtitle>
+  <subtitle>记录思想，分享技术</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2020-07-11T23:30:11.163Z</updated>
+  <updated>2020-07-11T20:25:45.323Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -15,40 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Machine Learning Concepts for Interview With R</title>
-    <link href="https://yuandongqi.github.io/2020/07/09/interview-machine-learning/"/>
-    <id>https://yuandongqi.github.io/2020/07/09/interview-machine-learning/</id>
-    <published>2020-07-10T01:55:41.000Z</published>
-    <updated>2020-07-11T23:30:11.163Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/o-ogYKNDzBo&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;p&gt;After
-        
-      
-    
-    </summary>
-    
-      <category term="information collection" scheme="https://yuandongqi.github.io/categories/information-collection/"/>
-    
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
-      <category term="interview" scheme="https://yuandongqi.github.io/tags/interview/"/>
-    
-      <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
-    
-      <category term="quantitative" scheme="https://yuandongqi.github.io/tags/quantitative/"/>
-    
-  </entry>
   
   <entry>
     <title>Machine Learning Concepts for Interview With Python</title>
@@ -88,7 +54,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/06/25/hamilton/"/>
     <id>https://yuandongqi.github.io/2020/06/25/hamilton/</id>
     <published>2020-06-25T13:41:25.000Z</published>
-    <updated>2020-07-11T23:31:37.446Z</updated>
+    <updated>2020-07-12T00:54:59.845Z</updated>
     
     <summary type="html">
     
@@ -96,10 +62,7 @@ or rmarkdown with the
       
         
         
-          &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/o-E8_ARd4oKiI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-
-&lt;p&gt;AARON
+          &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/07/12/U1fRMT.jpg&quot; alt=&quot;亞歷山大‧漢密爾頓
         
       
     
@@ -107,8 +70,10 @@ or rmarkdown with the
     
       <category term="戏剧" scheme="https://yuandongqi.github.io/categories/%E6%88%8F%E5%89%A7/"/>
     
+      <category term="娱乐" scheme="https://yuandongqi.github.io/categories/%E6%88%8F%E5%89%A7/%E5%A8%B1%E4%B9%90/"/>
     
-      <category term="历史" scheme="https://yuandongqi.github.io/tags/%E5%8E%86%E5%8F%B2/"/>
+    
+      <category term="文摘" scheme="https://yuandongqi.github.io/tags/%E6%96%87%E6%91%98/"/>
     
   </entry>
   
@@ -148,7 +113,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/06/21/meng-de-si-jiu-yan-zhong-de-gu-dai-zhong-guo/"/>
     <id>https://yuandongqi.github.io/2020/06/21/meng-de-si-jiu-yan-zhong-de-gu-dai-zhong-guo/</id>
     <published>2020-06-21T16:42:02.000Z</published>
-    <updated>2020-07-11T23:22:03.457Z</updated>
+    <updated>2020-07-12T01:07:44.928Z</updated>
     
     <summary type="html">
     
@@ -167,11 +132,11 @@ or rmarkdown with the
       <category term="思想" scheme="https://yuandongqi.github.io/categories/%E6%80%9D%E6%83%B3/"/>
     
     
+      <category term="文摘" scheme="https://yuandongqi.github.io/tags/%E6%96%87%E6%91%98/"/>
+    
       <category term="启蒙" scheme="https://yuandongqi.github.io/tags/%E5%90%AF%E8%92%99/"/>
     
       <category term="思想" scheme="https://yuandongqi.github.io/tags/%E6%80%9D%E6%83%B3/"/>
-    
-      <category term="文摘" scheme="https://yuandongqi.github.io/tags/%E6%96%87%E6%91%98/"/>
     
       <category term="法国" scheme="https://yuandongqi.github.io/tags/%E6%B3%95%E5%9B%BD/"/>
     
@@ -201,11 +166,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -216,11 +181,11 @@ or rmarkdown with the
   </entry>
   
   <entry>
-    <title>Intermediate R</title>
+    <title>R 语言数据分析进阶</title>
     <link href="https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/"/>
     <id>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</id>
     <published>2020-05-06T05:00:00.000Z</published>
-    <updated>2020-05-22T19:45:02.827Z</updated>
+    <updated>2020-07-12T01:46:42.810Z</updated>
     
     <summary type="html">
     
@@ -228,7 +193,11 @@ or rmarkdown with the
       
         
         
-          &lt;h2 id=&quot;1-Boolean-逻辑判断&quot;&gt;&lt;a href=&quot;#1-Boolean-逻辑判断&quot; class=&quot;headerlink&quot; title=&quot;1. Boolean 逻辑判断&quot;&gt;&lt;/a&gt;1. Boolean 逻辑判断&lt;/h2&gt;&lt;h3
+          &lt;iframe src=&quot;https://yuandongqi.github.io/R_intermd-cn.html&quot; width=&quot;1050&quot; height=&quot;14600&quot;&gt;&lt;/iframe&gt;
+
+
+&lt;p&gt;完结撒花！
+&lt;img
         
       
     
@@ -237,11 +206,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -252,7 +221,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/"/>
     <id>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</id>
     <published>2020-04-28T05:00:00.000Z</published>
-    <updated>2020-07-10T01:17:06.417Z</updated>
+    <updated>2020-07-12T01:38:37.327Z</updated>
     
     <summary type="html">
     
@@ -260,7 +229,11 @@ or rmarkdown with the
       
         
         
-          &lt;h1 id=&quot;R-入门第一步&quot;&gt;&lt;a href=&quot;#R-入门第一步&quot; class=&quot;headerlink&quot; title=&quot;R 入门第一步&quot;&gt;&lt;/a&gt;R 入门第一步&lt;/h1&gt;&lt;h2 id=&quot;软件安装&quot;&gt;&lt;a href=&quot;#软件安装&quot; class=&quot;headerlink&quot;
+          &lt;iframe src=&quot;https://yuandongqi.github.io/R_introduction.html&quot; width=&quot;1050&quot; height=&quot;14600&quot;&gt;&lt;/iframe&gt;
+
+
+&lt;p&gt;完结撒花！
+&lt;img
         
       
     
@@ -269,13 +242,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -362,13 +335,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
@@ -377,7 +350,7 @@ or rmarkdown with the
     <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
     <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
     <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-04-27T12:46:28.067Z</updated>
+    <updated>2020-07-12T01:07:44.922Z</updated>
     
     <summary type="html">
     
@@ -424,9 +397,9 @@ or rmarkdown with the
       <category term="Projects" scheme="https://yuandongqi.github.io/categories/Projects/"/>
     
     
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
-    
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="machine learning" scheme="https://yuandongqi.github.io/tags/machine-learning/"/>
     
