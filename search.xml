@@ -124,7 +124,7 @@
       <link href="/2020/05/10/data-manipulation-dplyr-1/"/>
       <url>/2020/05/10/data-manipulation-dplyr-1/</url>
       
-        <content type="html"><![CDATA[<h2 id="Data-Manipulation–dplyr"><a href="#Data-Manipulation–dplyr" class="headerlink" title="Data Manipulation–dplyr"></a>Data Manipulation–dplyr</h2><p><img src="https://s1.ax1x.com/2020/07/12/U3SSRf.png" alt="U3SSRf.png"></p><iframe src="https://yuandongqi.github.io/data_manipulation_dplyr_1.html" width="1050" height="14600"></iframe>]]></content>
+        <content type="html"><![CDATA[<h2 id="Data-Manipulation–dplyr"><a href="#Data-Manipulation–dplyr" class="headerlink" title="Data Manipulation–dplyr"></a>Data Manipulation–dplyr</h2><p><img src="https://s1.ax1x.com/2020/07/12/U3SSRf.png" alt="dplyr"></p><iframe src="https://yuandongqi.github.io/data_manipulation_dplyr_1.html" width="1000" height="17450"></iframe>]]></content>
       
       
       <categories>
@@ -136,11 +136,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> data manipulation </tag>
             
@@ -171,11 +171,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> advanced </tag>
             
@@ -202,13 +202,13 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
+            
+            <tag> R </tag>
             
         </tags>
       
@@ -233,13 +233,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
-            
-            <tag> python </tag>
             
         </tags>
       
