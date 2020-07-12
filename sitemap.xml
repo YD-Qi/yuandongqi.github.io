@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/2020/07/11/white-left/</loc>
+    
+    <lastmod>2020-07-12T03:48:20.279Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/2020/04/27/1-py-intro/</loc>
+    
+    <lastmod>2020-07-12T03:31:11.794Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</loc>
+    
+    <lastmod>2020-07-12T03:10:45.995Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/2020/05/10/data-manipulation-dplyr-1/</loc>
+    
+    <lastmod>2020-07-12T03:04:25.018Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/data_manipulation_dplyr_1.html</loc>
+    
+    <lastmod>2020-07-12T02:47:00.094Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/2020/05/06/2-r-intermed-cn/</loc>
     
-    <lastmod>2020-07-12T01:46:42.810Z</lastmod>
+    <lastmod>2020-07-12T01:50:20.104Z</lastmod>
     
   </url>
   
@@ -12,13 +47,6 @@
     <loc>https://yuandongqi.github.io/R_intermed-cn.html</loc>
     
     <lastmod>2020-07-12T01:45:14.561Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/28/1-r-intro-cn/</loc>
-    
-    <lastmod>2020-07-12T01:38:37.327Z</lastmod>
     
   </url>
   
@@ -72,48 +100,6 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/2020/06/21/white-left/</loc>
-    
-    <lastmod>2020-06-22T02:12:37.696Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/1-py-intro/</loc>
-    
-    <lastmod>2020-05-22T19:45:30.670Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/pro-heart-disease/</loc>
-    
-    <lastmod>2020-05-22T02:14:16.210Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/05/10/data-manipulation-intro/</loc>
-    
-    <lastmod>2020-05-22T02:14:16.205Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/collection/</loc>
-    
-    <lastmod>2020-05-22T02:14:16.195Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yuandongqi.github.io/2020/04/27/customize-pages/</loc>
-    
-    <lastmod>2020-04-27T14:01:36.173Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yuandongqi.github.io/about/index.html</loc>
     
     <lastmod>2020-04-27T12:57:00.703Z</lastmod>
@@ -142,14 +128,14 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/tags/index.html</loc>
+    <loc>https://yuandongqi.github.io/categories/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/categories/index.html</loc>
+    <loc>https://yuandongqi.github.io/tags/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
