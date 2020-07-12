@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/2020/07/09/interview-ml-py/</loc>
+    
+    <lastmod>2020-07-12T04:18:06.733Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/2020/05/10/data-manipulation-dplyr-1/</loc>
     
     <lastmod>2020-07-12T04:13:44.432Z</lastmod>
@@ -86,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/2020/07/09/interview-ml-py/</loc>
-    
-    <lastmod>2020-07-11T20:25:45.323Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yuandongqi.github.io/Interview_ML_python.html</loc>
     
     <lastmod>2020-07-10T03:50:13.096Z</lastmod>
@@ -121,14 +121,14 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/categories/index.html</loc>
+    <loc>https://yuandongqi.github.io/archives/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/archives/index.html</loc>
+    <loc>https://yuandongqi.github.io/categories/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
