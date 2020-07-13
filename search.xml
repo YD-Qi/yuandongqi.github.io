@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Data-Manipulation With data.table(1)</title>
+      <link href="/2020/07/12/data-manipulation-with-data-table-1/"/>
+      <url>/2020/07/12/data-manipulation-with-data-table-1/</url>
+      
+        <content type="html"><![CDATA[<iframe src="https://yuandongqi.github.io/data-manipulation-with-data.table-1.html" width="1050" height="14900"></iframe><p>完结撒花！<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> data science </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+            <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>data.table vs. Dplyr</title>
       <link href="/2020/07/12/data-table-vs-dplyr/"/>
       <url>/2020/07/12/data-table-vs-dplyr/</url>
@@ -167,11 +196,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> data manipulation </tag>
             
@@ -202,11 +231,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> advanced </tag>
             
@@ -233,13 +262,13 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
+            
+            <tag> R </tag>
             
         </tags>
       
@@ -264,13 +293,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
-            
-            <tag> python </tag>
             
         </tags>
       

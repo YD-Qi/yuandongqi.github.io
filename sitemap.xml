@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/data-manipulation-with-data.table-1.html</loc>
+    
+    <lastmod>2020-07-13T02:39:27.040Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yuandongqi.github.io/2020/07/12/data-manipulation-with-data-table-1/</loc>
+    
+    <lastmod>2020-07-13T02:39:27.017Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/2020/07/12/data-table-vs-dplyr/</loc>
     
     <lastmod>2020-07-13T02:15:29.940Z</lastmod>
