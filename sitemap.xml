@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yuandongqi.github.io/2020/07/12/data-table-vs-dplyr/</loc>
+    
+    <lastmod>2020-07-13T01:55:41.755Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yuandongqi.github.io/about/index.html</loc>
     
     <lastmod>2020-07-12T05:04:29.952Z</lastmod>
@@ -121,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/tags/index.html</loc>
+    <loc>https://yuandongqi.github.io/archives/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
@@ -135,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://yuandongqi.github.io/archives/index.html</loc>
+    <loc>https://yuandongqi.github.io/tags/index.html</loc>
     
     <lastmod>2020-04-05T02:43:43.000Z</lastmod>
     
