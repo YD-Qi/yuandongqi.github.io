@@ -332,11 +332,36 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">No tag</span>
+                        
+                        <a href="/tags/R/" target="_blank">
+                            <span class="chip bg-color">R</span>
+                        </a>
+                        
+                        <a href="/tags/data-manipulation/" target="_blank">
+                            <span class="chip bg-color">data manipulation</span>
+                        </a>
+                        
+                        <a href="/tags/dplyr/" target="_blank">
+                            <span class="chip bg-color">dplyr</span>
+                        </a>
+                        
+                        <a href="/tags/data-table/" target="_blank">
+                            <span class="chip bg-color">data.table</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/data-science/" class="post-category" target="_blank">
+                            data science
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -379,7 +404,7 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
                 <h1 id="Hadley-Wickham’s-take-on-dplyr-vs-data-table"><a href="#Hadley-Wickham’s-take-on-dplyr-vs-data-table" class="headerlink" title="Hadley Wickham’s take on dplyr vs. data.table"></a>Hadley Wickham’s take on dplyr vs. data.table</h1><blockquote>
 <p><strong>Key take-away:</strong> data.table is fast which is good for very large data, dplyr is good enough for most R users; dplyr is starter-friendly due to the fact that the functions are all English verbs.</p>
 </blockquote>
-<h2 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h2><p>There is some subjectivity to syntax, but I stand by my statement that the concision of data.table makes it harder to learn and harder to read. This is partly because dplyr is solving a much easier problem!</p>
+<p><strong>Syntax</strong><br>There is some subjectivity to syntax, but I stand by my statement that the concision of data.table makes it harder to learn and harder to read. This is partly because dplyr is solving a much easier problem!</p>
 <p>One really important thing that dplyr does for you is that it constrains your options. I claim that most single table problems can be solved with just five key verbs filter, select, mutate, arrange and summarise, along with a “by group” adverb. That constraint is a big help when you’re learning data manipulation, because it helps order your thinking about the problem. In dplyr, each of these verbs is mapped to a single function. Each function does one job, and is easy to understand in isolation.</p>
 <p>You create complexity by piping these simple operations together with %&gt;%. Here’s an example from one of the posts Arun linked to:</p>
 <pre><code>diamonds %&gt;%
@@ -417,7 +442,7 @@ diamondsDT[
     by = cut
   ] %&gt;% 
   .[order(-Count)]</code></pre><p>And the idea of piping with %&gt;% is not limited to just data frames and is easily generalised to other contexts: interactive web graphics, web scraping, gists, run-time contracts, …)</p>
-<h2 id="Memory-and-performance"><a href="#Memory-and-performance" class="headerlink" title="Memory and performance"></a>Memory and performance</h2><p>I’ve lumped these together, because, to me, they’re not that important. Most R users work with well under 1 million rows of data, and dplyr is sufficiently fast enough for that size of data that you’re not aware of processing time. We optimise dplyr for expressiveness on medium data; feel free to use data.table for raw speed on bigger data.</p>
+<p><strong>Memory and performance</strong><br>I’ve lumped these together, because, to me, they’re not that important. Most R users work with well under 1 million rows of data, and dplyr is sufficiently fast enough for that size of data that you’re not aware of processing time. We optimise dplyr for expressiveness on medium data; feel free to use data.table for raw speed on bigger data.</p>
 <p>The flexibility of dplyr also means that you can easily tweak performance characteristics using the same syntax. If the performance of dplyr with the data frame backend is not good enough for you, you can use the data.table backend (albeit with a somewhat restricted set of functionality). If the data you’re working with doesn’t fit in memory, then you can use a database backend.</p>
 <p>All that said, dplyr performance will get better in the long-term. We’ll definitely implement some of the great ideas of data.table like radix ordering and using the same index for joins &amp; filters. We’re also working on parallelisation so we can take advantage of multiple cores.</p>
 
@@ -806,10 +831,37 @@ diamondsDT[
                             </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/data-science/" class="post-category" target="_blank">
+                                    data science
+                                </a>
+                            
+                            
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/data-manipulation/" target="_blank">
+                        <span class="chip bg-color">data manipulation</span>
+                    </a>
+                    
+                    <a href="/tags/dplyr/" target="_blank">
+                        <span class="chip bg-color">dplyr</span>
+                    </a>
+                    
+                    <a href="/tags/data-table/" target="_blank">
+                        <span class="chip bg-color">data.table</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
