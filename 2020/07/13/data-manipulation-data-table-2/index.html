@@ -4,12 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="data.table vs. Dplyr,  ">
+    <meta name="keywords" content="Data-Manipulation-data.table-2,  ">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="Hadley Wickham’s take on dplyr vs. data.table
-Key take-away: data.table is fast which is good for very large data, dplyr">
+    <meta name="description" content="
+
+
+完结撒花！
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>data.table vs. Dplyr | Yuandong&#39;s Blog</title>
+    <title>Data-Manipulation-data.table-2 | Yuandong&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -216,13 +220,13 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/07/13/UGH1Sg.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        data.table vs. Dplyr
+                        Data-Manipulation-data.table-2
                     </div>
                 </div>
             </div>
@@ -256,10 +260,6 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
                             <span class="chip bg-color">data manipulation</span>
                         </a>
                         
-                        <a href="/tags/dplyr/" target="_blank">
-                            <span class="chip bg-color">dplyr</span>
-                        </a>
-                        
                     </div>
                     
                 </div>
@@ -280,7 +280,7 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-07-12
+                    2020-07-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -294,14 +294,14 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    778
+                    4
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
                 
@@ -312,50 +312,11 @@ Key take-away: data.table is fast which is good for very large data, dplyr">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hadley-Wickham’s-take-on-dplyr-vs-data-table"><a href="#Hadley-Wickham’s-take-on-dplyr-vs-data-table" class="headerlink" title="Hadley Wickham’s take on dplyr vs. data.table"></a>Hadley Wickham’s take on dplyr vs. data.table</h1><blockquote>
-<p><strong>Key take-away:</strong> data.table is fast which is good for very large data, dplyr is good enough for most R users; dplyr is starter-friendly due to the fact that the functions are all English verbs.</p>
-</blockquote>
-<p><strong>Syntax</strong><br>There is some subjectivity to syntax, but I stand by my statement that the concision of data.table makes it harder to learn and harder to read. This is partly because dplyr is solving a much easier problem!</p>
-<p>One really important thing that dplyr does for you is that it constrains your options. I claim that most single table problems can be solved with just five key verbs filter, select, mutate, arrange and summarise, along with a “by group” adverb. That constraint is a big help when you’re learning data manipulation, because it helps order your thinking about the problem. In dplyr, each of these verbs is mapped to a single function. Each function does one job, and is easy to understand in isolation.</p>
-<p>You create complexity by piping these simple operations together with %&gt;%. Here’s an example from one of the posts Arun linked to:</p>
-<pre><code>diamonds %&gt;%
-  filter(cut != &quot;Fair&quot;) %&gt;%
-  group_by(cut) %&gt;%
-  summarize(
-    AvgPrice = mean(price),
-    MedianPrice = as.numeric(median(price)),
-    Count = n()
-  ) %&gt;%
-  arrange(desc(Count))</code></pre><p>Even if you’ve never seen dplyr before (or even R!), you can still get the gist of what’s happening because the functions are all English verbs. The disadvantage of English verbs is that they require more typing than [, but I think that can be largely mitigated by better autocomplete.</p>
-<p>Here’s the equivalent data.table code:</p>
-<pre><code>diamondsDT &lt;- data.table(diamonds)
-diamondsDT[
-  cut != &quot;Fair&quot;, 
-  .(AvgPrice = mean(price),
-    MedianPrice = as.numeric(median(price)),
-    Count = .N
-  ), 
-  by = cut
-][ 
-  order(-Count) 
-]</code></pre><p>It’s harder to follow this code unless you’re already familiar with data.table. (I also couldn’t figure out how to indent the repeated [ in a way that looks good to my eye). Personally, when I look at code I wrote 6 months ago, it’s like looking at a code written by a stranger, so I’ve come to prefer straightforward, if verbose, code.</p>
-<p>Two other minor factors that I think slightly decrease readability:</p>
-<p>Since almost every data table operation uses [ you need additional context to figure out what’s happening. For example, is x[y] joining two data tables or extracting columns from a data frame? This is only a small issue, because in well-written code the variable names should suggest what’s happening.</p>
-<p>I like that group_by() is a separate operation in dplyr. It fundamentally changes the computation so I think should be obvious when skimming the code, and it’s easier to spot group_by() than the by argument to [.data.table.</p>
-<p>I also like that the the pipe isn’t just limited to just one package. You can start by tidying your data with tidyr, and finish up with a plot in ggvis. And you’re not limited to the packages that I write - anyone can write a function that forms a seamless part of a data manipulation pipe. In fact, I rather prefer the previous data.table code rewritten with %&gt;%:</p>
-<pre><code>diamonds %&gt;% 
-  data.table() %&gt;% 
-  .[cut != &quot;Fair&quot;, 
-    .(AvgPrice = mean(price),
-      MedianPrice = as.numeric(median(price)),
-      Count = .N
-    ), 
-    by = cut
-  ] %&gt;% 
-  .[order(-Count)]</code></pre><p>And the idea of piping with %&gt;% is not limited to just data frames and is easily generalised to other contexts: interactive web graphics, web scraping, gists, run-time contracts, …)</p>
-<p><strong>Memory and performance</strong><br>I’ve lumped these together, because, to me, they’re not that important. Most R users work with well under 1 million rows of data, and dplyr is sufficiently fast enough for that size of data that you’re not aware of processing time. We optimise dplyr for expressiveness on medium data; feel free to use data.table for raw speed on bigger data.</p>
-<p>The flexibility of dplyr also means that you can easily tweak performance characteristics using the same syntax. If the performance of dplyr with the data frame backend is not good enough for you, you can use the data.table backend (albeit with a somewhat restricted set of functionality). If the data you’re working with doesn’t fit in memory, then you can use a database backend.</p>
-<p>All that said, dplyr performance will get better in the long-term. We’ll definitely implement some of the great ideas of data.table like radix ordering and using the same index for joins &amp; filters. We’re also working on parallelisation so we can take advantage of multiple cores.</p>
+                <iframe src="https://yuandongqi.github.io/data-manipulation-with-data.table-2.html" width="1050" height="14900"></iframe>
+
+
+<p>完结撒花！
+<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>
 
             </div>
             <hr />
@@ -390,9 +351,9 @@ diamondsDT[
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《data.table vs. Dplyr》
+                    《Data-Manipulation-data.table-2》
                 </span> by
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/12/data-table-vs-dplyr/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/13/data-manipulation-data-table-2/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Yuandong Qi
             </a> is licensed under a
@@ -433,7 +394,7 @@ diamondsDT[
         repo: 'yuandongqi.github.io',
         owner: 'yuandongqi',
         admin: "yuandongqi",
-        id: '2020/07/12/data-table-vs-dplyr/',
+        id: '2020/07/13/data-manipulation-data-table-2/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -716,17 +677,18 @@ diamondsDT[
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/07/12/data-manipulation-with-data-table-1/">
+                <a href="/2020/07/13/data-manipulation-data-table-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Data-Manipulation With data.table(1)">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Data-Manipulation-data.table-2">
                         
-                        <span class="card-title">Data-Manipulation With data.table(1)</span>
+                        <span class="card-title">Data-Manipulation-data.table-2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -736,9 +698,9 @@ diamondsDT[
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -751,6 +713,7 @@ diamondsDT[
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -777,30 +740,31 @@ diamondsDT[
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/11/white-left/">
+                <a href="/2020/07/12/data-manipulation-with-data-table-1/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/07/12/U3kDjx.jpg" class="responsive-img" alt="What Is White Left?">
                         
-                        <span class="card-title">What Is White Left?</span>
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Data-Manipulation With data.table(1)">
+                        
+                        <span class="card-title">Data-Manipulation With data.table(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何用英语定义"白左"？
+                            This post is one of a series of posts about data manipulation with data.table, another powerful tool in addition to dplyr.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/思想/" class="post-category" target="_blank">
-                                    思想
+                            <a href="/categories/data-science/" class="post-category" target="_blank">
+                                    data science
                                 </a>
                             
                             
@@ -810,8 +774,16 @@ diamondsDT[
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/观察/" target="_blank">
-                        <span class="chip bg-color">观察</span>
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/data-table/" target="_blank">
+                        <span class="chip bg-color">data.table</span>
+                    </a>
+                    
+                    <a href="/tags/data-manipulation/" target="_blank">
+                        <span class="chip bg-color">data manipulation</span>
                     </a>
                     
                 </div>
