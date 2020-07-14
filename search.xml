@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Data-Manipulation-data.table-2</title>
+      <title>Data Manipulation data.table (2)</title>
       <link href="/2020/07/13/data-manipulation-data-table-2/"/>
       <url>/2020/07/13/data-manipulation-data-table-2/</url>
       
-        <content type="html"><![CDATA[<iframe src="https://yuandongqi.github.io/data-manipulation-with-data.table-2.html" width="1050" height="14900"></iframe><p>完结撒花！<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>]]></content>
+        <content type="html"><![CDATA[<iframe src="https://yuandongqi.github.io/data-manipulation-with-data.table-2.html" width="1050" height="10000"></iframe><p>完结撒花！<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>]]></content>
       
       
       <categories>
@@ -22,9 +22,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -33,11 +33,11 @@
     
     
     <entry>
-      <title>Data-Manipulation With data.table(1)</title>
+      <title>Data Manipulation With data.table (1)</title>
       <link href="/2020/07/12/data-manipulation-with-data-table-1/"/>
       <url>/2020/07/12/data-manipulation-with-data-table-1/</url>
       
-        <content type="html"><![CDATA[<iframe src="https://yuandongqi.github.io/data-manipulation-with-data.table-1.html" width="1050" height="14900"></iframe><p>完结撒花！<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>]]></content>
+        <content type="html"><![CDATA[<iframe src="https://yuandongqi.github.io/data-manipulation-with-data.table-1.html" width="1050" height="8000"></iframe><p>完结撒花！<img src="https://www.dropbox.com/s/9w3nxj755iqxnrz/sahua.gif?dl=1" alt></p>]]></content>
       
       
       <categories>
@@ -51,9 +51,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -80,11 +80,11 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
             
             <tag> dplyr </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -225,11 +225,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> data manipulation </tag>
             
@@ -260,11 +260,11 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
+            
+            <tag> R </tag>
             
             <tag> advanced </tag>
             
@@ -291,13 +291,13 @@
       
         <tags>
             
-            <tag> R </tag>
-            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
+            
+            <tag> R </tag>
             
         </tags>
       
@@ -322,13 +322,13 @@
       
         <tags>
             
+            <tag> python </tag>
+            
             <tag> data science </tag>
             
             <tag> concepts </tag>
             
             <tag> basics </tag>
-            
-            <tag> python </tag>
             
         </tags>
       
