@@ -330,11 +330,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -370,11 +370,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -406,7 +406,39 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
+    
+      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
+    
+      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 数据科学快速入门</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/1-py-intro/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/1-py-intro/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-07-12T04:25:32.100Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Crash-course-for-Python&quot;&gt;&lt;a href=&quot;#Crash-course-for-Python&quot; class=&quot;headerlink&quot; title=&quot;Crash course for Python&quot;&gt;&lt;/a&gt;Crash course for
+        
+      
+    
+    </summary>
+    
+      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
+    
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
@@ -443,38 +475,6 @@ or rmarkdown with the
       <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
     
       <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 数据科学快速入门</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/1-py-intro/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/1-py-intro/</id>
-    <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-07-12T04:25:32.100Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Crash-course-for-Python&quot;&gt;&lt;a href=&quot;#Crash-course-for-Python&quot; class=&quot;headerlink&quot; title=&quot;Crash course for Python&quot;&gt;&lt;/a&gt;Crash course for
-        
-      
-    
-    </summary>
-    
-      <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
-    
-    
-      <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
-    
-      <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
