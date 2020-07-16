@@ -55,7 +55,7 @@
     <link href="https://yuandongqi.github.io/2020/07/14/data-manipulation-with-data-table-3/"/>
     <id>https://yuandongqi.github.io/2020/07/14/data-manipulation-with-data-table-3/</id>
     <published>2020-07-15T01:27:18.000Z</published>
-    <updated>2020-07-15T00:31:20.653Z</updated>
+    <updated>2020-07-16T00:16:21.723Z</updated>
     
     <summary type="html">
     
@@ -63,7 +63,7 @@
       
         
         
-          &lt;iframe src=&quot;https://yuandongqi.github.io/data-manipulation-with-data.table-3.html&quot; width=&quot;1050&quot; height=&quot;10000&quot;&gt;&lt;/iframe&gt;
+          &lt;iframe src=&quot;https://yuandongqi.github.io/data-manipulation-with-data.table-3.html&quot; width=&quot;1050&quot; height=&quot;3000&quot;&gt;&lt;/iframe&gt;
 
 
 &lt;p&gt;完结撒花！
@@ -417,6 +417,36 @@ or rmarkdown with the
   </entry>
   
   <entry>
+    <title>How to Use Hexo and Deploy to GitHub Pages</title>
+    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
+    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
+    <published>2020-04-27T05:00:00.000Z</published>
+    <updated>2020-07-12T01:07:44.922Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
+        
+      
+    
+    </summary>
+    
+      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
+    
+    
+      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
+    
+      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
+    
+      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python 数据科学快速入门</title>
     <link href="https://yuandongqi.github.io/2020/04/27/1-py-intro/"/>
     <id>https://yuandongqi.github.io/2020/04/27/1-py-intro/</id>
@@ -445,36 +475,6 @@ or rmarkdown with the
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
     
       <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to Use Hexo and Deploy to GitHub Pages</title>
-    <link href="https://yuandongqi.github.io/2020/04/27/hexo-use/"/>
-    <id>https://yuandongqi.github.io/2020/04/27/hexo-use/</id>
-    <published>2020-04-27T05:00:00.000Z</published>
-    <updated>2020-07-12T01:07:44.922Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot;&gt;&lt;a href=&quot;#How-to-use-Hexo-and-deploy-to-GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;How to
-        
-      
-    
-    </summary>
-    
-      <category term="Tips" scheme="https://yuandongqi.github.io/categories/Tips/"/>
-    
-    
-      <category term="github pages" scheme="https://yuandongqi.github.io/tags/github-pages/"/>
-    
-      <category term="web sites" scheme="https://yuandongqi.github.io/tags/web-sites/"/>
-    
-      <category term="hexo" scheme="https://yuandongqi.github.io/tags/hexo/"/>
     
   </entry>
   
