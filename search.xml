@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>凭什么说神创造了一切？</title>
+      <link href="/2021/01/28/ping-shi-me-shuo-shen-chuang-zao-liao-yi-qie/"/>
+      <url>/2021/01/28/ping-shi-me-shuo-shen-chuang-zao-liao-yi-qie/</url>
+      
+        <content type="html"><![CDATA[<p>“谁说基督徒拥有唯一的答案？”“谁说神真的存在，你见过？”“谁说圣经如此特殊：绝对可靠，天启的，绝对无误？圣经里不是有各种各样的错误吗？”“谁说你可以相信圣经，圣经不是由跟你我一样的人写的吗？这些人里面很多都是自大且没有受过教育的。”“谁说那些被实现的预言可以证明圣经是启示而来的？几个幸运的猜想，一些巧合，根本不能说明什么。”“谁说考古学帮助证明圣经是真的？从什么时候开始你能挖出证据证明神迹？”“谁说进化论不能是解释生命从何而来的问题的正确答案？为什么它是唯一可能的自然解释。人和大猩猩是从同一个祖先演化而来。”“对在这个科学昌明的时代受过教育的人而言，谁说创世纪第一章是可信的？六天创造地球？可笑至极！”“谁说科学不是在取得突飞猛进？空间旅行已经实现。疾病被征服。人类很快就能控制出生，生活，死亡–甚至控制大脑并按照人所想要的方式将其编程。”“谁说教会与圣经，乃至任何宗教与现代人有任何关系？科学在过去50年所取得的进步已经超过基督教在过去2000年所取得的进步。宗教已经过时了！”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 思想 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哲学, 圣经, 思辨 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>代际阶层流动与社会资源再分配政策“ Hexo N 代际阶层流动与社会资源再分配政策“</title>
+      <link href="/2020/07/19/dai-ji-jie-ceng-liu-dong-yu-she-hui-zi-yuan-zai-fen-pei-zheng-ce-hexo-n-dai-ji-jie-ceng-liu-dong-yu-she-hui-zi-yuan-zai-fen-pei-zheng-ce/"/>
+      <url>/2020/07/19/dai-ji-jie-ceng-liu-dong-yu-she-hui-zi-yuan-zai-fen-pei-zheng-ce-hexo-n-dai-ji-jie-ceng-liu-dong-yu-she-hui-zi-yuan-zai-fen-pei-zheng-ce/</url>
+      
+        <content type="html"><![CDATA[<p>“Being free to say or do what you want”<br>“Being free to accomplish almost anything you want with hard work”<br>“Being able to succeed regardless of the economic circumstances in which you were born.”  </p><p>These meanings have historically not only made the American Dream a defining metaphor of the country, they are also likely a reason why Americans have been willing to tolerate a good deal more inequality of outcomes than citizens of many other rich countries. Bénabou and Ok (2001) have called this the “prospect of upward mobility” hypothesis, the idea that those with lower incomes are not especially strong advocates of redistributive policies because of the belief that they, or in the least their children, are likely to climb the income ladder.</p><p>However, an emerging body of evidence suggests that more inequality of incomes in the present is likely to make family background play a stronger role in determining the adult outcomes of young people, with their own hard work playing a commensurately weaker role. </p><p>The interaction between families, labor markets, and public policies all structure a child’s opportunities and determine the extent to which adult earnings are related to family background—but they do so in different ways across national contexts. Both cross-country comparisons and the underlying trends suggest that these drivers are all configured most likely to lower, or at least not raise, the degree of inter-generational earnings mobility for the next generation of Americans coming of age in a more polarized labor market. This trend will likely continue unless there are changes in public policy that promote the human capital of children in a way that offers relatively greater benefits to the relatively disadvantaged.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Data Manipulation With data.table (5)</title>
       <link href="/2020/07/16/data-manipulation-with-data-table-5/"/>
       <url>/2020/07/16/data-manipulation-with-data-table-5/</url>
@@ -22,9 +60,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -51,9 +89,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -80,9 +118,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -109,9 +147,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -138,9 +176,9 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
@@ -167,11 +205,11 @@
             
             <tag> R </tag>
             
-            <tag> data.table </tag>
-            
             <tag> data manipulation </tag>
             
             <tag> dplyr </tag>
+            
+            <tag> data.table </tag>
             
         </tags>
       
