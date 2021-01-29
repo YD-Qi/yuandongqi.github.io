@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Yuandong&#39;s Blog</title>
+  <title></title>
   
-  <subtitle>记录思想，分享技术</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
@@ -94,9 +94,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
-    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
@@ -128,9 +128,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
-    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
@@ -162,9 +162,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
-    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
@@ -196,9 +196,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
-    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
@@ -230,9 +230,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
-    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
@@ -260,11 +260,11 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
-    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
       <category term="dplyr" scheme="https://yuandongqi.github.io/tags/dplyr/"/>
+    
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
@@ -414,11 +414,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -454,11 +454,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -490,13 +490,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -522,13 +522,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
