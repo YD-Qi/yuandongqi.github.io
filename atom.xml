@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2021-01-29T03:06:29.575Z</updated>
+  <updated>2021-01-29T03:22:08.414Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuandongqi.github.io/2021/01/28/ping-shi-me-shuo-shen-chuang-zao-liao-yi-qie/"/>
     <id>https://yuandongqi.github.io/2021/01/28/ping-shi-me-shuo-shen-chuang-zao-liao-yi-qie/</id>
     <published>2021-01-29T02:01:56.000Z</published>
-    <updated>2021-01-29T03:06:29.575Z</updated>
+    <updated>2021-01-29T03:22:08.414Z</updated>
     
     <summary type="html">
     
@@ -414,11 +414,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
@@ -454,11 +454,11 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="advanced" scheme="https://yuandongqi.github.io/tags/advanced/"/>
     
@@ -490,13 +490,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -522,13 +522,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
-    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
+    
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
