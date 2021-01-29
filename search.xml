@@ -8,7 +8,7 @@
       <link href="/2021/01/28/ping-shi-me-shuo-shen-chuang-zao-liao-yi-qie/"/>
       <url>/2021/01/28/ping-shi-me-shuo-shen-chuang-zao-liao-yi-qie/</url>
       
-        <content type="html"><![CDATA[<p>“谁说基督徒拥有唯一的答案？”“谁说神真的存在，你见过？”“谁说圣经如此特殊：绝对可靠，天启的，绝对无误？圣经里不是有各种各样的错误吗？”“谁说你可以相信圣经，圣经不是由跟你我一样的人写的吗？这些人里面很多都是自大且没有受过教育的。”“谁说那些被实现的预言可以证明圣经是启示而来的？几个幸运的猜想，一些巧合，根本不能说明什么。”“谁说考古学帮助证明圣经是真的？从什么时候开始你能挖出证据证明神迹？”“谁说进化论不能是解释生命从何而来的问题的正确答案？为什么它是唯一可能的自然解释。人和大猩猩是从同一个祖先演化而来。”“对在这个科学昌明的时代受过教育的人而言，谁说创世纪第一章是可信的？六天创造地球？可笑至极！”“谁说科学不是在取得突飞猛进？空间旅行已经实现。疾病被征服。人类很快就能控制出生，生活，死亡–甚至控制大脑并按照人所想要的方式将其编程。”“谁说教会与圣经，乃至任何宗教与现代人有任何关系？科学在过去50年所取得的进步已经超过基督教在过去2000年所取得的进步。宗教已经过时了！”</p>]]></content>
+        <content type="html"><![CDATA[<p>“谁说基督徒拥有唯一的答案？” </p><p>“谁说神真的存在，你见过？” </p><p>“谁说圣经如此特殊：绝对可靠，天启的，绝对无误？圣经里不是有各种各样的错误吗？” </p><p>“谁说你可以相信圣经，圣经不是由跟你我一样的人写的吗？这些人里面很多都是自大且没有受过教育的。” </p><p>“谁说那些被实现的预言可以证明圣经是启示而来的？几个幸运的猜想，一些巧合，根本不能说明什么。” </p><p>“谁说考古学帮助证明圣经是真的？从什么时候开始你能挖出证据证明神迹？” </p><p>“谁说进化论不能是解释生命从何而来的问题的正确答案？为什么它是唯一可能的自然解释。人和大猩猩是从同一个祖先演化而来。” </p><p>“对在这个科学昌明的时代受过教育的人而言，谁说创世纪第一章是可信的？六天创造地球？可笑至极！” </p><p>“谁说科学不是在取得突飞猛进？空间旅行已经实现。疾病被征服。人类很快就能控制出生，生活，死亡–甚至控制大脑并按照人所想要的方式将其编程。” </p><p>“谁说教会与圣经，乃至任何宗教与现代人有任何关系？科学在过去50年所取得的进步已经超过基督教在过去2000年所取得的进步。宗教已经过时了！”</p>]]></content>
       
       
       <categories>
@@ -60,9 +60,9 @@
             
             <tag> R </tag>
             
-            <tag> data manipulation </tag>
-            
             <tag> data.table </tag>
+            
+            <tag> data manipulation </tag>
             
         </tags>
       
@@ -89,9 +89,9 @@
             
             <tag> R </tag>
             
-            <tag> data manipulation </tag>
-            
             <tag> data.table </tag>
+            
+            <tag> data manipulation </tag>
             
         </tags>
       
@@ -118,9 +118,9 @@
             
             <tag> R </tag>
             
-            <tag> data manipulation </tag>
-            
             <tag> data.table </tag>
+            
+            <tag> data manipulation </tag>
             
         </tags>
       
@@ -147,9 +147,9 @@
             
             <tag> R </tag>
             
-            <tag> data manipulation </tag>
-            
             <tag> data.table </tag>
+            
+            <tag> data manipulation </tag>
             
         </tags>
       
@@ -176,9 +176,9 @@
             
             <tag> R </tag>
             
-            <tag> data manipulation </tag>
-            
             <tag> data.table </tag>
+            
+            <tag> data manipulation </tag>
             
         </tags>
       
@@ -205,11 +205,11 @@
             
             <tag> R </tag>
             
+            <tag> data.table </tag>
+            
             <tag> data manipulation </tag>
             
             <tag> dplyr </tag>
-            
-            <tag> data.table </tag>
             
         </tags>
       
