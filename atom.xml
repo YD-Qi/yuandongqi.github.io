@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2021-01-30T00:31:55.886Z</updated>
+  <updated>2021-01-30T00:36:35.453Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yuandongqi.github.io/2021/01/29/ping-shi-me-shuo-shen-chuang-zao/"/>
     <id>https://yuandongqi.github.io/2021/01/29/ping-shi-me-shuo-shen-chuang-zao/</id>
     <published>2021-01-29T23:21:49.000Z</published>
-    <updated>2021-01-30T00:31:55.886Z</updated>
+    <updated>2021-01-30T00:36:35.453Z</updated>
     
     <summary type="html">
     
@@ -73,9 +73,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
+    
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
   </entry>
   
@@ -107,9 +107,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
+    
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
   </entry>
   
@@ -141,9 +141,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
+    
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
   </entry>
   
@@ -175,9 +175,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
+    
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
   </entry>
   
@@ -209,9 +209,9 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
-      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
+    
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
   </entry>
   
@@ -239,11 +239,11 @@
     
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
+      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
+    
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
       <category term="dplyr" scheme="https://yuandongqi.github.io/tags/dplyr/"/>
-    
-      <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
   </entry>
   
