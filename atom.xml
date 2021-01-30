@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2021-01-30T00:22:36.446Z</updated>
+  <updated>2021-01-30T00:27:42.577Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>凭什么说神创造？</title>
     <link href="https://yuandongqi.github.io/2021/01/29/ping-shi-me-shuo-shen-chuang-zao/"/>
     <id>https://yuandongqi.github.io/2021/01/29/ping-shi-me-shuo-shen-chuang-zao/</id>
-    <published>2021-01-30T00:21:49.557Z</published>
-    <updated>2021-01-30T00:22:36.446Z</updated>
+    <published>2021-01-29T23:21:49.000Z</published>
+    <updated>2021-01-30T00:27:42.577Z</updated>
     
     <summary type="html">
     
@@ -29,18 +29,19 @@
       
         
         
-          &lt;hr&gt;
-&lt;p&gt;title: 凭什么说神创造？
-top: true
-cover: false
-toc: true
-mathjax: true
-date: 2021-01-29
+          &lt;p&gt;“谁说基督徒拥有唯一的答案？”&lt;/p&gt;
+&lt;p&gt;“谁说神真的存在，你见过？”&lt;/p&gt;
+&lt;p&gt;“谁说圣经如此特殊：绝对可靠，天启的，绝对无误？圣经里不是有各种各样的错误吗？”&lt;/p&gt;
+&lt;p&gt;“谁说你可以相信圣经，圣经不是由跟你我一样的人写的吗？这些人里面很多都是自大且没有受过教
         
       
     
     </summary>
     
+      <category term="思想" scheme="https://yuandongqi.github.io/categories/%E6%80%9D%E6%83%B3/"/>
+    
+    
+      <category term="哲学, 圣经, 思辨" scheme="https://yuandongqi.github.io/tags/%E5%93%B2%E5%AD%A6-%E5%9C%A3%E7%BB%8F-%E6%80%9D%E8%BE%A8/"/>
     
   </entry>
   
@@ -70,11 +71,11 @@ date: 2021-01-29
       <category term="data science" scheme="https://yuandongqi.github.io/categories/data-science/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -104,11 +105,11 @@ date: 2021-01-29
       <category term="data science" scheme="https://yuandongqi.github.io/categories/data-science/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -138,11 +139,11 @@ date: 2021-01-29
       <category term="data science" scheme="https://yuandongqi.github.io/categories/data-science/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -172,11 +173,11 @@ date: 2021-01-29
       <category term="data science" scheme="https://yuandongqi.github.io/categories/data-science/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -206,11 +207,11 @@ date: 2021-01-29
       <category term="data science" scheme="https://yuandongqi.github.io/categories/data-science/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
   </entry>
   
@@ -236,11 +237,11 @@ date: 2021-01-29
       <category term="data science" scheme="https://yuandongqi.github.io/categories/data-science/"/>
     
     
-      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
-    
       <category term="data.table" scheme="https://yuandongqi.github.io/tags/data-table/"/>
     
       <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
+      <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="dplyr" scheme="https://yuandongqi.github.io/tags/dplyr/"/>
     
@@ -392,13 +393,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
+    
       <category term="R" scheme="https://yuandongqi.github.io/tags/R/"/>
     
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
-    
-      <category term="data manipulation" scheme="https://yuandongqi.github.io/tags/data-manipulation/"/>
     
       <category term="dplyr" scheme="https://yuandongqi.github.io/tags/dplyr/"/>
     
@@ -500,13 +501,13 @@ or rmarkdown with the
       <category term="Courses" scheme="https://yuandongqi.github.io/categories/Courses/"/>
     
     
+      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
+    
       <category term="data science" scheme="https://yuandongqi.github.io/tags/data-science/"/>
     
       <category term="concepts" scheme="https://yuandongqi.github.io/tags/concepts/"/>
     
       <category term="basics" scheme="https://yuandongqi.github.io/tags/basics/"/>
-    
-      <category term="python" scheme="https://yuandongqi.github.io/tags/python/"/>
     
   </entry>
   
