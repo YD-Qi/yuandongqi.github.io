@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2021-04-06T03:23:11.162Z</updated>
+  <updated>2021-04-07T03:09:46.183Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>币链笔记2-以太坊和以太币</title>
+    <link href="https://yuandongqi.github.io/2021/04/06/bi-lian-bi-ji-2-yi-tai-fang-he-yi-tai-bi/"/>
+    <id>https://yuandongqi.github.io/2021/04/06/bi-lian-bi-ji-2-yi-tai-fang-he-yi-tai-bi/</id>
+    <published>2021-04-07T01:39:47.000Z</published>
+    <updated>2021-04-07T03:09:46.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;虽然币链一体，但对大多数人来说，首先接触到的是加密货币，以比特币为首，以太币紧随其后，再然后是各种所谓山寨币，
+而对于其背后的区块链原理的了解要滞后许多。了解背后的基本原理对于正确投资加密资产意义重大，我们要投资的是未来可能改变
+人类生产生活的技术，而非仅仅投机赚一点差价。
+        
+      
+    
+    </summary>
+    
+      <category term="币链" scheme="https://yuandongqi.github.io/categories/%E5%B8%81%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://yuandongqi.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="加密货币" scheme="https://yuandongqi.github.io/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+      <category term="以太坊" scheme="https://yuandongqi.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    
+      <category term="以太币" scheme="https://yuandongqi.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%B8%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>币链笔记1-NFT</title>
     <link href="https://yuandongqi.github.io/2021/04/05/bi-lian-bi-ji-1-ntf/"/>
     <id>https://yuandongqi.github.io/2021/04/05/bi-lian-bi-ji-1-ntf/</id>
     <published>2021-04-06T01:45:20.000Z</published>
-    <updated>2021-04-06T03:23:11.162Z</updated>
+    <updated>2021-04-07T03:09:46.189Z</updated>
     
     <summary type="html">
     
