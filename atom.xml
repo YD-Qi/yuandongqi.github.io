@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuandongqi.github.io/"/>
-  <updated>2021-08-09T06:33:25.377Z</updated>
+  <updated>2021-08-09T17:18:04.563Z</updated>
   <id>https://yuandongqi.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>如何用Python抓取加密货币交易所数据并作分析</title>
-    <link href="https://yuandongqi.github.io/2021/08/09/ru-he-yong-python-zhua-qu-jia-mi-huo-bi-jiao-yi-suo-shu-ju-bing-zuo-fen-xi/"/>
-    <id>https://yuandongqi.github.io/2021/08/09/ru-he-yong-python-zhua-qu-jia-mi-huo-bi-jiao-yi-suo-shu-ju-bing-zuo-fen-xi/</id>
-    <published>2021-08-09T05:25:32.000Z</published>
-    <updated>2021-08-09T06:33:25.377Z</updated>
+    <title>如何创建加密货币交易所个人账户的API</title>
+    <link href="https://yuandongqi.github.io/2021/08/09/ru-he-chuang-jian-jia-mi-huo-bi-jiao-yi-suo-ge-ren-zhang-hu-de-api/"/>
+    <id>https://yuandongqi.github.io/2021/08/09/ru-he-chuang-jian-jia-mi-huo-bi-jiao-yi-suo-ge-ren-zhang-hu-de-api/</id>
+    <published>2021-08-09T16:51:42.000Z</published>
+    <updated>2021-08-09T17:18:04.563Z</updated>
     
     <summary type="html">
     
@@ -29,12 +29,79 @@
       
         
         
-          &lt;iframe src=&quot;https://nbviewer.jupyter.org/github/LastKnightCoder/numpy-note/blob/main/numpy%E5%85%A5%E9%97%A8.ipynb&quot; width=&quot;100%&quot;
+          &lt;p&gt;要实现程序自动交易，第一步是创建自己账户的API.&lt;/p&gt;
+&lt;p&gt;不知道API是啥？没关系，简单说，账户是你的房子，API就是钥匙，程序就是你的仆人。&lt;/p&gt;
+&lt;p&gt;仆人拿到钥匙才能进屋给你打扫卫生。&lt;/p&gt;
+&lt;p&gt;怕仆人拿你东西？没关系，API是特殊的钥匙，你可以设定权限
         
       
     
     </summary>
     
+      <category term="币链" scheme="https://yuandongqi.github.io/categories/%E5%B8%81%E9%93%BE/"/>
+    
+    
+      <category term="区块链" scheme="https://yuandongqi.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="加密货币" scheme="https://yuandongqi.github.io/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+      <category term="通证经济" scheme="https://yuandongqi.github.io/tags/%E9%80%9A%E8%AF%81%E7%BB%8F%E6%B5%8E/"/>
+    
+      <category term="交易所" scheme="https://yuandongqi.github.io/tags/%E4%BA%A4%E6%98%93%E6%89%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://yuandongqi.github.io/2021/08/09/ru-he-yong-python-zhua-qu-jia-mi-huo-bi-jiao-yi-suo-shu-ju-bing-zuo-fen-xi/python-shu-ju-fen-xi-yu-jia-mi-huo-bi-liang-hua-ce-lue-ji-qi-zi-dong-jiao-yi/"/>
+    <id>https://yuandongqi.github.io/2021/08/09/ru-he-yong-python-zhua-qu-jia-mi-huo-bi-jiao-yi-suo-shu-ju-bing-zuo-fen-xi/python-shu-ju-fen-xi-yu-jia-mi-huo-bi-liang-hua-ce-lue-ji-qi-zi-dong-jiao-yi/</id>
+    <published>2021-08-09T06:41:57.663Z</published>
+    <updated>2021-08-09T06:41:57.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;meta name=&quot;generator&quot; content=&quot;Hexo 3.9.0&quot;&gt;&lt;meta
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何用Python抓取加密货币交易所数据并作分析</title>
+    <link href="https://yuandongqi.github.io/2021/08/09/ru-he-yong-python-zhua-qu-jia-mi-huo-bi-jiao-yi-suo-shu-ju-bing-zuo-fen-xi/"/>
+    <id>https://yuandongqi.github.io/2021/08/09/ru-he-yong-python-zhua-qu-jia-mi-huo-bi-jiao-yi-suo-shu-ju-bing-zuo-fen-xi/</id>
+    <published>2021-08-09T05:25:32.000Z</published>
+    <updated>2021-08-09T17:18:04.546Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;iframe src=&quot;Python数据分析与加密货币量化策略及其自动交易.html&quot; width=&quot;100%&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="币链" scheme="https://yuandongqi.github.io/categories/%E5%B8%81%E9%93%BE/"/>
+    
+    
+      <category term="加密货币" scheme="https://yuandongqi.github.io/tags/%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81/"/>
+    
+      <category term="Python" scheme="https://yuandongqi.github.io/tags/Python/"/>
+    
+      <category term="数据分析" scheme="https://yuandongqi.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
